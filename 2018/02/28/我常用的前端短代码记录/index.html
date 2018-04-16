@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/830956-0d805390980baaaf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/830956-0b67fbeae1afbb71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/830956-e1c448a77adde0cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-12T09:42:03.120Z">
+<meta property="og:updated_time" content="2018-04-12T09:44:15.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我常用的前端短代码记录">
 <meta name="twitter:description" content="1.  检查边距123*&amp;#123; background: #000 !important;color: #0f0 !important;outline: solid #f00 1px !important; &amp;#125;  2. 保留小数点后两位1parseFloat((a).toFixed(2));//toFixed只能针对数字类型才能使用 3.Vue过滤器123456filters: &amp;#">
@@ -339,7 +339,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,728
+                  1,757
                 </span>
               
 
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -414,7 +414,7 @@
 <h1 id="33-页面的简单JS小框架"><a href="#33-页面的简单JS小框架" class="headerlink" title="33.页面的简单JS小框架"></a>33.页面的简单JS小框架</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var app = &#123;</span><br><span class="line">  datas : &#123;</span><br><span class="line">    arr : []</span><br><span class="line">  &#125;,</span><br><span class="line">  methods : &#123;</span><br><span class="line">    show : function () &#123;</span><br><span class="line">      // body...</span><br><span class="line">    &#125;,</span><br><span class="line">    close : function (argument) &#123;</span><br><span class="line">      // body...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  init : function()&#123;</span><br><span class="line">    app.methods.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var vm = new Vue()&#123;</span><br><span class="line">  el : &apos;#app&apos;,</span><br><span class="line">  data : app.datas,</span><br><span class="line">  methods : app.methods,</span><br><span class="line">  filters ： &#123;</span><br><span class="line">    text : function (flag) &#123;</span><br><span class="line">      // body...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.addEventListener(&quot;sign&quot;,function()&#123;</span><br><span class="line">  app.methods.show();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">;(function()&#123;</span><br><span class="line">  app.init();</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="34-自动化测试"><a href="#34-自动化测试" class="headerlink" title="34 自动化测试"></a>34 自动化测试</h1><p><code>loadrunner</code>和<code>jmeter</code></p>
 <h1 id="35-flex小记"><a href="#35-flex小记" class="headerlink" title="35 flex小记"></a>35 flex小记</h1><h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  justify-content: center;//居中</span><br><span class="line">  justify-content: space-around;//分散并在两边留白</span><br><span class="line">  justify-content: space-between;//分散在两边</span><br><span class="line">  align-items: center;//指它的子标签</span><br><span class="line">  align-self: center;//指它本身</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  width: 400px;</span><br><span class="line">  height: 400px;</span><br><span class="line">  border: 1px solid #f7b2bb;</span><br><span class="line">  display: flex;</span><br><span class="line">  /*flex-direction: row;//方向</span><br><span class="line">  flex-wrap: wrap; //换行 */</span><br><span class="line">  flex-flow: row wrap;</span><br><span class="line">  justify-content: space-between;//内容</span><br><span class="line">  align-content: space-between;//</span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: #f7b2bb;</span><br><span class="line">  color: #fff;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">  align-items: center;</span><br><span class="line">  /*flex-grow: 3;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -532,7 +532,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
