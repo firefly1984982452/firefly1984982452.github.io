@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue,weex," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="这个测试是建立在DCould公司上的，如果支付，也是DCould公司收的钱哦  工具HBuilder、mui.js 引入mui.js将mui.js放到根目录下的js文件夹里，然后在index.html中引入&amp;lt;script src=&amp;quot;js/mui.js&amp;quot; type=&amp;quot;text/javascript&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;">
+<meta name="description" content="网络请求fetch请求在电脑端浏览器会被提醒跨域，请求被拦截，直接用手机测试 如果要一进入页面就请求数据，在created(){}或mounted(){}中写123456let url = &amp;apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;amp;type=www_lingquan&amp;ap">
+<meta name="keywords" content="vue,weex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue2+mui.js完成移动端微信支付">
-<meta property="og:url" content="http://yoursite.com/2018/04/16/vue2项目用mui.js完成移动端微信支付/index.html">
+<meta property="og:title" content="weex踩坑集">
+<meta property="og:url" content="http://yoursite.com/2018/04/20/weex踩坑集/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="这个测试是建立在DCould公司上的，如果支付，也是DCould公司收的钱哦  工具HBuilder、mui.js 引入mui.js将mui.js放到根目录下的js文件夹里，然后在index.html中引入&amp;lt;script src=&amp;quot;js/mui.js&amp;quot; type=&amp;quot;text/javascript&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;">
+<meta property="og:description" content="网络请求fetch请求在电脑端浏览器会被提醒跨域，请求被拦截，直接用手机测试 如果要一进入页面就请求数据，在created(){}或mounted(){}中写123456let url = &amp;apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;amp;type=www_lingquan&amp;ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T09:45:40.222Z">
+<meta property="og:updated_time" content="2018-04-20T05:54:52.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue2+mui.js完成移动端微信支付">
-<meta name="twitter:description" content="这个测试是建立在DCould公司上的，如果支付，也是DCould公司收的钱哦  工具HBuilder、mui.js 引入mui.js将mui.js放到根目录下的js文件夹里，然后在index.html中引入&amp;lt;script src=&amp;quot;js/mui.js&amp;quot; type=&amp;quot;text/javascript&amp;quot; charset=&amp;quot;utf-8&amp;quot;&amp;">
+<meta name="twitter:title" content="weex踩坑集">
+<meta name="twitter:description" content="网络请求fetch请求在电脑端浏览器会被提醒跨域，请求被拦截，直接用手机测试 如果要一进入页面就请求数据，在created(){}或mounted(){}中写123456let url = &amp;apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;amp;type=www_lingquan&amp;ap">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/16/vue2项目用mui.js完成移动端微信支付/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/20/weex踩坑集/"/>
 
 
 
 
 
-  <title>vue2+mui.js完成移动端微信支付 | 春风自是人间客</title>
+  <title>weex踩坑集 | 春风自是人间客</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/vue2项目用mui.js完成移动端微信支付/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/weex踩坑集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="彭丹丹">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue2+mui.js完成移动端微信支付</h1>
+          <h1 class="post-title" itemprop="name headline">weex踩坑集</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T14:19:54+08:00">
-                2018-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T11:50:38+08:00">
+                2018-04-20
               </time>
             
 
@@ -335,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  428
+                  141
                 </span>
               
 
@@ -351,7 +352,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -372,17 +373,10 @@
       
 
       
-        <blockquote>
-<p>这个测试是建立在DCould公司上的，如果支付，也是DCould公司收的钱哦</p>
-</blockquote>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><code>HBuilder</code>、<code>mui.js</code></p>
-<h1 id="引入mui-js"><a href="#引入mui-js" class="headerlink" title="引入mui.js"></a>引入mui.js</h1><p>将<code>mui.js</code>放到根目录下的<code>js文件夹</code>里，然后在<code>index.html</code>中引入<br><code>&lt;script src=&quot;js/mui.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>在支付的vue页面写：</p>
-<p>首先添加这个配置在data里面<br><code>PAYSERVER:&#39;http://demo.dcloud.net.cn/payment/?payid=wxpay&amp;total=1&#39;</code></p>
-<p>然后用点击事件或其它事件调用下面的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function pay()&#123;</span><br><span class="line">	var that = this;</span><br><span class="line">	plus.payment.getChannels(function(channels)&#123;</span><br><span class="line">		for(var i = 0;i&lt;channels.length;i++)&#123;</span><br><span class="line">			var channel = channels[i];</span><br><span class="line">			if(channel.id == &apos;wxpay&apos;)&#123;</span><br><span class="line">				var xhr=new XMLHttpRequest();</span><br><span class="line">				xhr.onreadystatechange=function()&#123;</span><br><span class="line">					switch(xhr.readyState)&#123;</span><br><span class="line">						case 4:</span><br><span class="line">						if(xhr.status==200)&#123;</span><br><span class="line">							var order=xhr.responseText;</span><br><span class="line">							plus.payment.request(channel,order,function(result)&#123;</span><br><span class="line">								plus.nativeUI.alert(&apos;支付成功：感谢你的支持，我们会继续努力完善产品。&apos;,function()&#123;</span><br><span class="line">									back();</span><br><span class="line">								&#125;,&apos;捐赠&apos;);</span><br><span class="line">							&#125;,function(e)&#123;</span><br><span class="line">								plus.nativeUI.alert(&apos;更多错误信息请参考支付(Payment)规范文档：http://www.html5plus.org/#specification#/specification/Payment.html&apos;, null, &apos;支付失败：&apos;+e.code);</span><br><span class="line">							&#125;);</span><br><span class="line">						&#125;else&#123;</span><br><span class="line">							plus.nativeUI.alert(&apos;获取订单信息失败！&apos;, null, &apos;捐赠&apos;);</span><br><span class="line">						&#125;</span><br><span class="line">						break;</span><br><span class="line">						default:</span><br><span class="line">						break;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				xhr.open(&apos;GET&apos;,that.PAYSERVER);</span><br><span class="line">				xhr.send();</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h1><p><code>npm run build</code> 打包之后把<code>dist</code>文件夹拖到HBuilder里面，右键转换成App项目，然后直接连接手机测试</p>
-<h1 id="发行"><a href="#发行" class="headerlink" title="发行"></a>发行</h1><p>前面就说了，是DCould公司写的后台,所以打包的时候是没有DCould公司的微信支付app_id的，所以只能用手机测试。</p>
-<p>如果我们所有的手续都办好了，后台前台都写好了，就可以打包发行了，要在SDK配置里面加上app_id哦，不然打包出来的也不能用的。</p>
+        <h1 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h1><p><strong>fetch请求在电脑端浏览器会被提醒跨域，请求被拦截，直接用手机测试</strong></p>
+<p>如果要一进入页面就请求数据，在<code>created(){}</code>或<code>mounted(){}</code>中写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let url = &apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;type=www_lingquan&apos;;</span><br><span class="line">this.getData(url,res=&gt;&#123;</span><br><span class="line">	modal.toast(&#123;message:&apos;请求成功&apos;+res,duration:10&#125;);</span><br><span class="line">	this.lists = res.data;</span><br><span class="line">	console.log(res.data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在<code>methods{}</code>中写请求方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getData(url,callback)&#123;</span><br><span class="line">	return stream.fetch(&#123;</span><br><span class="line">		methods:&apos;get&apos;,</span><br><span class="line">		type:&apos;json&apos;,</span><br><span class="line">		url:url</span><br><span class="line">	&#125;,callback)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>用内置组件<code>&lt;list&gt;&lt;/list&gt;</code>和<code>&lt;cell&gt;&lt;/cell&gt;</code><br>相当于html中的<code>&lt;ul&gt;&lt;/ul&gt;</code>和<code>&lt;li&gt;&lt;/li&gt;</code></p>
 
       
     </div>
@@ -398,6 +392,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/weex/" rel="tag"># weex</a>
+          
+        </div>
+      
 
       
       
@@ -407,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/备忘录/" rel="next" title="备忘录">
-                <i class="fa fa-chevron-left"></i> 备忘录
+              <a href="/2018/04/19/《微习惯》/" rel="next" title="《微习惯》">
+                <i class="fa fa-chevron-left"></i> 《微习惯》
               </a>
             
           </div>
@@ -416,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/《高智商犯罪》/" rel="prev" title="《高智商犯罪》">
-                《高智商犯罪》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +520,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -555,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">1.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入mui-js"><span class="nav-number">2.</span> <span class="nav-text">引入mui.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打包"><span class="nav-number">4.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发行"><span class="nav-number">5.</span> <span class="nav-text">发行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络请求"><span class="nav-number">1.</span> <span class="nav-text">网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a></li></ol></div>
             
 
           </div>
