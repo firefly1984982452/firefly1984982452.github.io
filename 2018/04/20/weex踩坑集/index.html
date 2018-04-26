@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue,weex," />
+  <meta name="keywords" content="weex,vue," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="项目创建123456weex create projnpm install weexpack -gnpm installweex platform add androidweex platform add iosweex run android 运行12npm run devnpm run serve 布局的不同 使用flex布局 不支持百分数 border要分开写 长度只支持px 宽：720px">
-<meta name="keywords" content="vue,weex">
+<meta name="keywords" content="weex,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="weex踩坑集">
 <meta property="og:url" content="http://yoursite.com/2018/04/20/weex踩坑集/index.html">
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="项目创建123456weex create projnpm install weexpack -gnpm installweex platform add androidweex platform add iosweex run android 运行12npm run devnpm run serve 布局的不同 使用flex布局 不支持百分数 border要分开写 长度只支持px 宽：720px">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-23T09:02:48.116Z">
+<meta property="og:updated_time" content="2018-04-25T08:28:10.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weex踩坑集">
 <meta name="twitter:description" content="项目创建123456weex create projnpm install weexpack -gnpm installweex platform add androidweex platform add iosweex run android 运行12npm run devnpm run serve 布局的不同 使用flex布局 不支持百分数 border要分开写 长度只支持px 宽：720px">
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  360
+                  386
                 </span>
               
 
@@ -396,8 +396,10 @@
 <p>要想使用stream，必须使用weex来进行引入。</p>
 <p><code>const stream = weex.requireModule(&#39;stream&#39;);</code></p>
 <p><strong>fetch请求在电脑端浏览器会被提醒跨域，请求被拦截，直接用手机测试</strong></p>
-<p>如果要一进入页面就请求数据，在<code>created(){}</code>或<code>mounted(){}</code>中写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let url = &apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;type=www_lingquan&apos;;</span><br><span class="line">this.getData(url,res=&gt;&#123;</span><br><span class="line">	modal.toast(&#123;message:&apos;请求成功&apos;+res,duration:10&#125;);</span><br><span class="line">	this.lists = res.data;</span><br><span class="line">	console.log(res.data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>如果要一进入页面就请求数据，在<code>created(){}</code>或<code>mounted(){}</code>中写</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let url = &apos;http://api.tkjidi.com/getGoodsLink?appkey=ed33ed5a1a73e00c65f6c8da5793fb8a&amp;type=www_lingquan&apos;;</span><br><span class="line">this.getData(url,res=&gt;&#123;</span><br><span class="line">	modal.toast(&#123;message:&apos;请求成功&apos;+res,duration:10&#125;);</span><br><span class="line">	this.lists = res.data;</span><br><span class="line">	console.log(res.data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>在<code>methods{}</code>中写请求方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getData(url,callback)&#123;</span><br><span class="line">	return stream.fetch(&#123;</span><br><span class="line">		methods:&apos;get&apos;,</span><br><span class="line">		type:&apos;json&apos;,</span><br><span class="line">		url:url</span><br><span class="line">	&#125;,callback)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">stream.fetch(&#123;</span><br><span class="line">	methods:&apos;GET&apos;,</span><br><span class="line">	type:&apos;json&apos;,</span><br><span class="line">	url:&apos;&apos;</span><br><span class="line">&#125;,function(res) &#123;</span><br><span class="line"> console.log(res.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -415,9 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
-          
             <a href="/tags/weex/" rel="tag"># weex</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -523,7 +525,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -578,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目创建"><span class="nav-number">1.</span> <span class="nav-text">项目创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">2.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布局的不同"><span class="nav-number">3.</span> <span class="nav-text">布局的不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件"><span class="nav-number">4.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#text组件"><span class="nav-number">4.1.</span> <span class="nav-text">text组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image组件"><span class="nav-number">4.2.</span> <span class="nav-text">image组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表组件"><span class="nav-number">4.3.</span> <span class="nav-text">列表组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用原生组件"><span class="nav-number">5.</span> <span class="nav-text">调用原生组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络请求"><span class="nav-number">6.</span> <span class="nav-text">网络请求</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目创建"><span class="nav-number">1.</span> <span class="nav-text">项目创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">2.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布局的不同"><span class="nav-number">3.</span> <span class="nav-text">布局的不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件"><span class="nav-number">4.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#text组件"><span class="nav-number">4.1.</span> <span class="nav-text">text组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image组件"><span class="nav-number">4.2.</span> <span class="nav-text">image组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表组件"><span class="nav-number">4.3.</span> <span class="nav-text">列表组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用原生组件"><span class="nav-number">5.</span> <span class="nav-text">调用原生组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络请求"><span class="nav-number">6.</span> <span class="nav-text">网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">6.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">6.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></div>
             
 
           </div>
