@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="路由跳转及传参直接跳转A.vue1234567this.$router.push(&amp;#123;	name : &amp;apos;B&amp;apos;,	params : &amp;#123;		id : 1		name : &amp;apos;study Vue.&amp;apos;	&amp;#125;&amp;#125;) B.vue1this.$route.params tips:A.vue使用的是$router，B.vue使用的是$rout">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T02:39:49.330Z">
+<meta property="og:updated_time" content="2018-05-24T03:35:18.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue常用方法总结">
 <meta name="twitter:description" content="路由跳转及传参直接跳转A.vue1234567this.$router.push(&amp;#123;	name : &amp;apos;B&amp;apos;,	params : &amp;#123;		id : 1		name : &amp;apos;study Vue.&amp;apos;	&amp;#125;&amp;#125;) B.vue1this.$route.params tips:A.vue使用的是$router，B.vue使用的是$rout">
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  742
+                  891
                 </span>
               
 
@@ -387,7 +387,8 @@
 <p>const {href} = this.$router.resolve({<br>    name: ‘logistics’<br>})<br>window.open(href, ‘_blank’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 消息无缝滚动</span><br></pre></td></tr></table></figure></p>
 <p> export default {<br>data() {<br>  return {<br>      animate:false,<br>      items:[<br>          {name:”马云”},<br>          {name:”雷军”},<br>          {name:”王勤”}<br>      ]<br>  }<br>},<br>created(){<br>    setInterval(this.scroll,1000)<br>},<br>methods: {<br>    scroll(){<br>       this.animate=true;    // 因为在消息向上滚动的时候需要添加css3过渡动画，所以这里需要设置true<br>       setTimeout(()=&gt;{      //  这里直接使用了es6的箭头函数，省去了处理this指向偏移问题，代码也比之前简化了很多<br>               this.items.push(this.items[0]);  // 将数组的第一个元素添加到数组的<br>               this.items.shift();               //删除数组的第一个元素<br>               this.animate=false;  // margin-top 为0 的时候取消过渡动画，实现无缝滚动<br>       },500)<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参考：https://segmentfault.com/a/1190000012272194</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 商品错误时显示默认图片</span><br></pre></td></tr></table></figure></p>
 <p><img v-bind:src="userData.photo" :onerror="logo" class="img-box4">  </p>
-<p>data: () =&gt; ({<br>    logo: ‘this.src=”‘ + require(‘../assets/img.png’) + ‘“‘<br>})<br><code>`</code></p>
+<p>data: () =&gt; ({<br>    logo: ‘this.src=”‘ + require(‘../assets/img.png’) + ‘“‘<br>})<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">懒加载方法：</span><br><span class="line"></span><br><span class="line">`&lt;img v-lazy:background-image=&quot;&#123;src: item.pic_url, error: &apos;http://bpic.588ku.com/back_pic/03/53/97/65579958bb0ec9a.jpg!r850/fw/400&apos;, loading: &apos;default_banner&apos;&#125;&quot; /&gt;`</span><br><span class="line"></span><br><span class="line">注意：`error`里的图片得是网络图片，用本地图片我设置了很久都没有效果。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 引入mui</span><br><span class="line"></span><br><span class="line">复制mui.min.js进去</span><br><span class="line"></span><br><span class="line">在vue页面中引入</span><br><span class="line"></span><br><span class="line">`import mui from &apos;../../js/mui.js&apos;;`</span><br><span class="line"></span><br><span class="line">在严格模式下报错</span><br><span class="line"></span><br><span class="line">在.babel.rc中加入如下代码，排除mui相关的js就可以了：</span><br></pre></td></tr></table></figure></p>
+<p>{<br>“presets”: [ “es2015” ],<br>“ignore”: [<br>“./src/lib/mui/mui.min.js”,<br>“./src/lib/mui/mui.picker.js”,<br>“./src/lib/mui/mui.poppicker.js”<br>]<br>}<br><code>`</code></p>
 
       
     </div>
