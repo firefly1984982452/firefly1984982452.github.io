@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue常用方法总结">
+<meta property="og:url" content="http://yoursite.com/2018/03/19/vue常用方法总结/index.html">
+<meta property="og:site_name" content="春风自是人间客">
+<meta property="og:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-26T14:24:06.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue常用方法总结">
+<meta name="twitter:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/19/vue常用方法总结/">
+
+
+
+
+
+  <title>vue常用方法总结 | 春风自是人间客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春风自是人间客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">是非成败转头空，青山依旧在，几度夕阳红。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-program">
+          <a href="/categories/program" rel="section">
+            
+            程序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/idea" rel="section">
+            
+            想法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/19/vue常用方法总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="彭丹丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风自是人间客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">vue常用方法总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T13:50:17+08:00">
+                2018-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,363
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="公共组件"><a href="#公共组件" class="headerlink" title="公共组件"></a>公共组件</h1><h2 id="引入公共组件"><a href="#引入公共组件" class="headerlink" title="引入公共组件"></a>引入公共组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import VueRouter from &apos;vue-router&apos;</span><br><span class="line">import VueResource from &apos;vue-resource&apos;</span><br><span class="line">import SixiButton from &apos;components/common/SixiButton&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line">Vue.use(VueResource)</span><br><span class="line">Vue.component(&apos;six-button&apos;, SixiButton)</span><br></pre></td></tr></table></figure>
+<h1 id="路由跳转及传参"><a href="#路由跳转及传参" class="headerlink" title="路由跳转及传参"></a>路由跳转及传参</h1><h2 id="直接跳转"><a href="#直接跳转" class="headerlink" title="直接跳转"></a>直接跳转</h2><p>A.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123;</span><br><span class="line">	name : &apos;B&apos;,</span><br><span class="line">	params : &#123;</span><br><span class="line">		id : 1</span><br><span class="line">		name : &apos;study Vue.&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>B.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$route.params</span><br></pre></td></tr></table></figure></p>
+<p><em>tips:A.vue使用的是<code>$router</code>，B.vue使用的是<code>$route</code>，极易混淆。</em></p>
+<p><strong>此处push的必须是name，不能是path，如果要用path的话，可以用query</strong></p>
+<h2 id="地址栏’-‘传参"><a href="#地址栏’-‘传参" class="headerlink" title="地址栏’/‘传参"></a>地址栏’/‘传参</h2><p>router.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path: &apos;/success/:order_id&apos;,</span><br><span class="line">    name: &apos;success&apos;,</span><br><span class="line">    component: success</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A.vue</p>
+<p>地址：<code>http://localhost:8080/#/success/257</code></p>
+<p>获取：<code>this.$route.params.order_id</code></p>
+<h2 id="地址栏’-’传参"><a href="#地址栏’-’传参" class="headerlink" title="地址栏’?’传参"></a>地址栏’?’传参</h2><p>地址：<code>http://localhost:8080/#/success?id=257</code></p>
+<p>获取：<code>this.$route.query.id</code></p>
+<h1 id="axios网络请求"><a href="#axios网络请求" class="headerlink" title="axios网络请求"></a>axios网络请求</h1><p><code>this.axios.post().then().catch();</code></p>
+<p>详情如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.axios.post(url,params).then((res) =&gt; &#123;</span><br><span class="line">		console.log(res.data);</span><br><span class="line">&#125;).catch(</span><br><span class="line">	(err) =&gt; &#123;</span><br><span class="line">	console.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="vue-cli快速构建项目"><a href="#vue-cli快速构建项目" class="headerlink" title="vue-cli快速构建项目"></a>vue-cli快速构建项目</h1><h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p><code>npm install -g webpack</code></p>
+<h2 id="安装vue-cli"><a href="#安装vue-cli" class="headerlink" title="安装vue-cli"></a>安装vue-cli</h2><p><code>npm install -g vue-cli</code></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p><code>vue init webpack myVueStudy</code></p>
+<p>初始化过程中有些需要填的选项，直接按<code>enter</code>键就可以了。</p>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><p><code>npm install</code></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><code>npm run dev</code></p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>config/index.js<br><code>assetsPublicPath: &#39;./&#39;,</code></p>
+<p><code>npm run build</code></p>
+<h1 id="绝对地址和相对址引用"><a href="#绝对地址和相对址引用" class="headerlink" title="绝对地址和相对址引用"></a>绝对地址和相对址引用</h1><p><code>&lt;img src=&quot;~static/20180315130936.png&quot;/&gt;</code></p>
+<h1 id="el-input-只能输入数字"><a href="#el-input-只能输入数字" class="headerlink" title="el-input 只能输入数字"></a>el-input 只能输入数字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input </span><br><span class="line">	style=&quot;width: 400px;&quot; </span><br><span class="line">	v-model.number=&quot;params.account&quot; </span><br><span class="line">	onkeypress=&quot;return event.keyCode&gt;=48&amp;&amp;event.keyCode&lt;=57&quot;</span><br><span class="line">	clearable&gt;</span><br><span class="line">&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+<p><code>onkeypress=&quot;return event.keyCode&gt;=48&amp;&amp;event.keyCode&lt;=57&quot;</code>是按下时触发</p>
+<p><code>onkeyup=&quot;value=value.replace(/[^\d]/g,&#39;&#39;) &quot;</code>是输入后触发</p>
+<p><code>v-model.number</code>同样也只能输入数字，但是输入的非数字仍然会显示在输入框，看不去不友好。</p>
+<p><code>v-model.number</code>和<code>onkeyup=&quot;value=value.replace(/[^\d]/g,&#39;&#39;) &quot;</code>同时使用时可能会出错。</p>
+<p><code>oninput=&quot;value=value.replace(/[^0-9A-Za-z.]/g,&#39;&#39;)&quot;</code></p>
+<p><em>tips:</em><br><code>&lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;&quot; /&gt;</code></p>
+<p>这句代码在PC端和手机端会有兼容性问题</p>
+<hr>
+<h1 id="weex篇"><a href="#weex篇" class="headerlink" title="weex篇"></a>weex篇</h1><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p><code>npm run dev</code> 运行</p>
+<p><code>npm run serve</code> 热更新</p>
+<p><code>npm run build</code> 打包</p>
+<p>将<code>dist/index.js</code>里面的文件替换到Android中<code>assets/dist/index.js</code>和<code>assets/index.js</code>中</p>
+<h1 id="vue中做一些监听事件"><a href="#vue中做一些监听事件" class="headerlink" title="vue中做一些监听事件"></a>vue中做一些监听事件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">	var that = this;</span><br><span class="line">	document.onkeydown = function(e) &#123;</span><br><span class="line">		var keyNum = window.event ? e.keyCode : e.which;</span><br><span class="line">		if(keyNum == 13) &#123;</span><br><span class="line">			that.login();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;			</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h1 id="vue获取后端数据应该在created还是mounted方法"><a href="#vue获取后端数据应该在created还是mounted方法" class="headerlink" title="vue获取后端数据应该在created还是mounted方法"></a>vue获取后端数据应该在created还是mounted方法</h1><p>看情况了，一般放到created里面就可以了，这样可以及早发请求获取数据，如果有依赖dom必须存在的情况，就放到<code>mounted(){this.$nextTick(() =&gt; { /* code */ })}</code>里面</p>
+<h1 id="vue的target-blank跳转"><a href="#vue的target-blank跳转" class="headerlink" title="vue的target:blank跳转"></a>vue的target:blank跳转</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let routeUrl = this.$router.resolve(&#123;</span><br><span class="line">path: &apos;/peoManager/peopleDetails&apos;,</span><br><span class="line">query: &#123;index: index, peopleID: item.peopleID&#125;</span><br><span class="line">&#125;)</span><br><span class="line">window.open(routeUrl.href, &apos;_blank&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="消息无缝滚动"><a href="#消息无缝滚动" class="headerlink" title="消息无缝滚动"></a>消息无缝滚动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> export default &#123;</span><br><span class="line">data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">      animate:false,</span><br><span class="line">      items:[</span><br><span class="line">          &#123;name:&quot;马云&quot;&#125;,</span><br><span class="line">          &#123;name:&quot;雷军&quot;&#125;,</span><br><span class="line">          &#123;name:&quot;王勤&quot;&#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">created()&#123;</span><br><span class="line">    setInterval(this.scroll,1000)</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    scroll()&#123;</span><br><span class="line">       this.animate=true;    // 因为在消息向上滚动的时候需要添加css3过渡动画，所以这里需要设置true</span><br><span class="line">       setTimeout(()=&gt;&#123;      //  这里直接使用了es6的箭头函数，省去了处理this指向偏移问题，代码也比之前简化了很多</span><br><span class="line">               this.items.push(this.items[0]);  // 将数组的第一个元素添加到数组的</span><br><span class="line">               this.items.shift();               //删除数组的第一个元素</span><br><span class="line">               this.animate=false;  // margin-top 为0 的时候取消过渡动画，实现无缝滚动</span><br><span class="line">       &#125;,500)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://segmentfault.com/a/1190000012272194" target="_blank" rel="noopener">参考</a></p>
+<h1 id="图片错误时显示默认图片"><a href="#图片错误时显示默认图片" class="headerlink" title="图片错误时显示默认图片"></a>图片错误时显示默认图片</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-bind:src=&quot;userData.photo&quot; :onerror=&quot;logo&quot; class=&quot;img-box4&quot;&gt;  </span><br><span class="line"></span><br><span class="line">data: () =&gt; (&#123;  </span><br><span class="line">    logo: &apos;this.src=&quot;&apos; + require(&apos;../assets/img.png&apos;) + &apos;&quot;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>懒加载方法：</p>
+<p><code>&lt;img v-lazy:background-image=&quot;{src: item.pic_url, error: &#39;http://bpic.588ku.com/back_pic/03/53/97/65579958bb0ec9a.jpg!r850/fw/400&#39;, loading: &#39;default_banner&#39;}&quot; /&gt;</code></p>
+<p>注意：<code>error</code>里的图片得是网络图片，用本地图片我设置了很久都没有效果。</p>
+<h1 id="引入mui"><a href="#引入mui" class="headerlink" title="引入mui"></a>引入mui</h1><p>复制mui.min.js进去</p>
+<p>在vue页面中引入</p>
+<p><code>import mui from &#39;../../js/mui.js&#39;;</code></p>
+<p>在严格模式下报错</p>
+<p>在.babel.rc中加入如下代码，排除mui相关的js就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">&quot;presets&quot;: [ &quot;es2015&quot; ],</span><br><span class="line">&quot;ignore&quot;: [</span><br><span class="line">&quot;./src/lib/mui/mui.min.js&quot;,</span><br><span class="line">&quot;./src/lib/mui/mui.picker.js&quot;,</span><br><span class="line">&quot;./src/lib/mui/mui.poppicker.js&quot;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="axios篇"><a href="#axios篇" class="headerlink" title="axios篇"></a>axios篇</h1><h2 id="设置请求头带cooike"><a href="#设置请求头带cooike" class="headerlink" title="设置请求头带cooike"></a>设置请求头带cooike</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">axios.defaults.withCredentials=true;//让ajax携带cookie</span><br><span class="line">Vue.prototype.$axios = axios;</span><br></pre></td></tr></table></figure>
+<h1 id="mode模式"><a href="#mode模式" class="headerlink" title="mode模式"></a>mode模式</h1><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>优点：地址栏不会有<code>#</code>号，利于<code>SEO</code>优化</p>
+<p>缺点：线上刷新后会404，需要前后台都配置才行</p>
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><p>优点：线上线下都没有刷新异常的问题</p>
+<p>缺点：地址栏有<code>#</code>号，对<code>SEO</code>不友好</p>
+<h1 id="vue中nextTick使用"><a href="#vue中nextTick使用" class="headerlink" title="vue中nextTick使用"></a>vue中nextTick使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//改变数据</span><br><span class="line">var msg = &apos;change&apos;;</span><br><span class="line"></span><br><span class="line">//想要立即使用刚刚赋的值‘change’，此时是不行的，DOM并没有更新</span><br><span class="line">console.log(vm.$el.textContext);//不能得到 &apos;change&apos;</span><br><span class="line"></span><br><span class="line">//这样可以获取，nextTick会在DOM更新后获取</span><br><span class="line">this.$nextTick(()=&gt;&#123;</span><br><span class="line">    console.log(vm.$el.textContext);//可以得到 &apos;change&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="vue项目中的for循环引发的血案"><a href="#vue项目中的for循环引发的血案" class="headerlink" title="vue项目中的for循环引发的血案"></a>vue项目中的for循环引发的血案</h1><p>项目中用了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-for=&quot;(item) in arr&quot;</span><br></pre></td></tr></table></figure></p>
+<p>改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-for=&quot;item in arr&quot;</span><br></pre></td></tr></table></figure></p>
+<h1 id="vue父子组件相互通信"><a href="#vue父子组件相互通信" class="headerlink" title="vue父子组件相互通信"></a>vue父子组件相互通信</h1><h2 id="子-gt-父-传值"><a href="#子-gt-父-传值" class="headerlink" title="子 =&gt; 父 传值"></a>子 =&gt; 父 传值</h2><h3 id="child-vue"><a href="#child-vue" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sendData() &#123;</span><br><span class="line">    this.$emit(&apos;sendDataFun&apos;, &apos;hello&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="father-vue"><a href="#father-vue" class="headerlink" title="father.vue"></a>father.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;child @sendDataFun=&quot;get&quot;&gt;&lt;/child&gt;</span><br><span class="line">...</span><br><span class="line">get(val)&#123;</span><br><span class="line">	console.log(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="父-gt-子-传值"><a href="#父-gt-子-传值" class="headerlink" title="父 =&gt; 子 传值"></a>父 =&gt; 子 传值</h2><h3 id="father-vue-1"><a href="#father-vue-1" class="headerlink" title="father.vue"></a>father.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;child :sendType=&quot;type&quot;&gt;&lt;/child&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="child-vue-1"><a href="#child-vue-1" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">props:&#123;</span><br><span class="line">	sendType:&apos;&apos;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">	sendType()&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="父-gt-子-调方法"><a href="#父-gt-子-调方法" class="headerlink" title="父 =&gt; 子 调方法"></a>父 =&gt; 子 调方法</h2><h3 id="father-vue-2"><a href="#father-vue-2" class="headerlink" title="father.vue"></a>father.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;child ref=&quot;child&quot; @sendDataFun=&quot;get&quot;&gt;&lt;/child&gt;</span><br><span class="line">...</span><br><span class="line">this.$refs.child.sendData();</span><br><span class="line">...</span><br><span class="line">get(val)&#123;</span><br><span class="line">	console.log(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="child-vue-2"><a href="#child-vue-2" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sendData() &#123;</span><br><span class="line">    this.$emit(&apos;sendDataFun&apos;, &apos;hello&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="vue兄弟组件通过eventbus传值"><a href="#vue兄弟组件通过eventbus传值" class="headerlink" title="vue兄弟组件通过eventbus传值"></a>vue兄弟组件通过eventbus传值</h1><p>新建<code>bus.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &quot;vue&quot;</span><br><span class="line">export default new Vue();</span><br></pre></td></tr></table></figure>
+<p>兄组件<code>child1.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span @click=&quot;send&quot;&gt;点击&lt;/span&gt;</span><br><span class="line">send()&#123;</span><br><span class="line">	eventBus.$emit(&apos;sentMsg&apos;,&apos;hellowrold~&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>弟组件<code>child2.vue</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    eventBus.$on(&apos;sentMsg&apos;,v=&gt;&#123;</span><br><span class="line">        console.log(v)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h1 id="vue下swiper的使用"><a href="#vue下swiper的使用" class="headerlink" title="vue下swiper的使用"></a>vue下swiper的使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm install swiper</code></p>
+<p>然后视情况看要不要在main.js里面全局引用，如果界面少可以不用。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><code>html</code>部分：</p>
+<p>注意：此处的data要注意<strong>网络请求的异步问题</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;swiper :options=&quot;swiperOption&quot; ref=&quot;mySwiper&quot;&gt;</span><br><span class="line">    &lt;swiper-slide v-for=&quot;(item,index) in data&quot; :key=&quot;index&quot; class=&quot;swiper-slide&quot;&gt;</span><br><span class="line">        &#123;&#123;item&#125;&#125;</span><br><span class="line">    &lt;/swiper-slide&gt;</span><br><span class="line">&lt;/swiper&gt;</span><br></pre></td></tr></table></figure>
+<p><code>js</code>部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &apos;swiper/dist/css/swiper.css&apos;</span><br><span class="line">import &#123;swiper, swiperSlide&#125; from &apos;vue-awesome-swiper&apos;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">data()&#123;</span><br><span class="line">    reutrn &#123;</span><br><span class="line">        swiperOption: &#123;</span><br><span class="line">            direction: &apos;vertical&apos;,</span><br><span class="line">            notNextTick: true,</span><br><span class="line">            loop: true,</span><br><span class="line">            speed: 3500,</span><br><span class="line">            autoplay: &#123;</span><br><span class="line">                delay: 4000,</span><br><span class="line">                stopOnLastSlide: false,</span><br><span class="line">                disableOnInteraction: false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">components: &#123;</span><br><span class="line">    swiper,</span><br><span class="line">    swiperSlide</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>css</code>部分</p>
+<p>视情况而定，有的代码需要，有的不需要。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.swiper-container&#123;</span><br><span class="line">    windth:100%important;</span><br><span class="line">    heidth:100px!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="vue国际化i18n使用"><a href="#vue国际化i18n使用" class="headerlink" title="vue国际化i18n使用"></a>vue国际化i18n使用</h1><h2 id="安装vue-i18n"><a href="#安装vue-i18n" class="headerlink" title="安装vue-i18n"></a>安装vue-i18n</h2><p>npm install vue-i18n –save</p>
+<h2 id="main-js文件配置"><a href="#main-js文件配置" class="headerlink" title="main.js文件配置"></a>main.js文件配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 引入i18n国际化插件</span><br><span class="line">import VueI18n from &apos;vue-i18n&apos;</span><br><span class="line">Vue.use(VueI18n)</span><br><span class="line"> </span><br><span class="line">// 注册i18n实例并引入语言文件，文件格式等下解析</span><br><span class="line">const i18n = new VueI18n(&#123;</span><br><span class="line">  locale: &apos;zh&apos;,</span><br><span class="line">  messages: &#123;</span><br><span class="line">    &apos;zh&apos;: require(&apos;@/assets/languages/zh.json&apos;),</span><br><span class="line">    &apos;en&apos;: require(&apos;@/assets/languages/en.json&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">//将i18n注入到vue实例中</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  i18n,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>en.json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;common&quot;: &#123;</span><br><span class="line">        &quot;home&quot;: &quot;Home&quot;,</span><br><span class="line">        &quot;login&quot;: &quot;Login&quot;,</span><br><span class="line">        &quot;register&quot;: &quot;Register&quot;,</span><br><span class="line">        &quot;appDownload&quot;: &quot;APP Download&quot;,</span><br><span class="line">        &quot;aboutUs&quot;: &quot;About Us&quot;,</span><br><span class="line">        &quot;faq&quot;: &quot;FAQ&quot;,</span><br><span class="line">        &quot;contact&quot;: &quot;Contact Us&quot;,</span><br><span class="line">        &quot;join&quot;: &quot;Join Us&quot;,</span><br><span class="line">        &quot;copyright&quot;: &quot;Copyright © ZLGMcu Ltd&quot;,</span><br><span class="line">        &quot;news&quot;: &quot;News&quot;,</span><br><span class="line">        &quot;toggle&quot;: &quot;Toggle&quot;,</span><br><span class="line">        &quot;welcome&quot;: &quot;Welcome, &quot;,</span><br><span class="line">        &quot;userinfo&quot;: &quot;Userinfo&quot;,</span><br><span class="line">        &quot;firstPage&quot;: &quot;Home&quot;,</span><br><span class="line">        &quot;setting&quot;: &quot;Setting&quot;,</span><br><span class="line">        &quot;exit&quot;: &quot;Exit&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;message&quot;: &#123;</span><br><span class="line">        &quot;hint1&quot;: &quot;Please Input Nickname&quot;,</span><br><span class="line">        &quot;hint2&quot;: &quot;Please Input Username&quot;,</span><br><span class="line">        &quot;hint3&quot;: &quot;Please Input Password&quot;,</span><br><span class="line">        &quot;hint4&quot;: &quot;Don&apos;t find picture&quot;,</span><br><span class="line">        &quot;hint5&quot;: &quot;No Account?&quot;,</span><br><span class="line">        &quot;hint6&quot;: &quot;Register Now&quot;,</span><br><span class="line">        &quot;hint7&quot;: &quot;Remember me&quot;,</span><br><span class="line">        &quot;hint8&quot;: &quot;Can&apos;t login in?&quot;,</span><br><span class="line">        &quot;placeHolder1&quot;: &quot;Nickname&quot;,</span><br><span class="line">        &quot;placeHolder2&quot;: &quot;Username or Phone Number or Email&quot;,</span><br><span class="line">        &quot;placeHolder3&quot;: &quot;Password(8 Digits at Least)&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>zh.json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;common&quot;:&#123;</span><br><span class="line">        &quot;home&quot;: &quot;首页&quot;,</span><br><span class="line">        &quot;login&quot;: &quot;登录&quot;,</span><br><span class="line">        &quot;register&quot;: &quot;注册&quot;,</span><br><span class="line">        &quot;appDownload&quot;: &quot;APP下载&quot;,</span><br><span class="line">        &quot;aboutUs&quot;: &quot;关于我们&quot;,</span><br><span class="line">        &quot;faq&quot;: &quot;常见问题&quot;,</span><br><span class="line">        &quot;contact&quot;: &quot;联系方式&quot;,</span><br><span class="line">        &quot;join&quot;: &quot;加入我们&quot;,</span><br><span class="line">        &quot;copyright&quot;: &quot;版权说明 © 广州xxx有限公司&quot;,</span><br><span class="line">        &quot;news&quot;: &quot;消息&quot;,</span><br><span class="line">        &quot;toggle&quot;: &quot;切换&quot;,</span><br><span class="line">        &quot;welcome&quot;: &quot;欢迎您，&quot;,</span><br><span class="line">        &quot;userinfo&quot;: &quot;个人信息&quot;,</span><br><span class="line">        &quot;firstPage&quot;:  &quot;主页&quot;,</span><br><span class="line">        &quot;setting&quot;: &quot;设置&quot;,</span><br><span class="line">        &quot;exit&quot;: &quot;退出&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;message&quot;:&#123;</span><br><span class="line">        &quot;hint1&quot;: &quot;请输入昵称&quot;,</span><br><span class="line">        &quot;hint2&quot;: &quot;请输入账号&quot;,</span><br><span class="line">        &quot;hint3&quot;: &quot;请输入密码&quot;,</span><br><span class="line">        &quot;hint4&quot;: &quot;没有找到&quot;,</span><br><span class="line">        &quot;hin5&quot;: &quot;没有账号？&quot;,</span><br><span class="line">        &quot;hint6&quot;: &quot;马上注册&quot;,</span><br><span class="line">        &quot;hint7&quot;: &quot;记住我&quot;,</span><br><span class="line">        &quot;hint8&quot;: &quot;登录遇到问题？&quot;,</span><br><span class="line">        &quot;placeHolder1&quot;: &quot;昵称&quot;,</span><br><span class="line">        &quot;placeHolder2&quot;: &quot;用户名、手机号或邮箱&quot;,</span><br><span class="line">        &quot;placeHolder3&quot;: &quot;密码（至少8位字符）&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用vue-i18n"><a href="#使用vue-i18n" class="headerlink" title="使用vue-i18n"></a>使用vue-i18n</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 &gt;&#123;&#123;$t(&apos;common.home&apos;)&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;el-button @click=&quot;changeTest&quot;&gt;切换&lt;/el-button&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">changeTest()&#123;</span><br><span class="line">	let lang = this.$i18n.locale == &apos;zh&apos; ? &apos;en&apos; : &apos;zh&apos;;</span><br><span class="line">	this.$i18n.locale = lang;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h1 id="让el-select可以绑定对象"><a href="#让el-select可以绑定对象" class="headerlink" title="让el-select可以绑定对象"></a>让el-select可以绑定对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select value-key=&quot;name&quot;&gt;</span><br><span class="line">  &lt;el-option</span><br><span class="line">    v-for=&quot;item in list&quot;</span><br><span class="line">    :key=&quot;item.id&quot;</span><br><span class="line">    :label=&quot;item.name&quot;</span><br><span class="line">    :value=&quot;item&quot;&gt;</span><br><span class="line">  &lt;/el-option&gt;</span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="vue中让filter可以访问data里面的数据"><a href="#vue中让filter可以访问data里面的数据" class="headerlink" title="vue中让filter可以访问data里面的数据"></a>vue中让filter可以访问data里面的数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var that;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            peopleArr:[&#123;name:xx,value:1&#125;,&#123;name:xxx,value:2&#125;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeCreate()&#123;</span><br><span class="line">        that = this;</span><br><span class="line">    &#125;,</span><br><span class="line">    filter:&#123;</span><br><span class="line">        filterPeople(val)&#123;</span><br><span class="line">            return that.peopleArr[0].value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重点：<br>定义that；<br>在beforeCreate之前把that绑定在this(vue)上；<br>在filter中使用that.</p>
+<h1 id="vue中让beforeRouteEnter可以访问data里面的数据"><a href="#vue中让beforeRouteEnter可以访问data里面的数据" class="headerlink" title="vue中让beforeRouteEnter可以访问data里面的数据"></a>vue中让beforeRouteEnter可以访问data里面的数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter(to, from, next) &#123;</span><br><span class="line">    if(to.name == &apos;智慧护理工作台&apos;) &#123;</span><br><span class="line">        next(vm=&gt;&#123;</span><br><span class="line">            vm.show=true;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>重点：<br>next(vm=&gt;{vm.show=true;})</p>
+<h1 id="使用Vuex"><a href="#使用Vuex" class="headerlink" title="使用Vuex"></a>使用Vuex</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><code>npm install vuex --save</code></p>
+<h2 id="main-vue"><a href="#main-vue" class="headerlink" title="main.vue"></a><code>main.vue</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapState,mapMutations &#125; from &apos;vuex&apos;;</span><br><span class="line">...</span><br><span class="line">computed: &#123;</span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">    tabsList: &apos;tabsList&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    ...mapMutations([&quot;handleTabsList&quot;]),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可以直接在<code>vue</code>文件中写<code>this.tabsList</code>来获取vuex中的值。<br>如：</p>
+<p>原来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&apos;handleTabsList&apos;,this.$store.state.tabsList)</span><br></pre></td></tr></table></figure></p>
+<p>现在：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.handleTabsList(this.tabsList)</span><br></pre></td></tr></table></figure></p>
+<h2 id="store-js"><a href="#store-js" class="headerlink" title="store.js"></a>store.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        tabsList: [] || localStorage.getItem(&apos;tabsList&apos;)</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        handleTabsList: (state, tabsList) =&gt; &#123;</span><br><span class="line">            state.tabsList = tabsList</span><br><span class="line">            localStorage.setItem(&apos;tabsList&apos;, JSON.stringify(tabsList))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions: &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        tabsList: (state) =&gt; state.tabsList</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;./store&apos;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="使用静态资源"><a href="#使用静态资源" class="headerlink" title="使用静态资源"></a>使用静态资源</h1><p><code>image:require(&#39;../../assets/img/fn1.png&#39;)</code></p>
+<h1 id="element-UI的坑"><a href="#element-UI的坑" class="headerlink" title="element-UI的坑"></a>element-UI的坑</h1><h2 id="翻页"><a href="#翻页" class="headerlink" title="翻页"></a>翻页</h2><p><code>el-pagination</code>翻页组件重置时<code>:current-page=&quot;currentPage”</code>的值已经是1了，内容也是1了，但是DOM没更新，要加<code>.sync</code>，变成<code>:current-page.sync=&quot;currentPage”</code>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/18/《身份的焦虑》/" rel="next" title="《身份的焦虑》">
+                <i class="fa fa-chevron-left"></i> 《身份的焦虑》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/《当我谈跑步时我在谈什么》/" rel="prev" title="《当我谈跑步时我在谈什么》">
+                《当我谈跑步时我在谈什么》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODk2OC8xNTQ5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="彭丹丹">
+            
+              <p class="site-author-name" itemprop="name">彭丹丹</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">165</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#公共组件"><span class="nav-number">1.</span> <span class="nav-text">公共组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入公共组件"><span class="nav-number">1.1.</span> <span class="nav-text">引入公共组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由跳转及传参"><span class="nav-number">2.</span> <span class="nav-text">路由跳转及传参</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接跳转"><span class="nav-number">2.1.</span> <span class="nav-text">直接跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址栏’-‘传参"><span class="nav-number">2.2.</span> <span class="nav-text">地址栏’/‘传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址栏’-’传参"><span class="nav-number">2.3.</span> <span class="nav-text">地址栏’?’传参</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axios网络请求"><span class="nav-number">3.</span> <span class="nav-text">axios网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-cli快速构建项目"><span class="nav-number">4.</span> <span class="nav-text">vue-cli快速构建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装webpack"><span class="nav-number">4.1.</span> <span class="nav-text">安装webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装vue-cli"><span class="nav-number">4.2.</span> <span class="nav-text">安装vue-cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">4.3.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装模块"><span class="nav-number">4.4.</span> <span class="nav-text">安装模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">4.5.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包"><span class="nav-number">4.6.</span> <span class="nav-text">打包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绝对地址和相对址引用"><span class="nav-number">5.</span> <span class="nav-text">绝对地址和相对址引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#el-input-只能输入数字"><span class="nav-number">6.</span> <span class="nav-text">el-input 只能输入数字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#weex篇"><span class="nav-number">7.</span> <span class="nav-text">weex篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">7.1.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue中做一些监听事件"><span class="nav-number">8.</span> <span class="nav-text">vue中做一些监听事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue获取后端数据应该在created还是mounted方法"><span class="nav-number">9.</span> <span class="nav-text">vue获取后端数据应该在created还是mounted方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的target-blank跳转"><span class="nav-number">10.</span> <span class="nav-text">vue的target:blank跳转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消息无缝滚动"><span class="nav-number">11.</span> <span class="nav-text">消息无缝滚动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片错误时显示默认图片"><span class="nav-number">12.</span> <span class="nav-text">图片错误时显示默认图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入mui"><span class="nav-number">13.</span> <span class="nav-text">引入mui</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#axios篇"><span class="nav-number">14.</span> <span class="nav-text">axios篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置请求头带cooike"><span class="nav-number">14.1.</span> <span class="nav-text">设置请求头带cooike</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mode模式"><span class="nav-number">15.</span> <span class="nav-text">mode模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#history"><span class="nav-number">15.1.</span> <span class="nav-text">history</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash"><span class="nav-number">15.2.</span> <span class="nav-text">hash</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue中nextTick使用"><span class="nav-number">16.</span> <span class="nav-text">vue中nextTick使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue项目中的for循环引发的血案"><span class="nav-number">17.</span> <span class="nav-text">vue项目中的for循环引发的血案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue父子组件相互通信"><span class="nav-number">18.</span> <span class="nav-text">vue父子组件相互通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#子-gt-父-传值"><span class="nav-number">18.1.</span> <span class="nav-text">子 =&gt; 父 传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#child-vue"><span class="nav-number">18.1.1.</span> <span class="nav-text">child.vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#father-vue"><span class="nav-number">18.1.2.</span> <span class="nav-text">father.vue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父-gt-子-传值"><span class="nav-number">18.2.</span> <span class="nav-text">父 =&gt; 子 传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#father-vue-1"><span class="nav-number">18.2.1.</span> <span class="nav-text">father.vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#child-vue-1"><span class="nav-number">18.2.2.</span> <span class="nav-text">child.vue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父-gt-子-调方法"><span class="nav-number">18.3.</span> <span class="nav-text">父 =&gt; 子 调方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#father-vue-2"><span class="nav-number">18.3.1.</span> <span class="nav-text">father.vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#child-vue-2"><span class="nav-number">18.3.2.</span> <span class="nav-text">child.vue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue兄弟组件通过eventbus传值"><span class="nav-number">19.</span> <span class="nav-text">vue兄弟组件通过eventbus传值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue下swiper的使用"><span class="nav-number">20.</span> <span class="nav-text">vue下swiper的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">20.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">20.2.</span> <span class="nav-text">引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue国际化i18n使用"><span class="nav-number">21.</span> <span class="nav-text">vue国际化i18n使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装vue-i18n"><span class="nav-number">21.1.</span> <span class="nav-text">安装vue-i18n</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main-js文件配置"><span class="nav-number">21.2.</span> <span class="nav-text">main.js文件配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用vue-i18n"><span class="nav-number">22.</span> <span class="nav-text">使用vue-i18n</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#让el-select可以绑定对象"><span class="nav-number">23.</span> <span class="nav-text">让el-select可以绑定对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue中让filter可以访问data里面的数据"><span class="nav-number">24.</span> <span class="nav-text">vue中让filter可以访问data里面的数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue中让beforeRouteEnter可以访问data里面的数据"><span class="nav-number">25.</span> <span class="nav-text">vue中让beforeRouteEnter可以访问data里面的数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Vuex"><span class="nav-number">26.</span> <span class="nav-text">使用Vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">26.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main-vue"><span class="nav-number">26.2.</span> <span class="nav-text">main.vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-js"><span class="nav-number">26.3.</span> <span class="nav-text">store.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main-js"><span class="nav-number">26.4.</span> <span class="nav-text">main.js</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用静态资源"><span class="nav-number">27.</span> <span class="nav-text">使用静态资源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#element-UI的坑"><span class="nav-number">28.</span> <span class="nav-text">element-UI的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#翻页"><span class="nav-number">28.1.</span> <span class="nav-text">翻页</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭丹丹</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+	  本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+	</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  
+  <!-- 页面爆炸效果 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
