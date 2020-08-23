@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-17T00:11:27.088Z">
+<meta property="og:updated_time" content="2020-08-17T22:59:07.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue常用方法总结">
 <meta name="twitter:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,501
+                  2,516
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  13
                 </span>
               
             </div>
@@ -462,6 +462,7 @@
 <h3 id="child-vue-1"><a href="#child-vue-1" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">props:&#123;</span><br><span class="line">	sendType:&apos;&apos;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">	sendType()&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="父-gt-子-调方法"><a href="#父-gt-子-调方法" class="headerlink" title="父 =&gt; 子 调方法"></a>父 =&gt; 子 调方法</h2><h3 id="father-vue-2"><a href="#father-vue-2" class="headerlink" title="father.vue"></a>father.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;child ref=&quot;child&quot; @sendDataFun=&quot;get&quot;&gt;&lt;/child&gt;</span><br><span class="line">...</span><br><span class="line">this.$refs.child.sendData();</span><br><span class="line">...</span><br><span class="line">get(val)&#123;</span><br><span class="line">	console.log(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="child-vue-2"><a href="#child-vue-2" class="headerlink" title="child.vue"></a>child.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sendData() &#123;</span><br><span class="line">    this.$emit(&apos;sendDataFun&apos;, &apos;hello&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>this.$refs.child</code>只有在渲染完了才能获取到。</p>
 <h1 id="vue兄弟组件通过eventbus传值"><a href="#vue兄弟组件通过eventbus传值" class="headerlink" title="vue兄弟组件通过eventbus传值"></a>vue兄弟组件通过eventbus传值</h1><p>新建<code>bus.js</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &quot;vue&quot;</span><br><span class="line">export default new Vue();</span><br></pre></td></tr></table></figure>
 <p>兄组件<code>child1.vue</code></p>
@@ -506,6 +507,7 @@
 <h1 id="关闭element中的多条消息（只显示一条）"><a href="#关闭element中的多条消息（只显示一条）" class="headerlink" title="关闭element中的多条消息（只显示一条）"></a>关闭element中的多条消息（只显示一条）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$message.closeAll();</span><br><span class="line">this.$message.success(&apos;info&apos;);</span><br></pre></td></tr></table></figure>
 <h1 id="列表不缓存详情页缓存"><a href="#列表不缓存详情页缓存" class="headerlink" title="列表不缓存详情页缓存"></a>列表不缓存详情页缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">meta: &#123;</span><br><span class="line">    keepAlive: true,</span><br><span class="line">    isBack:false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter(to,from,next)&#123;</span><br><span class="line">    // 如果是从详情页回到列表页</span><br><span class="line">    console.log(from.name)</span><br><span class="line">    if(from.name == &apos;列表详情&apos;)&#123;</span><br><span class="line">        to.meta.isBack = true;</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;,</span><br><span class="line">activated()&#123;</span><br><span class="line">    // 如果不是从详情页回到列表页，则刷新数据</span><br><span class="line">    if(!this.$route.meta.isBack)&#123;</span><br><span class="line">        // 在此处获取数据后不用在created里调用数据</span><br><span class="line">        this.reset();</span><br><span class="line">    &#125;</span><br><span class="line">    this.$route.meta.isBack = false;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
