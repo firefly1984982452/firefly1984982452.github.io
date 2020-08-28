@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gho4csuijuj306203qdfx.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho4b225hlj30k60ffn1c.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gho4c77d8dj30bj02odfq.jpg">
-<meta property="og:updated_time" content="2020-08-12T23:36:54.388Z">
+<meta property="og:updated_time" content="2020-08-28T14:31:49.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我常用的前端短代码记录">
 <meta name="twitter:description" content="时间:2018-02-28 检查边距123*&amp;#123; background: #000 !important;color: #0f0 !important;outline: solid #f00 1px !important; &amp;#125;  保留小数点后两位四舍五入1parseFloat((a).toFixed(2));//toFixed只能针对数字类型才能使用 非四舍五入12var b =">
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,478
+                  4,486
                 </span>
               
 
@@ -492,7 +492,7 @@
 <p>结果：<code>(4) [1, 2, &quot;1&quot;, 3]</code></p>
 <h1 id="数组对象去重"><a href="#数组对象去重" class="headerlink" title="数组对象去重"></a>数组对象去重</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&#123;id:1&#125;,&#123;id:2&#125;,&#123;id:1&#125;]</span><br><span class="line">...</span><br><span class="line">arrRemove (arr) &#123;</span><br><span class="line">  var length = arr.length</span><br><span class="line">  for (var i = 0; i &lt; length; i++) &#123;</span><br><span class="line">    for (var j = i + 1; j &lt; length; j++) &#123;</span><br><span class="line">      if (arr[i].id === arr[j].id) &#123;</span><br><span class="line">        arr.splice(j, 1)</span><br><span class="line">        length--</span><br><span class="line">        j--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="用最短的代码实现一个长度为m-6-且值都n-8-的数组"><a href="#用最短的代码实现一个长度为m-6-且值都n-8-的数组" class="headerlink" title="用最短的代码实现一个长度为m(6)且值都n(8)的数组"></a>用最短的代码实现一个长度为m(6)且值都n(8)的数组</h1><p><code>Array(6).fill(&#39;8&#39;)</code></p>
-<h1 id="取一个数组中的最大值-和最小值"><a href="#取一个数组中的最大值-和最小值" class="headerlink" title="取一个数组中的最大值 和最小值"></a>取一个数组中的最大值 和最小值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1232,5324,234,234,123,-234,234,54,12];</span><br><span class="line">Math.max.apply(Math,numbers);//最大值 </span><br><span class="line">Math.min.apply(Math,numbers);//最小值 </span><br><span class="line"></span><br><span class="line">Math.max.call(&apos;&apos;,2,3,4)</span><br><span class="line">Math.max.bind(&apos;&apos;,12,2,112)()</span><br></pre></td></tr></table></figure>
+<h1 id="取一个数组中的最大值-和最小值"><a href="#取一个数组中的最大值-和最小值" class="headerlink" title="取一个数组中的最大值 和最小值"></a>取一个数组中的最大值 和最小值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1232,5324,234,234,123,-234,234,54,12];</span><br><span class="line">Math.max.apply(Math,numbers);//最大值 </span><br><span class="line">Math.min.apply(Math,numbers);//最小值 </span><br><span class="line"></span><br><span class="line">Math.max.call(&apos;&apos;,2,3,4)</span><br><span class="line">Math.max.bind(&apos;&apos;,12,2,112)()</span><br><span class="line"></span><br><span class="line">Reflect.apply(Math.max,Math,numbers)</span><br></pre></td></tr></table></figure>
 <p><strong><a href="https://github.com/jawil/blog/issues/24" target="_blank" rel="noopener">参考：</a></strong></p>
 <h1 id="简单的公告轮播效果"><a href="#简单的公告轮播效果" class="headerlink" title="简单的公告轮播效果"></a>简单的公告轮播效果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">	animate:false,</span><br><span class="line">	items:[&apos;aaa&apos;,&apos;bbb&apos;,&apos;ccc&apos;]</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">	scroll()&#123;</span><br><span class="line">		this.animate = true;</span><br><span class="line">		setTimeout(function()&#123;</span><br><span class="line">			this.items.push(this.items[0]);</span><br><span class="line">			this.shift();</span><br><span class="line">			this.animate = false;</span><br><span class="line">		&#125;,3000)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="scroll滚动事件在浏览器无效"><a href="#scroll滚动事件在浏览器无效" class="headerlink" title="scroll滚动事件在浏览器无效"></a>scroll滚动事件在浏览器无效</h1><p>在代码中写下了<code>document.body.scrollTop = 0;</code>，打印出来的值也是0，但是奈何chrome浏览器就是没有效果， 没有滚动到最上面去。</p>
@@ -661,7 +661,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">168</span>
+                  <span class="site-state-item-count">170</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
