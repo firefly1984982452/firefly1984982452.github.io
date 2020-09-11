@@ -87,7 +87,7 @@
 <meta property="og:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wx3.sinaimg.cn/large/0069qZtTgy1gij1jm6zqjj30zw0han25.jpg">
-<meta property="og:updated_time" content="2020-09-08T13:44:38.578Z">
+<meta property="og:updated_time" content="2020-09-10T23:26:09.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue常用方法总结">
 <meta name="twitter:description" content="公共组件引入公共组件12345678import Vue from &amp;apos;vue&amp;apos;import VueRouter from &amp;apos;vue-router&amp;apos;import VueResource from &amp;apos;vue-resource&amp;apos;import SixiButton from &amp;apos;components/common/SixiButton&amp;a">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,612
+                  2,619
                 </span>
               
 
@@ -509,7 +509,8 @@
 <h1 id="关闭element中的多条消息（只显示一条）"><a href="#关闭element中的多条消息（只显示一条）" class="headerlink" title="关闭element中的多条消息（只显示一条）"></a>关闭element中的多条消息（只显示一条）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$message.closeAll();</span><br><span class="line">this.$message.success(&apos;info&apos;);</span><br></pre></td></tr></table></figure>
 <h1 id="列表不缓存详情页缓存"><a href="#列表不缓存详情页缓存" class="headerlink" title="列表不缓存详情页缓存"></a>列表不缓存详情页缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">meta: &#123;</span><br><span class="line">    keepAlive: true,</span><br><span class="line">    isBack:false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter(to,from,next)&#123;</span><br><span class="line">    // 如果是从详情页回到列表页</span><br><span class="line">    console.log(from.name)</span><br><span class="line">    if(from.name == &apos;列表详情&apos;)&#123;</span><br><span class="line">        to.meta.isBack = true;</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;,</span><br><span class="line">activated()&#123;</span><br><span class="line">    // 如果不是从详情页回到列表页，则刷新数据</span><br><span class="line">    if(!this.$route.meta.isBack)&#123;</span><br><span class="line">        // 在此处获取数据后不用在created里调用数据</span><br><span class="line">        this.reset();</span><br><span class="line">    &#125;</span><br><span class="line">    this.$route.meta.isBack = false;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h1 id="window-eventBus实现vue页面与普通js数据通信"><a href="#window-eventBus实现vue页面与普通js数据通信" class="headerlink" title="window.eventBus实现vue页面与普通js数据通信"></a><code>window.eventBus</code>实现vue页面与普通js数据通信</h1><p>重点：用<code>window.eventBus</code>而不是<code>this.eventBus</code>，因为普通js里面的<code>this</code>是代表<code>vue</code>，而普通js获取不到<code>vue</code>的值。</p>
+<h1 id="window-eventBus实现vue页面与普通js数据通信"><a href="#window-eventBus实现vue页面与普通js数据通信" class="headerlink" title="window.eventBus实现vue页面与普通js数据通信"></a><code>window.eventBus</code>实现vue页面与普通js数据通信</h1><p>适用于<code>echarts.js</code>和<code>map.js</code>。</p>
+<p>重点：用<code>window.eventBus</code>而不是<code>this.eventBus</code>，因为普通js里面的<code>this</code>是代表<code>vue</code>，而普通js获取不到<code>vue</code>的值。</p>
 <p>main.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 引入eventBus</span><br><span class="line">import EventBus from &apos;./bus/eventBus&apos;; </span><br><span class="line">Vue.prototype.$eventBus = EventBus;</span><br><span class="line"></span><br><span class="line">if (window) &#123;</span><br><span class="line">  window.$eventBus = EventBus;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>page.vue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.$eventBus.$emit(&apos;residenceData&apos;, resData.map(v =&gt; v.lx));</span><br></pre></td></tr></table></figure></p>
 <p>index.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var attackSourcesName = [];</span><br><span class="line">window.$eventBus.$on(&apos;residenceData&apos;,v=&gt;&#123;</span><br><span class="line">    attackSourcesName = v;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
@@ -634,7 +635,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">173</span>
+                  <span class="site-state-item-count">176</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
