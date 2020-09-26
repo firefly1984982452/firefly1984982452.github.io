@@ -89,7 +89,10 @@
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gidesq1po8j30970c4mxc.jpg">
 <meta property="og:image" content="https://www.hangge.com/blog_uploads/201711/2017112015003436986.png">
 <meta property="og:image" content="https://wx2.sinaimg.cn/large/0069qZtTgy1gij2iyzdf5j31hb0twu0x.jpg">
-<meta property="og:updated_time" content="2020-09-08T13:44:38.575Z">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg">
+<meta property="og:updated_time" content="2020-09-26T09:52:56.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS拾遗">
 <meta name="twitter:description" content="HTML默认字体大小14px1font-size: 14px; flex中的space-evenly均匀分布 123justify-content: space-between; // 两端justify-content: space-around; // 两端间隙相等，项目中间的间隙比较大justify-content: space-evenly; // 两端与项目中间的间隙一样大 区别：  I">
@@ -363,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  439
+                  846
                 </span>
               
 
@@ -379,7 +382,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -416,6 +419,58 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div class=&quot;page&quot;&gt;</span><br><span class="line">        &lt;map1 class=&quot;map&quot; /&gt;</span><br><span class="line">        &lt;home class=&quot;home-content&quot; /&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;less&quot; scoped&gt;</span><br><span class="line">.page &#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100%;</span><br><span class="line">	position: relative;</span><br><span class="line">	.map&#123;</span><br><span class="line">		width:100%;</span><br><span class="line">		height:100%;</span><br><span class="line">		position: absolute;</span><br><span class="line">		top: 0;</span><br><span class="line">		bottom: 0;</span><br><span class="line">		left: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.home-content&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		top: 0;</span><br><span class="line">		bottom: 0;</span><br><span class="line">		left: 0;</span><br><span class="line">        pointer-events: none;</span><br><span class="line">        .left,.right&#123;</span><br><span class="line">            pointer-events:all</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <p>重点：<code>map</code>放在底层，<code>home</code>的<code>总DOM</code>设置为<code>none</code>，然后哪些地方需要点击就设置为<code>all</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.home&#123;</span><br><span class="line">    pointer-events: none;</span><br><span class="line">    .left,.right&#123;</span><br><span class="line">        pointer-events:all</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://wx2.sinaimg.cn/large/0069qZtTgy1gij2iyzdf5j31hb0twu0x.jpg" alt="image"></p>
+<h1 id="line-height深入理解"><a href="#line-height深入理解" class="headerlink" title="line-height深入理解"></a>line-height深入理解</h1><p>行高的几种值：<code>px</code>、<code>normal</code>、<code>%</code>、<code>number</code>、<code>inherit</code></p>
+<p>默认：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">line-height: 20px;</span><br><span class="line">line-height: normal;</span><br><span class="line">line-height: 150%;</span><br><span class="line">line-height: 1.5; // 资料上都是1，但chrome和firfox上应该都是1.5</span><br></pre></td></tr></table></figure>
+<h1 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a>background-origin</h1><p>背景区域的位置，有如下属性：</p>
+<ul>
+<li><p><code>content-box</code>：padding值会起效，以padding开始的单位开始显示背景；</p>
+</li>
+<li><p><code>padding-box</code>：padding不会影响背影，直接从border里面开如显示背影；</p>
+</li>
+<li><p><code>border-box</code>：border不会影响背景，直接把border的内容也算在背影里面，背景会减去border的长度。</p>
+</li>
+</ul>
+<h1 id="background-image"><a href="#background-image" class="headerlink" title="background-image"></a>background-image</h1><p>背景图，有如下属性：</p>
+<ul>
+<li><p><code>url()</code>：图片地址</p>
+</li>
+<li><p><code>line-gradient</code>：创建线性渐变的图片</p>
+</li>
+<li><p><code>redial-gradient</code>：创建径向渐变的图片</p>
+</li>
+<li><p><code>repeating-line-gradient</code>：创建重复线性渐变的图片</p>
+</li>
+<li><p><code>repeating-redial-gradient</code>：创建重复径向渐变的图片</p>
+</li>
+</ul>
+<p>与<code>background-size</code>组合的话，可以生成条纹背景。</p>
+<h2 id="line-gradient"><a href="#line-gradient" class="headerlink" title="line-gradient"></a>line-gradient</h2><p>背景2色平铺</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(#ff0 50%, #f00 50%);</span><br><span class="line">background-size: 100% 50%;</span><br></pre></td></tr></table></figure>
+<h2 id="repeating-line-gradient"><a href="#repeating-line-gradient" class="headerlink" title="repeating-line-gradient"></a>repeating-line-gradient</h2><p>背景2色任意角度平铺</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: repeating-linear-gradient(60deg,yellow 0%,yellow 5%,green 0%,green 10%);</span><br></pre></td></tr></table></figure>
+<h1 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h1><p>例：</p>
+<p><code>box-shadow: 50px 50px 0 20px #ffb;</code></p>
+<p>图：</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg" alt="image"></p>
+<p>解析：</p>
+<p>参数1：X轴，图中为30，因为50-20=30；<br>参数2：Y轴，图中为30，因为50-20=30；<br>参数3：模糊距离<br>参数4：阴影大小，默认可省略不写时为0。<br>参数4：颜色。</p>
+<h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><p>父元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.content-box::after&#123;</span><br><span class="line">  clear: both;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="display"><a href="#display" class="headerlink" title="display"></a>display</h1><h2 id="inline"><a href="#inline" class="headerlink" title="inline"></a>inline</h2><ul>
+<li>不会独占一行</li>
+<li>width和height无效</li>
+<li>margin和padding中的left/right有效，top/bottom无效</li>
+</ul>
+<h2 id="block"><a href="#block" class="headerlink" title="block"></a>block</h2><ul>
+<li>独占一行</li>
+<li>width和height正常</li>
+<li>marin和padding正常</li>
+</ul>
+<h2 id="inline-table"><a href="#inline-table" class="headerlink" title="inline-table"></a>inline-table</h2><p>行内表格</p>
+<h3 id="table-cell"><a href="#table-cell" class="headerlink" title="table-cell"></a>table-cell</h3><p>所有内容在一行</p>
 
       
     </div>
@@ -536,7 +591,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">176</span>
+                  <span class="site-state-item-count">178</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -582,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML默认字体大小14px"><span class="nav-number">1.</span> <span class="nav-text">HTML默认字体大小14px</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flex中的space-evenly"><span class="nav-number">2.</span> <span class="nav-text">flex中的space-evenly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改自带的scorll滚动条样式"><span class="nav-number">3.</span> <span class="nav-text">更改自带的scorll滚动条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pointer-events实现鼠标穿透效果"><span class="nav-number">4.</span> <span class="nav-text">pointer-events实现鼠标穿透效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML默认字体大小14px"><span class="nav-number">1.</span> <span class="nav-text">HTML默认字体大小14px</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flex中的space-evenly"><span class="nav-number">2.</span> <span class="nav-text">flex中的space-evenly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改自带的scorll滚动条样式"><span class="nav-number">3.</span> <span class="nav-text">更改自带的scorll滚动条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pointer-events实现鼠标穿透效果"><span class="nav-number">4.</span> <span class="nav-text">pointer-events实现鼠标穿透效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#line-height深入理解"><span class="nav-number">5.</span> <span class="nav-text">line-height深入理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-origin"><span class="nav-number">6.</span> <span class="nav-text">background-origin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-image"><span class="nav-number">7.</span> <span class="nav-text">background-image</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#line-gradient"><span class="nav-number">7.1.</span> <span class="nav-text">line-gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeating-line-gradient"><span class="nav-number">7.2.</span> <span class="nav-text">repeating-line-gradient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#box-shadow"><span class="nav-number">8.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除浮动"><span class="nav-number">9.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#display"><span class="nav-number">10.</span> <span class="nav-text">display</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-number">10.1.</span> <span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block"><span class="nav-number">10.2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-table"><span class="nav-number">10.3.</span> <span class="nav-text">inline-table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#table-cell"><span class="nav-number">10.3.1.</span> <span class="nav-text">table-cell</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

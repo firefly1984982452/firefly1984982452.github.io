@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="使用getter与setter控制属性访问1234567891011121314function Ninja() &amp;#123;    let skillLevel;    this.getSkillLevel = () =&amp;gt; &amp;#123;        console.log(&amp;apos;get&amp;apos;)        return skillLevel;    &amp;#125;    th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript控制对象">
+<meta property="og:url" content="http://yoursite.com/2020/09/18/JavaScript控制对象/index.html">
+<meta property="og:site_name" content="春风自是人间客">
+<meta property="og:description" content="使用getter与setter控制属性访问1234567891011121314function Ninja() &amp;#123;    let skillLevel;    this.getSkillLevel = () =&amp;gt; &amp;#123;        console.log(&amp;apos;get&amp;apos;)        return skillLevel;    &amp;#125;    th">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-23T13:25:34.855Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript控制对象">
+<meta name="twitter:description" content="使用getter与setter控制属性访问1234567891011121314function Ninja() &amp;#123;    let skillLevel;    this.getSkillLevel = () =&amp;gt; &amp;#123;        console.log(&amp;apos;get&amp;apos;)        return skillLevel;    &amp;#125;    th">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/18/JavaScript控制对象/">
+
+
+
+
+
+  <title>JavaScript控制对象 | 春风自是人间客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春风自是人间客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">是非成败转头空，青山依旧在，几度夕阳红。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-program">
+          <a href="/categories/program" rel="section">
+            
+            程序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/idea" rel="section">
+            
+            想法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/18/JavaScript控制对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="彭丹丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风自是人间客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript控制对象</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-18T18:50:17+08:00">
+                2020-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,270
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="使用getter与setter控制属性访问"><a href="#使用getter与setter控制属性访问" class="headerlink" title="使用getter与setter控制属性访问"></a>使用getter与setter控制属性访问</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function Ninja() &#123;</span><br><span class="line">    let skillLevel;</span><br><span class="line">    this.getSkillLevel = () =&gt; &#123;</span><br><span class="line">        console.log(&apos;get&apos;)</span><br><span class="line">        return skillLevel;</span><br><span class="line">    &#125;</span><br><span class="line">    this.setSkillLevel = value =&gt; &#123;</span><br><span class="line">        console.log(&apos;set&apos;);</span><br><span class="line">        skillLevel = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const nijia = new Ninja();</span><br><span class="line">nijia.setSkillLevel(100)</span><br><span class="line">console.log(nijia, nijia.getSkillLevel() == 100);</span><br></pre></td></tr></table></figure>
+<h2 id="定义getter与setter"><a href="#定义getter与setter" class="headerlink" title="定义getter与setter"></a>定义getter与setter</h2><p>在JavaScript中，可以通过两种方式定义getter和setter：</p>
+<ul>
+<li>通过对象字面量定义，或在ES6的class中定义。</li>
+<li>通过使用内置的Object.defineProperty方法。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const ninjaCollection = &#123;</span><br><span class="line">    ninjas: [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;],</span><br><span class="line">    get firstNinja()&#123;</span><br><span class="line">        console.log(&apos;get&apos;);</span><br><span class="line">        return this.ninjas[0];</span><br><span class="line">    &#125;,</span><br><span class="line">    set firstNinja(value)&#123;</span><br><span class="line">        console.log(&apos;set&apos;);</span><br><span class="line">        this.ninjas[0] = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(ninjaCollection);</span><br></pre></td></tr></table></figure>
+<h3 id="在ES6的class中使用getter和setter"><a href="#在ES6的class中使用getter和setter" class="headerlink" title="在ES6的class中使用getter和setter"></a>在ES6的class中使用getter和setter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class NinjoCollection &#123;</span><br><span class="line">    constructor()&#123;</span><br><span class="line">        this.ninjas = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</span><br><span class="line">    &#125;</span><br><span class="line">    get firstNinja() &#123;</span><br><span class="line">        console.log(&apos;get&apos;);</span><br><span class="line">        return this.ninjas[0];</span><br><span class="line">    &#125;</span><br><span class="line">    set firstNinja(value) &#123;</span><br><span class="line">        console.log(&apos;set&apos;);</span><br><span class="line">        this.ninjas[0] = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const ninjiaoCollectionClass = new NinjoCollection();</span><br><span class="line">console.log(ninjiaoCollectionClass.firstNinja === &apos;a&apos;);</span><br><span class="line">ninjiaoCollectionClass.firstNinja = &apos;hello&apos;;</span><br><span class="line">console.log(ninjiaoCollectionClass.firstNinja);</span><br></pre></td></tr></table></figure>
+<h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h3><p>控制私有变量，下例中_skillLevel是私有的，skillLevel是公有的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Ninja() &#123;</span><br><span class="line">    let _skillLevel = 0;</span><br><span class="line">    Object.defineProperty(this, &apos;skillLevel&apos;, &#123;</span><br><span class="line">        get: () =&gt; &#123;</span><br><span class="line">            console.log(&apos;get&apos;);</span><br><span class="line">            return _skillLevel;</span><br><span class="line">        &#125;,</span><br><span class="line">        set: value =&gt; &#123;</span><br><span class="line">            console.log(&apos;set&apos;);</span><br><span class="line">            _skillLevel = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">const ninja = new Ninja();</span><br><span class="line"></span><br><span class="line">console.log(typeof ninja._skillLevel);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用getter与setter检验属性"><a href="#使用getter与setter检验属性" class="headerlink" title="使用getter与setter检验属性"></a>使用getter与setter检验属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function Ninja() &#123;</span><br><span class="line">    let _skillLevel = 0;</span><br><span class="line">    Object.defineProperty(this, &apos;skillLevel&apos;, &#123;</span><br><span class="line">        get: () =&gt; &#123;</span><br><span class="line">            console.log(&apos;get&apos;);</span><br><span class="line">            return _skillLevel;</span><br><span class="line">        &#125;,</span><br><span class="line">        set: value =&gt; &#123;</span><br><span class="line">            console.log(&apos;set&apos;);</span><br><span class="line">            if(!Number.isInteger(value))&#123;</span><br><span class="line">                throw new TypeError(&apos;必须为整数!&apos;)</span><br><span class="line">            &#125;</span><br><span class="line">            _skillLevel = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">    const ninja = new Ninja();</span><br><span class="line">    ninja.skillLevel = 23.3;</span><br><span class="line">&#125; catch (error) &#123;</span><br><span class="line">    console.log(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用getter与setter定义如何计算属性值"><a href="#使用getter与setter定义如何计算属性值" class="headerlink" title="使用getter与setter定义如何计算属性值"></a>使用getter与setter定义如何计算属性值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const nameObj = &#123;</span><br><span class="line">    name: &apos;a&apos;,</span><br><span class="line">    clan: &apos;b&apos;,</span><br><span class="line">    get fullTitle()&#123;</span><br><span class="line">        return this.name + &apos;-&apos; + this.clan;</span><br><span class="line">    &#125;,</span><br><span class="line">    set fullTitle(value)&#123;</span><br><span class="line">        const segments = value.split(&quot; &quot;);</span><br><span class="line">        this.name = segments[0];</span><br><span class="line">        this.clan = segments[1];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">console.log(nameObj.name == &apos;a&apos;);</span><br></pre></td></tr></table></figure>
+<h1 id="使用代理控制访问"><a href="#使用代理控制访问" class="headerlink" title="使用代理控制访问"></a>使用代理控制访问</h1><p>通过Proxy构造器创建代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const emperor = &#123;name: &apos;pdd&apos;&#125;;</span><br><span class="line">const representative = new Proxy(emperor, &#123;</span><br><span class="line">    get : (target, key) =&gt; &#123;</span><br><span class="line">        console.log(&apos;get:&apos; + key);</span><br><span class="line">        return key in target ? target[key] : &apos;error!&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">    set: (target, key, value) =&gt; &#123;</span><br><span class="line">        console.log(&apos;set:&apos; + key);</span><br><span class="line">        target[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(emperor.name === &apos;pdd&apos;,representative.name === &apos;pdd&apos;); // true true</span><br><span class="line">console.log(emperor.name1,representative.name1); // undefined &quot;error!&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="使用代理记录日志"><a href="#使用代理记录日志" class="headerlink" title="使用代理记录日志"></a>使用代理记录日志</h2><p>上同</p>
+<h2 id="使用代理检测性能-apply"><a href="#使用代理检测性能-apply" class="headerlink" title="使用代理检测性能-apply"></a>使用代理检测性能-apply</h2><p><strong>代理的作用有利于原函数的复用</strong></p>
+<p>假设不用代理：</p>
+<p>判断一个数是否大于2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function isPrime(number)&#123;</span><br><span class="line">    if(number &lt; 2) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>写完后如果要检测该函数的性能，执行了多久，这时就要修改代码，加上<code>console.time</code>和<code>console.timeEnd</code>，<strong>不利于代码的复用</strong>，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function isPrime(number)&#123;</span><br><span class="line">    console.time(&apos;isPrime&apos;);</span><br><span class="line">    if(number &lt; 2) &#123;</span><br><span class="line">        console.timeEnd(&apos;isPrime&apos;);</span><br><span class="line">        return false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        console.timeEnd(&apos;isPrime&apos;);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function isPrime(number)&#123;</span><br><span class="line">    if(number &lt; 2) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 正常打印</span><br><span class="line">function test1(num)&#123;</span><br><span class="line">    console.time(&apos;test&apos;)</span><br><span class="line">    const result = isPrime(num);</span><br><span class="line">    console.timeEnd(&apos;test&apos;);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">// 隔2秒后再获取时间</span><br><span class="line">function test2(num)&#123;</span><br><span class="line">    console.time(&apos;test&apos;)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        const result = isPrime(num);</span><br><span class="line">        console.timeEnd(&apos;test&apos;);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;, 2000);</span><br><span class="line">&#125;</span><br><span class="line">test1(23); // test: 0.00390625 ms</span><br><span class="line">test2(23); // test: 2001.0390625 ms</span><br></pre></td></tr></table></figure>
+<p><strong>用代理解决</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function isPrime(number)&#123;</span><br><span class="line">    if(number &lt; 2) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 正常打印</span><br><span class="line">isPrime1 = new Proxy(isPrime, &#123;</span><br><span class="line">    apply: (target, thisArg, args) =&gt; &#123;</span><br><span class="line">        console.time(&apos;isPrime&apos;);</span><br><span class="line">        const result = target.apply(thisArg, args);</span><br><span class="line">        console.timeEnd(&apos;isPrime&apos;);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 隔2秒后再获取时间</span><br><span class="line">isPrime2 = new Proxy(isPrime, &#123;</span><br><span class="line">    apply: (target, thisArg, args) =&gt; &#123;</span><br><span class="line">        console.time(&apos;isPrime&apos;);</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            const result = target.apply(thisArg, args);</span><br><span class="line">            console.timeEnd(&apos;isPrime&apos;);</span><br><span class="line">            return result;</span><br><span class="line">        &#125;, 2000); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">isPrime1(23); // isPrime: 0.00390625 ms</span><br><span class="line">isPrime2(23); // isPrime: 2001.0390625 ms</span><br></pre></td></tr></table></figure>
+<h2 id="使用代理计算值-apply"><a href="#使用代理计算值-apply" class="headerlink" title="使用代理计算值-apply"></a>使用代理计算值-apply</h2><p><strong>apply方法拦截函数的调用、call和apply操作</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function sum (a,b) &#123; return a+b &#125;;</span><br><span class="line">var proxy = new Proxy(sum, &#123;</span><br><span class="line">    apply(target, thisArg, args) &#123;</span><br><span class="line">        // return Reflect.apply(...arguments) * 2;</span><br><span class="line">        // 或</span><br><span class="line">        return target.apply(thisArg, args) * 2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 以下调用全都是*2后的结果</span><br><span class="line">proxy(1,2); // 6</span><br><span class="line">proxy.call(null, 4,5); // 18</span><br><span class="line">proxy.apply(null, [29,239]); // 536</span><br><span class="line">Reflect.apply(proxy, null, [32,10]); // 84</span><br></pre></td></tr></table></figure>
+<h2 id="apply实现负数组"><a href="#apply实现负数组" class="headerlink" title="apply实现负数组"></a>apply实现负数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function createNegativeArrayProxy(array) &#123;</span><br><span class="line">    return new Proxy(array, &#123;</span><br><span class="line">        get: (target, index) =&gt; &#123;</span><br><span class="line">            index = index &lt; 0 ? target.length + Number(index) : index;</span><br><span class="line">            return target[index];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">var arr = createNegativeArrayProxy([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]);</span><br><span class="line">console.log(arr[1],arr[-2]); // b c</span><br></pre></td></tr></table></figure>
+<p>普通方法实现暂时想不到，下标也无法获取。</p>
+<h2 id="proxy总结"><a href="#proxy总结" class="headerlink" title="proxy总结"></a>proxy总结</h2><ul>
+<li><p>代理可以代理<code>对象</code>、<code>函数</code>、<code>数组</code>；</p>
+</li>
+<li><p>代理的过程中，可以在<code>get</code>和<code>set</code>中进行拦截和设置新的参数方法；</p>
+</li>
+<li><p>代理的过程中，可以通过<code>apply</code>绑定拦截原来的函数。</p>
+</li>
+</ul>
+<p><a href="https://www.suibianlu.com/c/p/14220.html" target="_blank" rel="noopener">JS Proxy 的优势以及使用场景</a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>使用访问器方法（getter和setter）可以控制对象</li>
+</ol>
+<ul>
+<li>通过内容的Object.definedProperty方法访问属性</li>
+<li>通过对象字面量中使用get和set语法</li>
+<li>通过ES6的class语法</li>
+</ul>
+<p><br></p>
+<ul>
+<li>读取对象时会隐式调用get，写入对象时会隐式调用set</li>
+<li>get可以定义计算属性，set可以实现数据验证与日志记录</li>
+</ul>
+<ol>
+<li>使用代理（proxy）可以控制对象</li>
+</ol>
+<ul>
+<li>代理可以定义对象交互时的行为</li>
+<li>所有的交互行为必须通过代理</li>
+</ul>
+<ol>
+<li>使用代理（proxy）可以实现以下内容</li>
+</ol>
+<ul>
+<li>日志记录</li>
+<li>性能测量</li>
+<li>数据校验</li>
+<li>数组负索引</li>
+</ul>
+<ol>
+<li>使用代理（proxy）效率不高，需进行性能测验</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/11/逻辑英语/" rel="next" title="逻辑英语">
+                <i class="fa fa-chevron-left"></i> 逻辑英语
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/22/《CSS秘籍》笔记/" rel="prev" title="《CSS秘籍》笔记">
+                《CSS秘籍》笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODk2OC8xNTQ5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="彭丹丹">
+            
+              <p class="site-author-name" itemprop="name">彭丹丹</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">178</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用getter与setter控制属性访问"><span class="nav-number">1.</span> <span class="nav-text">使用getter与setter控制属性访问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义getter与setter"><span class="nav-number">1.1.</span> <span class="nav-text">定义getter与setter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在ES6的class中使用getter和setter"><span class="nav-number">1.1.1.</span> <span class="nav-text">在ES6的class中使用getter和setter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">1.1.2.</span> <span class="nav-text">Object.defineProperty</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用getter与setter检验属性"><span class="nav-number">1.2.</span> <span class="nav-text">使用getter与setter检验属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用getter与setter定义如何计算属性值"><span class="nav-number">1.3.</span> <span class="nav-text">使用getter与setter定义如何计算属性值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用代理控制访问"><span class="nav-number">2.</span> <span class="nav-text">使用代理控制访问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用代理记录日志"><span class="nav-number">2.1.</span> <span class="nav-text">使用代理记录日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用代理检测性能-apply"><span class="nav-number">2.2.</span> <span class="nav-text">使用代理检测性能-apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用代理计算值-apply"><span class="nav-number">2.3.</span> <span class="nav-text">使用代理计算值-apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply实现负数组"><span class="nav-number">2.4.</span> <span class="nav-text">apply实现负数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proxy总结"><span class="nav-number">2.5.</span> <span class="nav-text">proxy总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭丹丹</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+	  本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+	</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  
+  <!-- 页面爆炸效果 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
