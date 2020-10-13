@@ -92,7 +92,9 @@
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg">
-<meta property="og:updated_time" content="2020-09-26T09:52:56.341Z">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj589b1p14j30aa08z75k.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj589e73jxj308i0bl3yn.jpg">
+<meta property="og:updated_time" content="2020-10-09T00:15:44.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS拾遗">
 <meta name="twitter:description" content="HTML默认字体大小14px1font-size: 14px; flex中的space-evenly均匀分布 123justify-content: space-between; // 两端justify-content: space-around; // 两端间隙相等，项目中间的间隙比较大justify-content: space-evenly; // 两端与项目中间的间隙一样大 区别：  I">
@@ -366,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  846
+                  1,078
                 </span>
               
 
@@ -382,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -471,6 +473,31 @@
 </ul>
 <h2 id="inline-table"><a href="#inline-table" class="headerlink" title="inline-table"></a>inline-table</h2><p>行内表格</p>
 <h3 id="table-cell"><a href="#table-cell" class="headerlink" title="table-cell"></a>table-cell</h3><p>所有内容在一行</p>
+<h1 id="width和height"><a href="#width和height" class="headerlink" title="width和height"></a>width和height</h1><h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>Table表格中，定了width，如果其它的内容很高，内容少的可能会撑成一列高。</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj589b1p14j30aa08z75k.jpg" alt="image"></p>
+<h2 id="不适合用width-100-的情况"><a href="#不适合用width-100-的情况" class="headerlink" title="不适合用width:100%的情况"></a>不适合用width:100%的情况</h2><p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj589e73jxj308i0bl3yn.jpg" alt="image"></p>
+<p>子元素<code>width:100%</code>会获取父元素长度，如果设置了<code>width:100%</code>反而适得其反。</p>
+<h2 id="按钮内文字会自动换行"><a href="#按钮内文字会自动换行" class="headerlink" title="按钮内文字会自动换行"></a>按钮内文字会自动换行</h2><h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h2><ul>
+<li>content-box：默认值</li>
+<li>border-box：将border变成里面消化的值</li>
+</ul>
+<h2 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h2><ul>
+<li><p><code>display: inline-block;</code>会控制当前元素以自己的内容为长度，不受父元素影响。</p>
+</li>
+<li><p>内联元素如果<code>display</code>改为了<code>block</code>，不用再设置<code>width:100%</code>。</p>
+</li>
+</ul>
+<h2 id="让元素heigth支持100-的方法"><a href="#让元素heigth支持100-的方法" class="headerlink" title="让元素heigth支持100%的方法"></a>让元素heigth支持100%的方法</h2><p>方法一：</p>
+<p><code>html,body{heigth:100%}</code></p>
+<p>方法二：</p>
+<p>使用绝对定位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height: 100%;</span><br><span class="line">position: absolute;</span><br></pre></td></tr></table></figure>
+<h2 id="max-width-min-width和max-height-min-height"><a href="#max-width-min-width和max-height-min-height" class="headerlink" title="max-width/min-width和max-height/min-height"></a>max-width/min-width和max-height/min-height</h2><p><strong>超越!important</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;./floor.jpeg&quot; style=&quot;width: 300px!important;&quot; /&gt;</span><br><span class="line">img&#123;min-width: 400px;&#125;</span><br></pre></td></tr></table></figure>
+<p>最终生效的是<code>400px</code>。</p>
+<p><strong>min-width覆盖max-width</strong></p>
+<p>如果<code>min-width</code>和<code>max-width</code>冲突时，取<code>min-width</code>的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">min-width: 400px;</span><br><span class="line">max-width: 350px;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -591,7 +618,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">178</span>
+                  <span class="site-state-item-count">179</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML默认字体大小14px"><span class="nav-number">1.</span> <span class="nav-text">HTML默认字体大小14px</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flex中的space-evenly"><span class="nav-number">2.</span> <span class="nav-text">flex中的space-evenly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改自带的scorll滚动条样式"><span class="nav-number">3.</span> <span class="nav-text">更改自带的scorll滚动条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pointer-events实现鼠标穿透效果"><span class="nav-number">4.</span> <span class="nav-text">pointer-events实现鼠标穿透效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#line-height深入理解"><span class="nav-number">5.</span> <span class="nav-text">line-height深入理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-origin"><span class="nav-number">6.</span> <span class="nav-text">background-origin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-image"><span class="nav-number">7.</span> <span class="nav-text">background-image</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#line-gradient"><span class="nav-number">7.1.</span> <span class="nav-text">line-gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeating-line-gradient"><span class="nav-number">7.2.</span> <span class="nav-text">repeating-line-gradient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#box-shadow"><span class="nav-number">8.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除浮动"><span class="nav-number">9.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#display"><span class="nav-number">10.</span> <span class="nav-text">display</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-number">10.1.</span> <span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block"><span class="nav-number">10.2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-table"><span class="nav-number">10.3.</span> <span class="nav-text">inline-table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#table-cell"><span class="nav-number">10.3.1.</span> <span class="nav-text">table-cell</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML默认字体大小14px"><span class="nav-number">1.</span> <span class="nav-text">HTML默认字体大小14px</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flex中的space-evenly"><span class="nav-number">2.</span> <span class="nav-text">flex中的space-evenly</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改自带的scorll滚动条样式"><span class="nav-number">3.</span> <span class="nav-text">更改自带的scorll滚动条样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pointer-events实现鼠标穿透效果"><span class="nav-number">4.</span> <span class="nav-text">pointer-events实现鼠标穿透效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#line-height深入理解"><span class="nav-number">5.</span> <span class="nav-text">line-height深入理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-origin"><span class="nav-number">6.</span> <span class="nav-text">background-origin</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#background-image"><span class="nav-number">7.</span> <span class="nav-text">background-image</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#line-gradient"><span class="nav-number">7.1.</span> <span class="nav-text">line-gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeating-line-gradient"><span class="nav-number">7.2.</span> <span class="nav-text">repeating-line-gradient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#box-shadow"><span class="nav-number">8.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除浮动"><span class="nav-number">9.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#display"><span class="nav-number">10.</span> <span class="nav-text">display</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-number">10.1.</span> <span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block"><span class="nav-number">10.2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-table"><span class="nav-number">10.3.</span> <span class="nav-text">inline-table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#table-cell"><span class="nav-number">10.3.1.</span> <span class="nav-text">table-cell</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#width和height"><span class="nav-number">11.</span> <span class="nav-text">width和height</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#table"><span class="nav-number">11.1.</span> <span class="nav-text">table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不适合用width-100-的情况"><span class="nav-number">11.2.</span> <span class="nav-text">不适合用width:100%的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按钮内文字会自动换行"><span class="nav-number">11.3.</span> <span class="nav-text">按钮内文字会自动换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#box-sizing"><span class="nav-number">11.4.</span> <span class="nav-text">box-sizing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联元素"><span class="nav-number">11.5.</span> <span class="nav-text">内联元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让元素heigth支持100-的方法"><span class="nav-number">11.6.</span> <span class="nav-text">让元素heigth支持100%的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#max-width-min-width和max-height-min-height"><span class="nav-number">11.7.</span> <span class="nav-text">max-width/min-width和max-height/min-height</span></a></li></ol></li></ol></div>
             
 
           </div>

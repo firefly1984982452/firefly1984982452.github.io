@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1ghel895idrj309k05i3yo.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1ghelkmlwaxj30a80340st.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho3yuu5lpj30au09n74t.jpg">
-<meta property="og:updated_time" content="2020-09-23T13:25:34.857Z">
+<meta property="og:updated_time" content="2020-10-12T14:06:20.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《JavaScript高级程序设计》笔记">
 <meta name="twitter:description" content="基本概念&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。 &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;l">
@@ -516,7 +516,7 @@
 <p>用let可以劫持i的作用域。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 1; i &lt; 6; i++) &#123;</span><br><span class="line">    let j = i;</span><br><span class="line">    console.log(j)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&apos;print&apos;+j)</span><br><span class="line">    &#125;, 1000 * j)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时就是先打印1、2、3、4、5，然后每隔1秒打印’print1’、’print2’…’print5’。但是，每次都会有新的j替代原来的j，所以可以直接在for循环里面定义let i = 1;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 1; i &lt; 6; i++) &#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&apos;print&apos;+i)</span><br><span class="line">    &#125;, 1000 * i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 1; i &lt; 6; i++) &#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&apos;print&apos;+i)</span><br><span class="line">    &#125;, 1000 * i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="function和object"><a href="#function和object" class="headerlink" title="function和object"></a>function和object</h1><h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var str = (()=&gt; &#123;</span><br><span class="line">    var count = 0;</span><br><span class="line">    function sum () &#123; return ++count; &#125;;</span><br><span class="line">    function reduce () &#123;return --count;&#125;;</span><br><span class="line">    return &#123;</span><br><span class="line">        sum,</span><br><span class="line">        reduce</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>此时的str是个function</p>
@@ -1133,7 +1133,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">178</span>
+                  <span class="site-state-item-count">179</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
