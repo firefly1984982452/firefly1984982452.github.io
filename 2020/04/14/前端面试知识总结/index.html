@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho47acnm9j303q03ndfo.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gho487f7lnj305904omx1.jpg">
-<meta property="og:updated_time" content="2020-08-12T23:36:54.386Z">
+<meta property="og:updated_time" content="2020-11-23T14:02:51.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试知识总结">
 <meta name="twitter:description" content="1、常用全总结链接 2、基础居中居中 数组链接 HTML渲染过程1、解析HTML，构成DOM2、解析CSS，形成CSS对象模型3、将CSS和DOM合并，构成渲染模型4、绘制 重绘：corlor、borde、visibility，只会小变动；重排（回流）：DOM操作、CSS属性改变、伪类操作，会大变动。 前端路由和后端路由前端路由（#）：hash值或pushStatu后端路由（/）：通过URL跳转到">
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,767
+                  2,776
                 </span>
               
 
@@ -405,7 +405,7 @@
 <h2 id="HTML渲染过程"><a href="#HTML渲染过程" class="headerlink" title="HTML渲染过程"></a>HTML渲染过程</h2><p>1、解析HTML，构成DOM<br>2、解析CSS，形成CSS对象模型<br>3、将CSS和DOM合并，构成渲染模型<br>4、绘制</p>
 <p>重绘：corlor、borde、visibility，只会小变动；<br>重排（回流）：DOM操作、CSS属性改变、伪类操作，会大变动。</p>
 <h2 id="前端路由和后端路由"><a href="#前端路由和后端路由" class="headerlink" title="前端路由和后端路由"></a>前端路由和后端路由</h2><p>前端路由（#）：hash值或pushStatu<br>后端路由（/）：通过URL跳转到具体的html页面，每次跳转都重新访问服务端，服务端返回页面。</p>
-<h2 id="事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）"><a href="#事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）" class="headerlink" title="事件循环（Event Loop）、宏任务（macrotask）、微任务（microtask）"></a>事件循环（<code>Event Loop</code>）、宏任务（<code>macrotask</code>）、微任务（<code>microtask</code>）</h2><p>事件循环（<code>Event Loop</code>）：执行完宏任务后，将微任务排队添加任务，执行后再循环检查有没有宏任务……所以整个过程称为事件循环。<br>宏任务（<code>macrotask</code>）：主代码、setTimeout、setInterval<br>微任务（<code>microtask</code>）：promise、process.nextTick</p>
+<h2 id="事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）"><a href="#事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）" class="headerlink" title="事件循环（Event Loop）、宏任务（macrotask）、微任务（microtask）"></a>事件循环（<code>Event Loop</code>）、宏任务（<code>macrotask</code>）、微任务（<code>microtask</code>）</h2><p>事件循环（<code>Event Loop</code>）：执行完宏任务后，将微任务排队添加任务，执行后再循环检查有没有宏任务……所以整个过程称为事件循环。<br>宏任务（<code>macrotask</code>）：主代码、setTimeout、setInterval、setImmediate(IE)、MessageChannel、I/O、UI渲染<br>微任务（<code>microtask</code>）：promise、process.nextTick、MutationObserver</p>
 <p>执行顺序：先宏任务–》执行结束后–》再执行所有微任务–》渲染–》下一个宏任务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;start&apos;);</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(&apos;1&apos;);</span><br><span class="line">&#125;, 10);</span><br><span class="line"></span><br><span class="line">new Promise(resolve =&gt; &#123;</span><br><span class="line">    console.log(&apos;2&apos;);</span><br><span class="line">    resolve();</span><br><span class="line">    setTimeout(() =&gt; console.log(&apos;3&apos;), 10);</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">    console.log(&apos;4&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(&apos;end&apos;);</span><br></pre></td></tr></table></figure>
 <p>这里的执行顺序就是<code>start--&gt;2--&gt;end--&gt;4--&gt;1--&gt;3</code></p>
@@ -662,7 +662,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">183</span>
+                  <span class="site-state-item-count">190</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
