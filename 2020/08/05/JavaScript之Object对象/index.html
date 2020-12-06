@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Math取整相关123456789101112131415161718// sign 返回正数或是负数Math.sign(9); // 1Math.sign(-8); // -1Math.sign(0); //0Math.sign(-0); //-0Math(&amp;apos;ee&amp;apos;); //NaN// trunc 取整，只取小数点前的数字不管正负，不管四舍五入Math.trunc(9.9);">
+<meta name="description" content="增12var obj = &amp;#123;&amp;#125;;obj.id = 1; 删1delete obj.id; assign合并两个对象1Object.assign(obj1,obj2); 深拷贝链接 方法1：JSON.parse(JSON.stringify()) 方法2：MessageChannel 方法3：lodash.cloneDeep 遍历Object.keys() Object.valu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js Math和Number">
-<meta property="og:url" content="http://yoursite.com/2020/06/05/js Math和Number/index.html">
+<meta property="og:title" content="JavaScript之Object对象">
+<meta property="og:url" content="http://yoursite.com/2020/08/05/JavaScript之Object对象/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="Math取整相关123456789101112131415161718// sign 返回正数或是负数Math.sign(9); // 1Math.sign(-8); // -1Math.sign(0); //0Math.sign(-0); //-0Math(&amp;apos;ee&amp;apos;); //NaN// trunc 取整，只取小数点前的数字不管正负，不管四舍五入Math.trunc(9.9);">
+<meta property="og:description" content="增12var obj = &amp;#123;&amp;#125;;obj.id = 1; 删1delete obj.id; assign合并两个对象1Object.assign(obj1,obj2); 深拷贝链接 方法1：JSON.parse(JSON.stringify()) 方法2：MessageChannel 方法3：lodash.cloneDeep 遍历Object.keys() Object.valu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-26T14:24:06.085Z">
+<meta property="og:updated_time" content="2020-12-06T10:44:05.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js Math和Number">
-<meta name="twitter:description" content="Math取整相关123456789101112131415161718// sign 返回正数或是负数Math.sign(9); // 1Math.sign(-8); // -1Math.sign(0); //0Math.sign(-0); //-0Math(&amp;apos;ee&amp;apos;); //NaN// trunc 取整，只取小数点前的数字不管正负，不管四舍五入Math.trunc(9.9);">
+<meta name="twitter:title" content="JavaScript之Object对象">
+<meta name="twitter:description" content="增12var obj = &amp;#123;&amp;#125;;obj.id = 1; 删1delete obj.id; assign合并两个对象1Object.assign(obj1,obj2); 深拷贝链接 方法1：JSON.parse(JSON.stringify()) 方法2：MessageChannel 方法3：lodash.cloneDeep 遍历Object.keys() Object.valu">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/05/js Math和Number/">
+  <link rel="canonical" href="http://yoursite.com/2020/08/05/JavaScript之Object对象/">
 
 
 
 
 
-  <title>js Math和Number | 春风自是人间客</title>
+  <title>JavaScript之Object对象 | 春风自是人间客</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/js Math和Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/05/JavaScript之Object对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="彭丹丹">
@@ -293,7 +293,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">js Math和Number</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript之Object对象</h2>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-05T11:19:32+08:00">
-                2020-06-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-05T15:44:34+08:00">
+                2020-08-05
               </time>
             
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  344
+                  345
                 </span>
               
 
@@ -396,24 +396,24 @@
       
 
       
-        <h1 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h1><h2 id="取整相关"><a href="#取整相关" class="headerlink" title="取整相关"></a>取整相关</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// sign 返回正数或是负数</span><br><span class="line">Math.sign(9); // 1</span><br><span class="line">Math.sign(-8); // -1</span><br><span class="line">Math.sign(0); //0</span><br><span class="line">Math.sign(-0); //-0</span><br><span class="line">Math(&apos;ee&apos;); //NaN</span><br><span class="line"></span><br><span class="line">// trunc 取整，只取小数点前的数字不管正负，不管四舍五入</span><br><span class="line">Math.trunc(9.9); // 9</span><br><span class="line">Math.trunc(-8.7); // -8</span><br><span class="line"></span><br><span class="line">Math.round(4.5); //5 四舍五入(无小数)</span><br><span class="line">Math.ceil(4.1); //5 只要小数点后面大于0，整数值都+1（按最大的取）</span><br><span class="line"></span><br><span class="line">Math.floor(4.9); // 4</span><br><span class="line">Math.floor(-4.1); // -5 按最小的取</span><br><span class="line"></span><br><span class="line">12.899.toFixed(2); // 12.9 四舍五入（有小数）</span><br></pre></td></tr></table></figure>
-<h2 id="返回数组中最大值"><a href="#返回数组中最大值" class="headerlink" title="返回数组中最大值"></a>返回数组中最大值</h2><p><code>Math.max(...[1,2,3])</code> // 3</p>
-<h2 id="返回数组中最小值"><a href="#返回数组中最小值" class="headerlink" title="返回数组中最小值"></a>返回数组中最小值</h2><p><code>Math.min(...[1,2,3])</code> // 1</p>
-<h2 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h2><p>默认返回0~1</p>
-<p><code>Math.random()</code> </p>
-<p>返回指定范围（5~24）：</p>
-<p><code>Math.randow()*(24-5)+5</code></p>
-<h1 id="number"><a href="#number" class="headerlink" title="number"></a>number</h1><h2 id="isFinite-是否为数字型"><a href="#isFinite-是否为数字型" class="headerlink" title="isFinite 是否为数字型"></a>isFinite 是否为数字型</h2><p>之前判断一个值是否为数字类型都是用<code>typeof</code>，此处的 <code>isFinite</code>也有同样的效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typeof 1.2 ; // &apos;number&apos;</span><br><span class="line">Number.isFinite(1.2) ; // true</span><br></pre></td></tr></table></figure>
-<h2 id="isInteger-是否为整数"><a href="#isInteger-是否为整数" class="headerlink" title="isInteger 是否为整数"></a>isInteger 是否为整数</h2><p>判断是否为整数</p>
-<p><code>Number.isInteger(13)</code></p>
-<h2 id="isNaN-是否为NaN"><a href="#isNaN-是否为NaN" class="headerlink" title="isNaN 是否为NaN"></a>isNaN 是否为NaN</h2><p><code>Number.isNaN()</code></p>
-<h2 id="安全范围"><a href="#安全范围" class="headerlink" title="安全范围"></a>安全范围</h2><p>整数的操作有一个安全范围，即2的53次方。</p>
-<p><code>Math.pow(2, 53) - 1 = 9007199254740991</code></p>
-<p><code>Number.MAX_SAFE_INTEGER</code>：最大安全范围</p>
-<p><code>Number.MIN_SAFE_INTEGER</code>：最小安全范围</p>
-<p><code>Number.isSafeInteger(12)</code>：是否在安全范围内</p>
-<h2 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Number();</span><br><span class="line">parseInt();</span><br><span class="line">parseFloat();</span><br><span class="line"></span><br><span class="line">Number(&apos;3e&apos;); // NaN</span><br><span class="line">parseInt(&apos;3e&apos;); // 3</span><br></pre></td></tr></table></figure>
+        <h1 id="增"><a href="#增" class="headerlink" title="增"></a>增</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj.id = 1;</span><br></pre></td></tr></table></figure>
+<h1 id="删"><a href="#删" class="headerlink" title="删"></a>删</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete obj.id;</span><br></pre></td></tr></table></figure>
+<h1 id="assign合并两个对象"><a href="#assign合并两个对象" class="headerlink" title="assign合并两个对象"></a>assign合并两个对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(obj1,obj2);</span><br></pre></td></tr></table></figure>
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p><a href="https://firefly1984982452.github.io/2020/07/31/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%85%A8%E6%9E%90/" target="_blank" rel="noopener">链接</a></p>
+<p>方法1：JSON.parse(JSON.stringify())</p>
+<p>方法2：MessageChannel</p>
+<p>方法3：lodash.cloneDeep</p>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><p><code>Object.keys()</code></p>
+<p><code>Object.values()</code></p>
+<p><code>for...in</code></p>
+<h1 id="definedProperty"><a href="#definedProperty" class="headerlink" title="definedProperty"></a>definedProperty</h1><p>递归遍历对象用defineProperty实现vue双向绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">id:1,</span><br><span class="line">info:&#123;</span><br><span class="line">    sex:&apos;女&apos;,</span><br><span class="line">    name:&apos;小红&apos;</span><br><span class="line">&#125;,</span><br><span class="line">arr:[&apos;吃饭&apos;,&apos;喝水&apos;]</span><br><span class="line">&#125;;</span><br><span class="line">function observer(obj) &#123;</span><br><span class="line">console.log(obj)</span><br><span class="line">if(typeof obj === &apos;object&apos;)&#123;</span><br><span class="line">    for(let i in obj)&#123;</span><br><span class="line">    definedReactive(obj,i,obj[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">function definedReactive(obj,key,value) &#123;</span><br><span class="line">observer(value);</span><br><span class="line">Object.defineProperty(obj,key,&#123;</span><br><span class="line">    get()&#123;</span><br><span class="line">    console.log(&apos;获取：&apos;+key)</span><br><span class="line">    return value;</span><br><span class="line">    &#125;,</span><br><span class="line">    set(newValue)&#123;</span><br><span class="line">    observer(newValue);</span><br><span class="line">    console.log(key + &apos;- 数据改变了&apos;);</span><br><span class="line">    value = newValue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line">observer(obj);</span><br><span class="line"></span><br><span class="line">obj.id = 1; // 修改对象监听成功</span><br><span class="line">delete obj.info.name; // 删除对象监听失败</span><br><span class="line">obj.arr.push(2); // 添加数组监听失败</span><br><span class="line">obj.arr.slice(1); // 修改数组监听失败</span><br></pre></td></tr></table></figure>
+<h1 id="is"><a href="#is" class="headerlink" title="is"></a>is</h1><p><code>Object.is()</code> 的意思是对象比较</p>
+<p>比如之前判断一个值是否为<code>NaN</code>的话可能会用<code>Number.isNaN()</code>，现在用<code>Object.is(NaN, NaN)</code>也能达到一样的效果。</p>
+<h1 id="对象key值构建"><a href="#对象key值构建" class="headerlink" title="对象key值构建"></a>对象key值构建</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = &apos;name&apos;</span><br><span class="line">var b = &#123;</span><br><span class="line">    [a] : &apos;小明&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line"></span><br><span class="line">b = &#123;</span><br><span class="line">    name: &apos;小明&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="fromEntries"><a href="#fromEntries" class="headerlink" title="fromEntries"></a>fromEntries</h1><p>把序列化的字符串反转为对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.location.search = &apos;?roomId=9&amp;status=1&amp;taskId=7&amp;serviceId=1109&apos;;</span><br><span class="line">var str = window.location.search.substr(1);</span><br><span class="line">var p = new URLSearchParams(str);</span><br><span class="line">var param = Object.fromEntries(p);</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -437,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/05/js时间方法/" rel="next" title="js时间方法">
-                <i class="fa fa-chevron-left"></i> js时间方法
+              <a href="/2020/08/03/JavaScrip专业名词/" rel="next" title="JavaScrip专业名词">
+                <i class="fa fa-chevron-left"></i> JavaScrip专业名词
               </a>
             
           </div>
@@ -447,8 +447,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/05/前端知识个人总结链接/" rel="prev" title="前端知识个人总结链接">
-                前端知识个人总结链接 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/17/ES6总结/" rel="prev" title="ES6总结">
+                ES6总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">1.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取整相关"><span class="nav-number">1.1.</span> <span class="nav-text">取整相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回数组中最大值"><span class="nav-number">1.2.</span> <span class="nav-text">返回数组中最大值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回数组中最小值"><span class="nav-number">1.3.</span> <span class="nav-text">返回数组中最小值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机数"><span class="nav-number">1.4.</span> <span class="nav-text">随机数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#number"><span class="nav-number">2.</span> <span class="nav-text">number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#isFinite-是否为数字型"><span class="nav-number">2.1.</span> <span class="nav-text">isFinite 是否为数字型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isInteger-是否为整数"><span class="nav-number">2.2.</span> <span class="nav-text">isInteger 是否为整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isNaN-是否为NaN"><span class="nav-number">2.3.</span> <span class="nav-text">isNaN 是否为NaN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全范围"><span class="nav-number">2.4.</span> <span class="nav-text">安全范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值转换"><span class="nav-number">2.5.</span> <span class="nav-text">数值转换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#增"><span class="nav-number">1.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删"><span class="nav-number">2.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#assign合并两个对象"><span class="nav-number">3.</span> <span class="nav-text">assign合并两个对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深拷贝"><span class="nav-number">4.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历"><span class="nav-number">5.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#definedProperty"><span class="nav-number">6.</span> <span class="nav-text">definedProperty</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#is"><span class="nav-number">7.</span> <span class="nav-text">is</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象key值构建"><span class="nav-number">8.</span> <span class="nav-text">对象key值构建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fromEntries"><span class="nav-number">9.</span> <span class="nav-text">fromEntries</span></a></li></ol></div>
             
 
           </div>
