@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。 小图标使用sprite图减少重绘和回流 回流改变尺寸或布局，如px  重绘改变外观或风格，如color   如何减少：  不要操作’px’,可以切换class 不要经常访问元素的’px’,可以将’px’保存起来操作 先将元素display:none,改完之后再display:block  异步网络请求Promise 减少HTTP请求请求之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-26T14:24:06.103Z">
+<meta property="og:updated_time" content="2020-12-07T11:25:05.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端优化方案">
 <meta name="twitter:description" content="感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。 小图标使用sprite图减少重绘和回流 回流改变尺寸或布局，如px  重绘改变外观或风格，如color   如何减少：  不要操作’px’,可以切换class 不要经常访问元素的’px’,可以将’px’保存起来操作 先将元素display:none,改完之后再display:block  异步网络请求Promise 减少HTTP请求请求之">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  194
+                  326
                 </span>
               
 
@@ -413,7 +413,26 @@
 <h1 id="减少HTTP请求"><a href="#减少HTTP请求" class="headerlink" title="减少HTTP请求"></a>减少HTTP请求</h1><p>请求之后也可以存储下来</p>
 <h1 id="使用公用方法"><a href="#使用公用方法" class="headerlink" title="使用公用方法"></a>使用公用方法</h1><p>比如有时间戳转时间的插件的话，写一个即可，不用每个页面都写</p>
 <h1 id="使用公用组件"><a href="#使用公用组件" class="headerlink" title="使用公用组件"></a>使用公用组件</h1><p>比如公用的头部尾部等组件</p>
-<h1 id="使用压缩JS和压缩CSS文件"><a href="#使用压缩JS和压缩CSS文件" class="headerlink" title="使用压缩JS和压缩CSS文件"></a>使用压缩JS和压缩CSS文件</h1>
+<h1 id="使用压缩JS和压缩CSS文件"><a href="#使用压缩JS和压缩CSS文件" class="headerlink" title="使用压缩JS和压缩CSS文件"></a>使用压缩JS和压缩CSS文件</h1><h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
+<li><p>vue中的mode使用<code>‘history’</code>时地址栏不会有<code>#</code>号，利于SEO，但需要后台配合一起设置，否则页面会空白（mode默认是<code>‘hash’</code>）。</p>
+</li>
+<li><p>图片和文字添加alt属性。</p>
+</li>
+<li><p>body中代码语义化，比如说使用<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>、<code>&lt;nav&gt;</code>的标签来代替<code>&lt;div&gt;</code>。</p>
+</li>
+<li><p>少使用<code>iframe</code>。</p>
+</li>
+<li><p>谨慎使用<code>display:none</code></p>
+</li>
+</ul>
+<h2 id="前端优化"><a href="#前端优化" class="headerlink" title="前端优化"></a>前端优化</h2><p><a href="https://firefly1984982452.github.io/2018/09/12/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">前端优化</a></p>
+<h2 id="移动端优化"><a href="#移动端优化" class="headerlink" title="移动端优化"></a>移动端优化</h2><ul>
+<li>初次加载缓慢时用骨架屏</li>
+<li>尽量用v-show而不是v-if</li>
+<li>for循环里面加key值</li>
+<li>首页可考虑用ssr渲染</li>
+</ul>
+
       
     </div>
     
@@ -533,7 +552,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">190</span>
+                  <span class="site-state-item-count">185</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -579,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小图标使用sprite图"><span class="nav-number">1.</span> <span class="nav-text">小图标使用sprite图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少重绘和回流"><span class="nav-number">2.</span> <span class="nav-text">减少重绘和回流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步网络请求"><span class="nav-number">3.</span> <span class="nav-text">异步网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少HTTP请求"><span class="nav-number">4.</span> <span class="nav-text">减少HTTP请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用方法"><span class="nav-number">5.</span> <span class="nav-text">使用公用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用组件"><span class="nav-number">6.</span> <span class="nav-text">使用公用组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用压缩JS和压缩CSS文件"><span class="nav-number">7.</span> <span class="nav-text">使用压缩JS和压缩CSS文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小图标使用sprite图"><span class="nav-number">1.</span> <span class="nav-text">小图标使用sprite图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少重绘和回流"><span class="nav-number">2.</span> <span class="nav-text">减少重绘和回流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步网络请求"><span class="nav-number">3.</span> <span class="nav-text">异步网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少HTTP请求"><span class="nav-number">4.</span> <span class="nav-text">减少HTTP请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用方法"><span class="nav-number">5.</span> <span class="nav-text">使用公用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用组件"><span class="nav-number">6.</span> <span class="nav-text">使用公用组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用压缩JS和压缩CSS文件"><span class="nav-number">7.</span> <span class="nav-text">使用压缩JS和压缩CSS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">7.1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端优化"><span class="nav-number">7.2.</span> <span class="nav-text">前端优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端优化"><span class="nav-number">7.3.</span> <span class="nav-text">移动端优化</span></a></li></ol></li></ol></div>
             
 
           </div>
