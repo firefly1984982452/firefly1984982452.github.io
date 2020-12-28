@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="设计图首先，拿到设计图，假设设计图是375*667。 以顶部轮播为例，它的宽是375px，高是120px左右。 大多数手里都好适配，但是如果在iPhone5手机上，宽是320px，那么此时它的高应该是102px左右，这样它的比例才是一样的。 预览先贴代码： 12345678910111213141516171819202122232425262728293031323334353637383940">
+<meta name="description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="根据设计图适配rem">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/根据设计图适配rem/index.html">
+<meta property="og:title" content="JavaScript之RegExp正则表达式">
+<meta property="og:url" content="http://yoursite.com/2020/12/23/JavaScript之RegExp正则表达式/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="设计图首先，拿到设计图，假设设计图是375*667。 以顶部轮播为例，它的宽是375px，高是120px左右。 大多数手里都好适配，但是如果在iPhone5手机上，宽是320px，那么此时它的高应该是102px左右，这样它的比例才是一样的。 预览先贴代码： 12345678910111213141516171819202122232425262728293031323334353637383940">
+<meta property="og:description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-26T14:24:06.108Z">
+<meta property="og:updated_time" content="2020-12-28T14:11:53.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="根据设计图适配rem">
-<meta name="twitter:description" content="设计图首先，拿到设计图，假设设计图是375*667。 以顶部轮播为例，它的宽是375px，高是120px左右。 大多数手里都好适配，但是如果在iPhone5手机上，宽是320px，那么此时它的高应该是102px左右，这样它的比例才是一样的。 预览先贴代码： 12345678910111213141516171819202122232425262728293031323334353637383940">
+<meta name="twitter:title" content="JavaScript之RegExp正则表达式">
+<meta name="twitter:description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/根据设计图适配rem/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/23/JavaScript之RegExp正则表达式/">
 
 
 
 
 
-  <title>根据设计图适配rem | 春风自是人间客</title>
+  <title>JavaScript之RegExp正则表达式 | 春风自是人间客</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/根据设计图适配rem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/23/JavaScript之RegExp正则表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="彭丹丹">
@@ -293,7 +293,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">根据设计图适配rem</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript之RegExp正则表达式</h2>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T17:02:40+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-23T14:44:34+08:00">
+                2020-12-23
               </time>
             
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  413
+                  491
                 </span>
               
 
@@ -396,18 +396,125 @@
       
 
       
-        <h1 id="设计图"><a href="#设计图" class="headerlink" title="设计图"></a>设计图</h1><p>首先，拿到设计图，假设设计图是375*667。</p>
-<p>以顶部轮播为例，它的宽是375px，高是120px左右。</p>
-<p>大多数手里都好适配，但是如果在iPhone5手机上，宽是320px，那么此时它的高应该是102px左右，这样它的比例才是一样的。</p>
-<h1 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h1><p>先贴代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			* &#123;</span><br><span class="line">				padding: 0;</span><br><span class="line">				margin: 0;</span><br><span class="line">				box-sizing: border-box;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			html &#123;</span><br><span class="line">				font-size: 100px;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.content &#123;</span><br><span class="line">				width: 3.75rem;</span><br><span class="line">				height: 1.2rem;</span><br><span class="line">				background-color: red;</span><br><span class="line">				font-size: 16px;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">			测试文字</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			(function() &#123;</span><br><span class="line">				var width = window.screen.width;</span><br><span class="line">				console.log(width);</span><br><span class="line">				var scaleSize = 100,</span><br><span class="line">					designSize = 375;</span><br><span class="line">				var size = width / (designSize / scaleSize);</span><br><span class="line">				document.getElementsByTagName(&apos;html&apos;)[0].style.fontSize = (size) + &apos;px&apos;;</span><br><span class="line">			&#125;)();</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="重点讲解"><a href="#重点讲解" class="headerlink" title="重点讲解"></a>重点讲解</h1><h2 id="手机适配"><a href="#手机适配" class="headerlink" title="手机适配"></a>手机适配</h2><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;</code></p>
-<h2 id="不同宽度下不同的font-size"><a href="#不同宽度下不同的font-size" class="headerlink" title="不同宽度下不同的font-size"></a>不同宽度下不同的font-size</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">	//首先取得当得屏幕宽度</span><br><span class="line">	var width = window.screen.width;</span><br><span class="line">	var scaleSize = 100,</span><br><span class="line">		designSize = 375;</span><br><span class="line">		//用当得宽度除以（设计尺寸除以缩放尺寸）</span><br><span class="line">	var size = width / (designSize / scaleSize);</span><br><span class="line">	//设置font-size</span><br><span class="line">	document.getElementsByTagName(&apos;html&apos;)[0].style.fontSize = (size) + &apos;px&apos;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p>这一段代码是精华</p>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">	测试文字</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">	width: 3.75rem;</span><br><span class="line">	height: 1.2rem;</span><br><span class="line">	font-size: 16px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里的3.75和1.2就是设计稿中的375px和120px绽放了100倍的效果。</p>
-<p>至于<code>font-size: 16px;</code>，这会使文中的字体大小正常。</p>
+        <p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023021582119488" target="_blank" rel="noopener">学习链接-廖雪峰</a></p>
+<p><a href="https://www.runoob.com/regexp/regexp-syntax.html" target="_blank" rel="noopener">学习链接-菜鸟教程</a></p>
+<h1 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var re1 = /ABC\-001/;</span><br><span class="line">var re2 = new RegExp(&apos;ABC\\-001&apos;);</span><br><span class="line"></span><br><span class="line">re1; // /ABC\-001/</span><br><span class="line">re2; // /ABC\-001/</span><br></pre></td></tr></table></figure>
+<p>re2转义，2个<code>\\</code>会变成1个<code>\</code>。</p>
+<p><code>new RegExp(&#39;a&#39;,&#39;g&#39;)</code>等同于<code>/a/g</code></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p><code>/\d/.test(3)</code>; // true</p>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p><strong>使用</strong></p>
+<p><code>/\d/.exec(&#39;3e&#39;)</code>; // [“3”, index: 0, input: “3e”, groups: undefined]</p>
+<p><strong>非全局模式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;1a1b1c&quot;;</span><br><span class="line">var reg = /1./;</span><br><span class="line">reg.exec(str)[0]; // &quot;1a&quot;</span><br><span class="line">reg.exec(str)[0]; // &quot;1a&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>全局模式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;1a1b1c&quot;;</span><br><span class="line">var reg = /1./g;</span><br><span class="line">reg.exec(str)[0]; // &quot;1a&quot;</span><br><span class="line">reg.exec(str)[0]; // &quot;1b&quot;</span><br></pre></td></tr></table></figure>
+<p>依次返回所有符合条件的值。</p>
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p><strong>使用</strong></p>
+<p><code>&#39;3e&#39;.match(/\d/)</code>; // [“3”, index: 0, input: “3e”, groups: undefined]</p>
+<p><strong>非全局模式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;1a1b1c&quot;;</span><br><span class="line">var reg = /1./;</span><br><span class="line">str.match(reg); // [&apos;1a&apos;]</span><br><span class="line">str.match(reg); // [&apos;1a&apos;]</span><br></pre></td></tr></table></figure>
+<p><strong>全局模式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1a1b1c&apos;.match(/1./g); // [&quot;1a&quot;, &quot;1b&quot;, &quot;1c&quot;]</span><br></pre></td></tr></table></figure>
+<p>一次返回所有符合条件的值。</p>
+<h1 id="更多用法"><a href="#更多用法" class="headerlink" title="更多用法"></a>更多用法</h1><h2 id="切分字符串"><a href="#切分字符串" class="headerlink" title="切分字符串"></a>切分字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不用时：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(&apos; &apos;); // [&quot;a&quot;, &quot;b&quot;, &quot;&quot;, &quot;c&quot;]</span><br><span class="line"></span><br><span class="line">用正则：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(/\s+/); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</span><br><span class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</span><br><span class="line">re.exec(&apos;010 12345&apos;); // null</span><br></pre></td></tr></table></figure>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;8&apos;.replace(/\d/, &apos;*&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>[ABC]</code>中括号</td>
+<td style="text-align:center">匹配<code>[...]</code>中的所有字符</td>
+<td style="text-align:center"><code>&#39;google&#39;.match(/[aeiou]/g); // [&quot;o&quot;, &quot;o&quot;, &quot;e&quot;]</code><br>相当于：`’google’.match(/a</td>
+<td>e</td>
+<td>i</td>
+<td>o</td>
+<td>u/g)`</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[^ABC]</code></td>
+<td style="text-align:center">匹配<strong>除了</strong><code>[...]</code>中的所有字符</td>
+<td style="text-align:center"><code>&#39;google&#39;.match(/[^aeiou]/g); // [&quot;g&quot;, &quot;g&quot;, &quot;l&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[A-Z]</code></td>
+<td style="text-align:center">所有大写字母</td>
+<td style="text-align:center"><code>&#39;ABC is first&#39;.match(/[A-Z]+/g); // [&quot;ABC&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[a-z]</code></td>
+<td style="text-align:center">所有小写字母</td>
+<td style="text-align:center"><code>&#39;abc is first&#39;.match(/[a-z]+/g); // [&quot;abc&quot;, &quot;is&quot;, &quot;first&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[0-9]</code></td>
+<td style="text-align:center">所有数字</td>
+<td style="text-align:center"><code>&#39;010-12345&#39;.match(/[0-9]+/g); // [&quot;010&quot;, &quot;12345&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>.</code></td>
+<td style="text-align:center">匹配除换行符（<code>\n\r</code>）以外的任何单个字符</td>
+<td style="text-align:center"><code>&#39;hi&#39;.match(/./g); // [&quot;h&quot;, &quot;i&quot;]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>\s</code></td>
+<td style="text-align:center">所有空白字符</td>
+<td style="text-align:center"><code>&#39;hi you&#39;.match(/\s/g); // [&quot; &quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\S</code></td>
+<td style="text-align:center">所有非空白字符</td>
+<td style="text-align:center"><code>&#39;hi you&#39;.match(/\S/g); // [&quot;h&quot;, &quot;i&quot;, &quot;y&quot;, &quot;o&quot;, &quot;u&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\w</code></td>
+<td style="text-align:center">匹配字母、数字、下划线，等价于<code>[a-zA-Z0-9_]</code></td>
+<td style="text-align:center"><code>&#39;b_ 2&#39;.match(/\w/g); // [&quot;b&quot;, &quot;_&quot;, &quot;2&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\f</code></td>
+<td style="text-align:center">匹配换页符</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\n</code></td>
+<td style="text-align:center">匹配换行符</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\r</code></td>
+<td style="text-align:center">匹配回车符</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\t</code></td>
+<td style="text-align:center">匹配制表符</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\v</code></td>
+<td style="text-align:center">匹配垂直制表符</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -432,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/我的一些原则/" rel="next" title="我的一些原则">
-                <i class="fa fa-chevron-left"></i> 我的一些原则
+              <a href="/2020/12/15/《牡丹亭》与《西厢记》/" rel="next" title="《牡丹亭》与《西厢记》">
+                <i class="fa fa-chevron-left"></i> 《牡丹亭》与《西厢记》
               </a>
             
           </div>
@@ -441,10 +548,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/和业华的点滴温存/" rel="prev" title="和业华的点滴温存">
-                和业华的点滴温存 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +631,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">183</span>
+                  <span class="site-state-item-count">186</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -574,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计图"><span class="nav-number">1.</span> <span class="nav-text">设计图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预览"><span class="nav-number">2.</span> <span class="nav-text">预览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点讲解"><span class="nav-number">3.</span> <span class="nav-text">重点讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机适配"><span class="nav-number">3.1.</span> <span class="nav-text">手机适配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同宽度下不同的font-size"><span class="nav-number">3.2.</span> <span class="nav-text">不同宽度下不同的font-size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">3.3.</span> <span class="nav-text">内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建"><span class="nav-number">1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">2.1.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec"><span class="nav-number">2.2.</span> <span class="nav-text">exec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.3.</span> <span class="nav-text">match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多用法"><span class="nav-number">3.</span> <span class="nav-text">更多用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切分字符串"><span class="nav-number">3.1.</span> <span class="nav-text">切分字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">3.2.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换"><span class="nav-number">3.3.</span> <span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">4.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通字符"><span class="nav-number">4.1.</span> <span class="nav-text">普通字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非打印字符"><span class="nav-number">4.2.</span> <span class="nav-text">非打印字符</span></a></li></ol></li></ol></div>
             
 
           </div>

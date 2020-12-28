@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="function和objectfunction123456789var str = (()=&amp;gt; &amp;#123;    var count = 0;    function sum () &amp;#123; return ++count; &amp;#125;;    function reduce () &amp;#123;return --count;&amp;#125;;    return &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-08T13:25:25.755Z">
+<meta property="og:updated_time" content="2020-12-24T11:21:04.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之Function函数">
 <meta name="twitter:description" content="function和objectfunction123456789var str = (()=&amp;gt; &amp;#123;    var count = 0;    function sum () &amp;#123; return ++count; &amp;#125;;    function reduce () &amp;#123;return --count;&amp;#125;;    return &amp;#123;">
@@ -402,10 +402,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var str = (()=&gt; &#123;</span><br><span class="line">    var count = 0;</span><br><span class="line">    return &#123;</span><br><span class="line">        sum : ()=&gt;&#123;return ++count;&#125;,</span><br><span class="line">        reduce : ()=&gt;&#123;return --count;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">str.sum(); // 1</span><br></pre></td></tr></table></figure>
 <p>此时的str是已经立即执行函数了，返回的是Object，是{sum:f,reduce:f}，注意，这里的str是获取不到count的，只有return的数据能获取到。</p>
 <h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    count:0,</span><br><span class="line">    sum : ()=&gt;&#123;return ++obj.count;&#125;,</span><br><span class="line">    reduce : ()=&gt;&#123;return --obj.count;&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.sum(); // 1</span><br></pre></td></tr></table></figure>
-<p>这里的obj是Object，不同于str的是，它能获取到count，object里面的所有数据都能获取到。</p>
+<p>这里的<code>obj</code>是<code>Object</code>，不同于<code>str</code>的是，它能获取到<code>count</code>，<code>object</code>里面的所有数据都能获取到。</p>
 <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul>
-<li>Function只有return的方法才能获取到（闭包）</li>
-<li>Function执行后返回的是对象</li>
+<li><code>Function</code>只有<code>return</code>的方法才能获取到（闭包）</li>
+<li><code>Function</code>执行后返回的是对象</li>
 </ul>
 <h1 id="JavaScript函数调用及this参数"><a href="#JavaScript函数调用及this参数" class="headerlink" title="JavaScript函数调用及this参数"></a>JavaScript函数调用及this参数</h1><p>JS有4种方式调用函数</p>
 <ul>
@@ -461,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/12/08/JavaScript之运行机制/" rel="next" title="JavaScript之运行机制">
-                <i class="fa fa-chevron-left"></i> JavaScript之运行机制
+              <a href="/2020/12/08/JavaScript之观察者模式(Obverse)/" rel="next" title="JavaScript之观察者模式(Obverse)">
+                <i class="fa fa-chevron-left"></i> JavaScript之观察者模式(Obverse)
               </a>
             
           </div>
@@ -470,6 +470,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/12/09/JavaScript之Window对象/" rel="prev" title="JavaScript之Window对象">
+                JavaScript之Window对象 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -553,7 +557,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">183</span>
+                  <span class="site-state-item-count">186</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

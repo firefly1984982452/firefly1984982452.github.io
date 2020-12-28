@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。 小图标使用sprite图减少重绘和回流 回流改变尺寸或布局，如px  重绘改变外观或风格，如color   如何减少：  不要操作’px’,可以切换class 不要经常访问元素的’px’,可以将’px’保存起来操作 先将元素display:none,改完之后再display:block  异步网络请求Promise 减少HTTP请求请求之">
+<meta name="description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端优化方案">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/前端优化方案/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。 小图标使用sprite图减少重绘和回流 回流改变尺寸或布局，如px  重绘改变外观或风格，如color   如何减少：  不要操作’px’,可以切换class 不要经常访问元素的’px’,可以将’px’保存起来操作 先将元素display:none,改完之后再display:block  异步网络请求Promise 减少HTTP请求请求之">
+<meta property="og:description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-08T13:25:25.759Z">
+<meta property="og:updated_time" content="2020-12-24T11:21:04.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端优化方案">
-<meta name="twitter:description" content="感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。 小图标使用sprite图减少重绘和回流 回流改变尺寸或布局，如px  重绘改变外观或风格，如color   如何减少：  不要操作’px’,可以切换class 不要经常访问元素的’px’,可以将’px’保存起来操作 先将元素display:none,改完之后再display:block  异步网络请求Promise 减少HTTP请求请求之">
+<meta name="twitter:description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  622
+                  665
                 </span>
               
 
@@ -396,18 +396,20 @@
       
 
       
-        <p>感觉每个前端人员都有属于自己的优化方案，我也该日积月累了。</p>
-<h1 id="小图标使用sprite图"><a href="#小图标使用sprite图" class="headerlink" title="小图标使用sprite图"></a>小图标使用sprite图</h1><h1 id="减少重绘和回流"><a href="#减少重绘和回流" class="headerlink" title="减少重绘和回流"></a>减少重绘和回流</h1><ul>
-<li><p>回流<br>改变尺寸或布局，如<code>px</code></p>
+        <h1 id="计算页面加载完成所需要的总时间"><a href="#计算页面加载完成所需要的总时间" class="headerlink" title="计算页面加载完成所需要的总时间"></a>计算页面加载完成所需要的总时间</h1><p><code>performance.timing.loadEventEnd - performance.timing.navigationStart</code></p>
+<h1 id="小图标使用sprite图"><a href="#小图标使用sprite图" class="headerlink" title="小图标使用sprite图"></a>小图标使用sprite图</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background: url(xxx) no-repeat;</span><br><span class="line">width: 64px;</span><br><span class="line">height: 64px;</span><br><span class="line">background-position: 0 -64px;</span><br></pre></td></tr></table></figure>
+<h1 id="减少重绘和回流"><a href="#减少重绘和回流" class="headerlink" title="减少重绘和回流"></a>减少重绘和回流</h1><ul>
+<li><p>回流<br>改变尺寸或布局，如<code>px</code>、<code>width</code>、<code>height</code>、<code>border</code>、<code>margin</code>、<code>padding</code>等</p>
 </li>
 <li><p>重绘<br>改变外观或风格，如<code>color</code></p>
 </li>
 </ul>
 <p>如何减少：</p>
 <ul>
-<li>不要操作’px’,可以切换class</li>
-<li>不要经常访问元素的’px’,可以将’px’保存起来操作</li>
-<li>先将元素display:none,改完之后再display:block</li>
+<li>不要操作<code>&#39;px&#39;</code>,可以切换<code>class</code>；</li>
+<li>不要经常访问元素的<code>&#39;px&#39;</code>,可以将<code>&#39;px&#39;</code>保存起来操作；</li>
+<li>先将元素<code>display:none</code>,改完之后再<code>display:block</code>；</li>
+<li>使用<code>resize</code>和<code>scroll</code>时进行<code>防抖</code>和<code>节流</code>处理，这两者会直接导致<code>回流</code>；</li>
 </ul>
 <h1 id="异步网络请求"><a href="#异步网络请求" class="headerlink" title="异步网络请求"></a>异步网络请求</h1><p>Promise</p>
 <h1 id="减少HTTP请求"><a href="#减少HTTP请求" class="headerlink" title="减少HTTP请求"></a>减少HTTP请求</h1><p>请求之后也可以存储下来</p>
@@ -425,16 +427,17 @@
 <li><p>谨慎使用<code>display:none</code></p>
 </li>
 </ul>
-<h2 id="前端优化"><a href="#前端优化" class="headerlink" title="前端优化"></a>前端优化</h2><p><a href="https://firefly1984982452.github.io/2018/09/12/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">前端优化</a></p>
 <h2 id="移动端优化"><a href="#移动端优化" class="headerlink" title="移动端优化"></a>移动端优化</h2><ul>
 <li>初次加载缓慢时用骨架屏</li>
 <li>尽量用v-show而不是v-if</li>
 <li>for循环里面加key值</li>
 <li>首页可考虑用ssr渲染</li>
 </ul>
-<h1 id="web-Worker"><a href="#web-Worker" class="headerlink" title="web Worker"></a>web Worker</h1><h1 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h1><p>染几万条数据并不卡住界面</p>
+<h1 id="WebWorker"><a href="#WebWorker" class="headerlink" title="WebWorker"></a>WebWorker</h1><p>大量DOM操作时使用WebWorker</p>
+<h1 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h1><p>染几万条数据并不卡住界面</p>
 <h2 id="普通用法"><a href="#普通用法" class="headerlink" title="普通用法"></a>普通用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      控件</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      console.time(&quot;createElement&quot;);</span><br><span class="line">      // 插入十万条数据</span><br><span class="line">      const total = 100000;</span><br><span class="line">      let ul = document.querySelector(&quot;ul&quot;);</span><br><span class="line">      const fragment = document.createDocumentFragment();</span><br><span class="line">      for (let i = 0; i &lt; total; i++) &#123;</span><br><span class="line">        const li = document.createElement(&quot;li&quot;);</span><br><span class="line">        li.innerText = Math.floor(Math.random()*total);</span><br><span class="line">        fragment.appendChild(li);</span><br><span class="line">      &#125;</span><br><span class="line">      ul.appendChild(fragment);</span><br><span class="line">      console.timeEnd(&quot;createElement&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="使用requestAnimationFrame"><a href="#使用requestAnimationFrame" class="headerlink" title="使用requestAnimationFrame"></a>使用requestAnimationFrame</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      控件</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">      // 插入十万条数据</span><br><span class="line">      const total = 100000;</span><br><span class="line">      const once = 20;</span><br><span class="line">      const loopCount = total / once;</span><br><span class="line">      let countOfRender = 0;</span><br><span class="line">      let ul = document.querySelector(&apos;ul&apos;);</span><br><span class="line">      function add () &#123;</span><br><span class="line">        const fragment = document.createDocumentFragment();</span><br><span class="line">        for (let i = 0; i &lt; once; i++) &#123;</span><br><span class="line">          const li = document.createElement(&quot;li&quot;);</span><br><span class="line">          li.innerText = Math.floor(Math.random()*total);</span><br><span class="line">          fragment.appendChild(li);</span><br><span class="line">        &#125;</span><br><span class="line">        ul.appendChild(fragment);</span><br><span class="line">        countOfRender += 1;</span><br><span class="line">        loop();</span><br><span class="line">      &#125;</span><br><span class="line">      function loop()&#123;</span><br><span class="line">        if(countOfRender &lt; loopCount) &#123;</span><br><span class="line">          requestAnimationFrame(add);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      loop();</span><br><span class="line">      &#125;, 0);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Page-Visibility-API"><a href="#Page-Visibility-API" class="headerlink" title="Page Visibility API"></a>Page Visibility API</h1>
       
     </div>
     
@@ -554,7 +557,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">183</span>
+                  <span class="site-state-item-count">186</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小图标使用sprite图"><span class="nav-number">1.</span> <span class="nav-text">小图标使用sprite图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少重绘和回流"><span class="nav-number">2.</span> <span class="nav-text">减少重绘和回流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步网络请求"><span class="nav-number">3.</span> <span class="nav-text">异步网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少HTTP请求"><span class="nav-number">4.</span> <span class="nav-text">减少HTTP请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用方法"><span class="nav-number">5.</span> <span class="nav-text">使用公用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用组件"><span class="nav-number">6.</span> <span class="nav-text">使用公用组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用压缩JS和压缩CSS文件"><span class="nav-number">7.</span> <span class="nav-text">使用压缩JS和压缩CSS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">7.1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端优化"><span class="nav-number">7.2.</span> <span class="nav-text">前端优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端优化"><span class="nav-number">7.3.</span> <span class="nav-text">移动端优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web-Worker"><span class="nav-number">8.</span> <span class="nav-text">web Worker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#requestAnimationFrame"><span class="nav-number">9.</span> <span class="nav-text">requestAnimationFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通用法"><span class="nav-number">9.1.</span> <span class="nav-text">普通用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用requestAnimationFrame"><span class="nav-number">9.2.</span> <span class="nav-text">使用requestAnimationFrame</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算页面加载完成所需要的总时间"><span class="nav-number">1.</span> <span class="nav-text">计算页面加载完成所需要的总时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小图标使用sprite图"><span class="nav-number">2.</span> <span class="nav-text">小图标使用sprite图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少重绘和回流"><span class="nav-number">3.</span> <span class="nav-text">减少重绘和回流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步网络请求"><span class="nav-number">4.</span> <span class="nav-text">异步网络请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少HTTP请求"><span class="nav-number">5.</span> <span class="nav-text">减少HTTP请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用方法"><span class="nav-number">6.</span> <span class="nav-text">使用公用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用公用组件"><span class="nav-number">7.</span> <span class="nav-text">使用公用组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用压缩JS和压缩CSS文件"><span class="nav-number">8.</span> <span class="nav-text">使用压缩JS和压缩CSS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO"><span class="nav-number">8.1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端优化"><span class="nav-number">8.2.</span> <span class="nav-text">移动端优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebWorker"><span class="nav-number">9.</span> <span class="nav-text">WebWorker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#requestAnimationFrame"><span class="nav-number">10.</span> <span class="nav-text">requestAnimationFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通用法"><span class="nav-number">10.1.</span> <span class="nav-text">普通用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用requestAnimationFrame"><span class="nav-number">10.2.</span> <span class="nav-text">使用requestAnimationFrame</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Page-Visibility-API"><span class="nav-number">11.</span> <span class="nav-text">Page Visibility API</span></a></li></ol></div>
             
 
           </div>
