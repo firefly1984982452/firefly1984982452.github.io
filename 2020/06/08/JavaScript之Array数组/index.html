@@ -87,7 +87,8 @@
 <meta property="og:description" content="扩展运算符（...）将数组变为参数序列 1console.log(...[1,2,3]); // 1,2,3 代替apply12345678// ES5 的写法Math.max.apply(null, [14, 3, 77])// ES6 的写法Math.max(...[14, 3, 77])// 等同于Math.max(14, 3, 77); 替换push123456789// ES5的 写法v">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg">
-<meta property="og:updated_time" content="2020-12-24T11:21:04.677Z">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg">
+<meta property="og:updated_time" content="2020-12-28T14:12:57.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之Array数组">
 <meta name="twitter:description" content="扩展运算符（...）将数组变为参数序列 1console.log(...[1,2,3]); // 1,2,3 代替apply12345678// ES5 的写法Math.max.apply(null, [14, 3, 77])// ES6 的写法Math.max(...[14, 3, 77])// 等同于Math.max(14, 3, 77); 替换push123456789// ES5的 写法v">
@@ -524,6 +525,7 @@
 <h1 id="arguments参数的3种转数组方法"><a href="#arguments参数的3种转数组方法" class="headerlink" title="arguments参数的3种转数组方法"></a><code>arguments</code>参数的3种转数组方法</h1><p><strong>方法1：Array.prototype.slice.apply</strong><br><strong>方法2：Array.from</strong><br><strong>方法3：[…arguments]</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var test3 = function()&#123;</span><br><span class="line">    console.log(arguments);</span><br><span class="line">    var list1 = Array.prototype.slice.apply(arguments);</span><br><span class="line">    console.log(list1);</span><br><span class="line">    var list2 = Array.from(arguments);</span><br><span class="line">    console.log(list2);</span><br><span class="line">    var list3 = [...arguments];</span><br><span class="line">    console.log(list3);</span><br><span class="line">&#125;</span><br><span class="line">test3(1,2,3,4);</span><br></pre></td></tr></table></figure>
 <p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg" alt="image"></p>
+<p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg"></p>
 
       
     </div>
