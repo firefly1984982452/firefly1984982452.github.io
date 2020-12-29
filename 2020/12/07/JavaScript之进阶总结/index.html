@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。 &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;sc">
+<meta name="description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。  &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之进阶总结">
 <meta property="og:url" content="http://yoursite.com/2020/12/07/JavaScript之进阶总结/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。 &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;sc">
+<meta property="og:description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。  &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;s">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho47acnm9j303q03ndfo.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gho487f7lnj305904omx1.jpg">
 <meta property="og:image" content="https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-043719.png">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho3yuu5lpj30au09n74t.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/large/0069qZtTgy1gls4a0l7fej30ge0agtap.jpg">
-<meta property="og:updated_time" content="2020-12-24T11:21:04.683Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之进阶总结">
-<meta name="twitter:description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。 &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;sc">
+<meta name="twitter:description" content="&amp;lt;noscript&amp;gt;&amp;lt;noscript&amp;gt;标签：当页面不支持script或禁用了script时会显示&amp;lt;noscript&amp;gt;里面的内容。  &amp;lt;script&amp;gt;中的async和defer12345678910111.`&amp;lt;script src=&amp;quot;script.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;`读到就立即执行。2.`&amp;lt;s">
 <meta name="twitter:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho47acnm9j303q03ndfo.jpg">
 
 
@@ -403,13 +403,17 @@
 
       
         <h1 id="lt-noscript-gt"><a href="#lt-noscript-gt" class="headerlink" title="&lt;noscript&gt;"></a><code>&lt;noscript&gt;</code></h1><p><code>&lt;noscript&gt;</code>标签：当页面不支持<code>script</code>或禁用了<code>script</code>时会显示<code>&lt;noscript&gt;</code>里面的内容。</p>
+<hr>
 <h1 id="lt-script-gt-中的async和defer"><a href="#lt-script-gt-中的async和defer" class="headerlink" title="&lt;script&gt;中的async和defer"></a><code>&lt;script&gt;</code>中的<code>async</code>和<code>defer</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.`&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;`</span><br><span class="line"></span><br><span class="line">读到就立即执行。</span><br><span class="line"></span><br><span class="line">2.`&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;`</span><br><span class="line"></span><br><span class="line">和DOM并行进行（异步）。</span><br><span class="line"></span><br><span class="line">2.`&lt;script defer src=&quot;script.js&quot;&gt;&lt;/script&gt;`</span><br><span class="line"></span><br><span class="line">和DOM并行进行（异步），但在所有`script.js`的执行解析完后，`DOMContentLoaded`事件触发完成之前。</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="typeof-null为什么返回object"><a href="#typeof-null为什么返回object" class="headerlink" title="typeof null为什么返回object"></a><code>typeof null</code>为什么返回<code>object</code></h1><p><code>null</code>是空对象指针，所以<code>typeof null</code>返回的是<code>object</code>，</p>
 <p><code>&#39;null&#39;</code>变为<code>null</code>：<code>JSON.parse(&#39;null&#39;)</code></p>
+<hr>
 <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="arguments-callee：函数自身"><a href="#arguments-callee：函数自身" class="headerlink" title="arguments.callee：函数自身"></a>arguments.callee：函数自身</h2><p>用<code>arguments.callee</code>实现递归</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function test(num) &#123;</span><br><span class="line">    console.log(num)</span><br><span class="line">    if(num!==0)&#123;</span><br><span class="line">        --num;</span><br><span class="line">        arguments.callee(num)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test(3)</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
 <p>但是<code>arguments.callee</code>已经被弃用了，所以可以尝试其它方法。</p>
 <h2 id="命名一个function"><a href="#命名一个function" class="headerlink" title="命名一个function"></a>命名一个function</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function test(num) &#123;</span><br><span class="line">    (function fn ()&#123;</span><br><span class="line">        console.log(num)</span><br><span class="line">        if(num !== 0) &#123;</span><br><span class="line">            --num;</span><br><span class="line">            fn();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&#125;</span><br><span class="line">test(3)</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="return和闭包"><a href="#return和闭包" class="headerlink" title="return和闭包"></a>return和闭包</h1><h2 id="直接return"><a href="#直接return" class="headerlink" title="直接return"></a>直接return</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 0;</span><br><span class="line">function fn()&#123;</span><br><span class="line">    var a = 12;</span><br><span class="line">    return a;</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn()); // 12</span><br><span class="line">console.log(a); // 0</span><br></pre></td></tr></table></figure>
 <h2 id="return-function"><a href="#return-function" class="headerlink" title="return function"></a>return function</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = 0;</span><br><span class="line">function fn() &#123;</span><br><span class="line">    var a = 12;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        return a</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn()()); // 12</span><br><span class="line">console.log(a); // 0</span><br></pre></td></tr></table></figure>
 <h2 id="return-闭包"><a href="#return-闭包" class="headerlink" title="return 闭包"></a>return 闭包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = 0;</span><br><span class="line">function fn() &#123;</span><br><span class="line">    var a = 12;</span><br><span class="line">    return (function()&#123;</span><br><span class="line">        return a</span><br><span class="line">    &#125;)();</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn()); // 12</span><br><span class="line">console.log(a); // 0</span><br></pre></td></tr></table></figure>
@@ -418,6 +422,7 @@
 <li>2.闭包不是为了让函数外部拿到内部变量，而是为了保护私有变量不被更改。</li>
 <li>3.<code>return</code>出来的是一个值（<code>12</code>），不是变量本身（<code>a</code>），此处的<code>return</code>是取得私有变量值的一种方法，跟闭包没有严格关系。</li>
 </ul>
+<hr>
 <h1 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h1><p><a href="http://demo.nimius.net/debounce_throttle/" target="_blank" rel="noopener">可视化在线demo</a><br><a href="https://wall-wxk.github.io/blogDemo/2017/02/15/throttleAndDebounce.html" target="_blank" rel="noopener">滚动栏在线demo</a></p>
 <p><a href="https://www.jianshu.com/p/f9f6b637fd6c" target="_blank" rel="noopener">学习链接1</a><br><a href="https://www.jianshu.com/p/b73c2acad696" target="_blank" rel="noopener">学习链接2</a></p>
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
@@ -444,6 +449,7 @@
 <p>假设浏览器一直在不停滚动，我不可能等停止了再请求，也不可能一直请求。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var flag = false;</span><br><span class="line">handleThrottle () &#123;</span><br><span class="line">  console.log(&apos;调用&apos;)</span><br><span class="line">  if(flag)&#123;return&#125;</span><br><span class="line">  flag = false;</span><br><span class="line">  setTimeout(()=&gt;&#123;</span><br><span class="line">    console.log(&apos;函数节流&apos;);</span><br><span class="line">    flag = true;</span><br><span class="line">  &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gho487f7lnj305904omx1.jpg" alt="image.png"></p>
+<hr>
 <h1 id="事件委托（事件代理）"><a href="#事件委托（事件代理）" class="headerlink" title="事件委托（事件代理）"></a>事件委托（事件代理）</h1><p>如下代码：因为<code>li</code>的点击事件一定会事件冒泡到<code>ul</code>上，所以将点击事件写在<code>ul</code>上即可委托。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;ul&quot;&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;5&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  let ul = document.querySelector(&apos;##ul&apos;)</span><br><span class="line">  ul.addEventListener(&apos;click&apos;, event =&gt; &#123;</span><br><span class="line">    console.log(event.target)</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue中使用</p>
@@ -453,6 +459,7 @@
 <li>节省内存</li>
 <li>不需要给子节点注销事件</li>
 </ul>
+<hr>
 <h1 id="let和闭包"><a href="#let和闭包" class="headerlink" title="let和闭包"></a>let和闭包</h1><h2 id="let劫持作用域"><a href="#let劫持作用域" class="headerlink" title="let劫持作用域"></a>let劫持作用域</h2><p><strong>用var时</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(str);</span><br><span class="line">var str = &apos;hello&apos;;</span><br></pre></td></tr></table></figure>
 <p>打印出<code>undefined</code>。</p>
@@ -471,6 +478,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 1; i &lt; 6; i++) &#123;</span><br><span class="line">    let j = i;</span><br><span class="line">    console.log(j)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&apos;print&apos;+j)</span><br><span class="line">    &#125;, 1000 * j)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时就是先打印1、2、3、4、5，然后每隔1秒打印’print1’、’print2’…’print5’。但是，每次都会有新的j替代原来的j，所以可以直接在for循环里面定义let i = 1;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 1; i &lt; 6; i++) &#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&apos;print&apos;+i)</span><br><span class="line">    &#125;, 1000 * i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="JavaScript相等操作符（-）"><a href="#JavaScript相等操作符（-）" class="headerlink" title="JavaScript相等操作符（==）"></a>JavaScript相等操作符（==）</h1><p>参考：<br><a href="https://www.cnblogs.com/wisewrong/p/10396002.html" target="_blank" rel="noopener">链接1</a><br><a href="https://blog.csdn.net/magic_xiang/article/details/83686224" target="_blank" rel="noopener">链接2</a><br><a href="https://yuchengkai.cn/docs/frontend/#%E6%93%8D%E4%BD%9C%E7%AC%A6" target="_blank" rel="noopener">链接3</a></p>
 <h2 id="两组操作符"><a href="#两组操作符" class="headerlink" title="两组操作符"></a>两组操作符</h2><p>相等：<code>==</code>（先转换再比较）<br>全等：<code>===</code>（仅比较不转换）</p>
 <h2 id="相等（-）规则"><a href="#相等（-）规则" class="headerlink" title="相等（==）规则"></a>相等（<code>==</code>）规则</h2><p><strong>Boolean规则：Boolean(val)</strong>：如果有一个操作数是<code>Boolean</code>值，则在比较前先将其转换为数值——<code>false</code>为<code>0</code>，<code>true</code>为<code>1</code>。<br><strong>String&amp;Number规则：Number(string)</strong>：如果一个是<code>String</code>，一个是<code>Number</code>，则先将<code>String</code>转为<code>Number</code>。<br><strong>Object规则：valueOf(obj)</strong>：如果有一个是对象，则调用<code>valueOf</code>方法（数组调<code>toString()</code>方法）。</p>
@@ -491,11 +499,13 @@
 <li>2：调用<strong>Booean规则</strong>，计算<code>Boolean({})</code>得到<code>true</code>，此时比较的是<code>true == false</code>。</li>
 </ul>
 <p>简化：<br><code>{} == !{}</code> 转化：<code>{} == false</code> 转化：<code>true == false</code>。</p>
+<hr>
 <h1 id="Blob实现下载文件"><a href="#Blob实现下载文件" class="headerlink" title="Blob实现下载文件"></a>Blob实现下载文件</h1><p><a href="https://zhuanlan.zhihu.com/p/97768916" target="_blank" rel="noopener">参考链接</a></p>
 <p>DOM:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a id=&quot;download&quot; @click=&quot;download&quot;&gt;下载&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 <p>JS:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">download()&#123;</span><br><span class="line">    var blob = new Blob([&apos;hello world&apos;]);</span><br><span class="line">    var url = window.URL.createObjectURL(blob);</span><br><span class="line">    var a = document.getElementById(&apos;download&apos;);</span><br><span class="line">    a.download = &apos;helloworld.txt&apos;;</span><br><span class="line">    a.href = url;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="try-catch无法用于异步代码"><a href="#try-catch无法用于异步代码" class="headerlink" title="try...catch无法用于异步代码"></a><code>try...catch</code>无法用于异步代码</h1><h2 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">    foo();</span><br><span class="line">&#125; catch (error) &#123;</span><br><span class="line">    console.log(&apos;异常是：&apos;+error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时会由catch捕捉到异常：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">异常是：ReferenceError: foo is not defined</span><br></pre></td></tr></table></figure>
@@ -503,8 +513,10 @@
 <p>此时无法捕捉，而是浏览器控制台报出未捕捉异常。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: bar is not defined</span><br></pre></td></tr></table></figure>
 <h2 id="对比图"><a href="#对比图" class="headerlink" title="对比图"></a>对比图</h2><p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gho3yuu5lpj30au09n74t.jpg" alt="image"></p>
+<hr>
 <h1 id="lighthouse前端性能优化工具"><a href="#lighthouse前端性能优化工具" class="headerlink" title="lighthouse前端性能优化工具"></a>lighthouse前端性能优化工具</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g lighthouse</span><br><span class="line"></span><br><span class="line">lighthouse https://www.cnblogs.com/</span><br></pre></td></tr></table></figure>
 <p>生成html页面</p>
+<hr>
 <h1 id="valueOf、toString和Symbol-toPrimitive"><a href="#valueOf、toString和Symbol-toPrimitive" class="headerlink" title="valueOf、toString和Symbol.toPrimitive"></a>valueOf、toString和Symbol.toPrimitive</h1><p>对象转基本类型时，先调用<code>valueOf</code>,再调用<code>toString</code>，如果有<code>Symbol.toPrimitive</code>的话优先级是最高的。</p>
 <h2 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf"></a>valueOf</h2><p>如果有valueOf和toString时，valueOf的优先级高：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;</span><br><span class="line">    valueOf() &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;,</span><br><span class="line">    toString() &#123;</span><br><span class="line">        return &apos;2&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">console.log( a + &apos;10&apos;); // 110</span><br></pre></td></tr></table></figure>
@@ -512,6 +524,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;</span><br><span class="line">    toString() &#123;</span><br><span class="line">        return &apos;2&apos;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">console.log(a+203); // 2203</span><br></pre></td></tr></table></figure>
 <h2 id="Symbol-toPrimitive"><a href="#Symbol-toPrimitive" class="headerlink" title="Symbol.toPrimitive"></a>Symbol.toPrimitive</h2><p>优先级最高，还可根据不同的类型转换成Number类型和String类型：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let obj = &#123;</span><br><span class="line">    [Symbol.toPrimitive](hint) &#123;</span><br><span class="line">        switch (hint) &#123;</span><br><span class="line">        case &apos;number&apos;:</span><br><span class="line">            return 1234;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case &apos;string&apos;:</span><br><span class="line">            return &apos;str&apos;;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case &apos;default&apos;:</span><br><span class="line">            return &apos;default&apos;;</span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">        default:</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(2 * obj); // 2468</span><br><span class="line">console.log(2 + obj); // 2default</span><br><span class="line">console.log(&apos;default&apos; === obj); // false</span><br><span class="line">console.log(String(obj)); /// str</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="window-postMessage"><a href="#window-postMessage" class="headerlink" title="window.postMessage"></a>window.postMessage</h1><p>知识点：</p>
 <ul>
 <li><code>addEventListener</code>监听的必须是<code>&#39;message&#39;</code></li>
@@ -524,6 +537,7 @@
 <p>页面B：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.postMessage(&quot;hi there!&quot;, location.origin);</span><br></pre></td></tr></table></figure>
 <p>此时点击页面B的发送消息按钮就能在页面A接收消息了。</p>
+<hr>
 <h1 id="JSON的更多参数用法"><a href="#JSON的更多参数用法" class="headerlink" title="JSON的更多参数用法"></a>JSON的更多参数用法</h1><h2 id="JSON-stringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify"></a>JSON.stringify</h2><p>新建一个普通对象</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var settings = &#123;</span><br><span class="line">  username: &apos;lydiahallie&apos;,</span><br><span class="line">  level: 19,</span><br><span class="line">  health: 90,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="普通用法"><a href="#普通用法" class="headerlink" title="普通用法"></a>普通用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var data = JSON.stringify(settings); // &quot;&#123;&quot;username&quot;:&quot;lydiahallie&quot;,&quot;level&quot;:19,&quot;health&quot;:90&#125;&quot;</span><br></pre></td></tr></table></figure>
@@ -536,6 +550,7 @@
 <h2 id="参数2：过滤函数"><a href="#参数2：过滤函数" class="headerlink" title="参数2：过滤函数"></a>参数2：过滤函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(&apos;&#123;&quot;p&quot;: 5&#125;&apos;,((key,value)=&gt;&#123;</span><br><span class="line">    console.log(key,value);</span><br><span class="line">    return value*20;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 <p>返回：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p 5</span><br><span class="line">&#123;p: 100&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="与JAVA相通的概念"><a href="#与JAVA相通的概念" class="headerlink" title="与JAVA相通的概念"></a>与JAVA相通的概念</h1><h2 id="MVC、MVVM"><a href="#MVC、MVVM" class="headerlink" title="MVC、MVVM"></a>MVC、MVVM</h2><h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>Model层:模型层，比如图片放一个类，标题放一个类<br>View层：显示页面，如xml<br>Controller层：控制Model的读取、存储。如MainActivity</p>
 <h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>MVVM实现了View和Model的自动同步，当Model的属性改变时，我们不再手动操作DOM，也就是双向绑定。</p>
 <p>Model层：后端传递的数据<br>View层：页面<br>ViewModel层：视图模型，连接Model和View的桥梁。将Model转为View（将后端数据显示给前端）用的是数据绑定，将View转为Model（将前端数据转给后端）用的DOM监听，这种实现方法称为为<strong>数据的双向绑定</strong>。</p>
@@ -543,7 +558,9 @@
 <h2 id="jsBridge"><a href="#jsBridge" class="headerlink" title="jsBridge"></a>jsBridge</h2><p>js与android的通信</p>
 <h3 id="android代码："><a href="#android代码：" class="headerlink" title="android代码："></a>android代码：</h3><p>java发消息给js：<br><code>webview.send()</code><br>java收js的消息<br><code>webview.registerHander(&#39;name&#39;,new Bridge(){})</code></p>
 <h3 id="javaScript代码："><a href="#javaScript代码：" class="headerlink" title="javaScript代码："></a>javaScript代码：</h3><p>js发消息给java<br><code>window.WebViewJavaScriptBridge.send()</code><br>js收java的消息<br><code>document.addEventListener(&#39;WebViewJavaScriptBridgeReady&#39;,()=&gt;{})</code></p>
+<hr>
 <h1 id="hybird"><a href="#hybird" class="headerlink" title="hybird"></a>hybird</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.company_color&quot;).click(function()&#123;</span><br><span class="line">  var u = navigator.userAgent;</span><br><span class="line">  var isAndroid = u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1; //android终端或者uc浏览器</span><br><span class="line">  var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</span><br><span class="line">  var company_name = $(this).text();</span><br><span class="line">  if(isAndroid) &#123;</span><br><span class="line">    var msg = window.mrlou.androidIs(&quot;2&quot;,company_name);</span><br><span class="line">  &#125; else if(isIos) &#123;</span><br><span class="line">    //iosPhone()这个方法，ios会自动监听，并接收我传过来的值，用msg接收它传给我的值</span><br><span class="line">    broker(&quot;2&quot;,company_name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>客户端和服务器之间传输数据的规范，全称是“超文本传输协议”。</p>
 <h2 id="协议请求"><a href="#协议请求" class="headerlink" title="协议请求"></a>协议请求</h2><p>GET、POST和OPTION</p>
 <h2 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h2><table>
@@ -627,7 +644,9 @@
 <p>方法二：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;expires&quot; content=&quot;mon, 18 apr 2016 14:30:00 GMT&quot;&gt;</span><br></pre></td></tr></table></figure>
 <p>请求–判断max-age是否过期（没过期就直接在缓存数据库中得到数据）–过期后判断属性是否字段一致，再使用缓存。</p>
+<hr>
 <h1 id="session和cookie"><a href="#session和cookie" class="headerlink" title="session和cookie"></a>session和cookie</h1><p>cookie是在客户端，session是在服务端。<br>一般如果想跳过cookie的限制，就用session。</p>
+<hr>
 <h1 id="HTML渲染过程"><a href="#HTML渲染过程" class="headerlink" title="HTML渲染过程"></a>HTML渲染过程</h1><ul>
 <li>1、解析HTML，构成DOM</li>
 <li>2、解析CSS，形成CSS对象模型</li>
@@ -638,14 +657,17 @@
 <li>重绘：corlor、borde、visibility，只会小变动；</li>
 <li>重排（回流）：DOM操作、CSS属性改变、伪类操作，会大变动。</li>
 </ul>
+<hr>
 <h1 id="前端路由和后端路由"><a href="#前端路由和后端路由" class="headerlink" title="前端路由和后端路由"></a>前端路由和后端路由</h1><ul>
 <li>前端路由（#）：hash值或pushStatu</li>
 <li>后端路由（/）：通过URL跳转到具体的html页面，每次跳转都重新访问服务端，服务端返回页面。</li>
 </ul>
+<hr>
 <h1 id="localStorage标签页通信"><a href="#localStorage标签页通信" class="headerlink" title="localStorage标签页通信"></a>localStorage标签页通信</h1><p>page1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&apos;send&apos;,&apos;sendValue&apos;);</span><br></pre></td></tr></table></figure>
 <p>page2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;storage&apos;, (e) =&gt; &#123;</span><br><span class="line">    console.log(e)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="打开下载后立马关闭"><a href="#打开下载后立马关闭" class="headerlink" title="打开下载后立马关闭"></a>打开下载后立马关闭</h1><ul>
 <li>1.excel</li>
 </ul>
@@ -654,8 +676,11 @@
 <li>2.image</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(res =&gt; res.blob()).then((blob) =&gt; &#123;</span><br><span class="line">  // 创建隐藏的可下载链接</span><br><span class="line">  const a = document.createElement(&apos;a&apos;);</span><br><span class="line">  a.style.display = &apos;none&apos;;</span><br><span class="line">  a.href = URL.createObjectURL(blob);</span><br><span class="line">  a.download = this.peopleList[i].peopleName;</span><br><span class="line">  document.body.appendChild(a);</span><br><span class="line">  a.click();</span><br><span class="line">  // 移除元素</span><br><span class="line">  document.body.removeChild(a);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="冒泡事件"><a href="#冒泡事件" class="headerlink" title="冒泡事件"></a>冒泡事件</h1><p><code>event.stopProgation</code>能阻止冒泡事件</p>
+<hr>
 <h1 id="默认事件"><a href="#默认事件" class="headerlink" title="默认事件"></a>默认事件</h1><p><code>event.preventDefault</code>能阻止如<code>&lt;a&gt;</code>的默认<code>href</code>事件</p>
+<hr>
 <h1 id="webSocekt多人通信"><a href="#webSocekt多人通信" class="headerlink" title="webSocekt多人通信"></a>webSocekt多人通信</h1><p><a href="http://www.imooc.com/article/286001" target="_blank" rel="noopener">学习链接-基础通信</a><br><a href="https://www.cnblogs.com/lihaohua/p/12410511.html" target="_blank" rel="noopener">学习链接-多人通信(ws)</a><br><a href="https://zhuanlan.zhihu.com/p/64906193" target="_blank" rel="noopener">学习链接-多人通信(nodejs-websocket)</a></p>
 <p><img src="https://wx2.sinaimg.cn/large/0069qZtTgy1gls4a0l7fej30ge0agtap.jpg" alt="效果"></p>
 <h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var ws = require(&quot;nodejs-websocket&quot;);</span><br><span class="line">console.log(&apos;开始建立连接...&apos;);</span><br><span class="line"></span><br><span class="line">// 向所有连接的客户端广播</span><br><span class="line">function boardcast(obj) &#123;</span><br><span class="line">    server.connections.forEach(function (conn) &#123;</span><br><span class="line">        conn.sendText(JSON.stringify(obj));</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">var server = ws.createServer(function (conn) &#123;</span><br><span class="line">    conn.on(&apos;text&apos;, function (str) &#123;</span><br><span class="line">        var obj = JSON.parse(str);</span><br><span class="line">        console.log(&quot;message: &quot; + str);</span><br><span class="line">        boardcast(&#123;</span><br><span class="line">            type: 2,</span><br><span class="line">            msg: obj.msg,</span><br><span class="line">            uid: obj.uid,</span><br><span class="line">            nickname: obj.nickname</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    conn.on(&apos;close&apos;, function (code, reason) &#123;</span><br><span class="line">        console.log(&apos;关闭连接!&apos;);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    conn.on(&apos;error&apos;, function (code, reason) &#123;</span><br><span class="line">        console.log(&apos;异常关闭！&apos;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).listen(8001);</span><br><span class="line">console.log(&apos;webSocket建立完毕！&apos;);</span><br></pre></td></tr></table></figure>
@@ -665,6 +690,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">var ws = new WebSocket(&quot;ws://localhost:8001?userName=2&quot;);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">ws.send(</span><br><span class="line">    JSON.stringify(&#123;</span><br><span class="line">    uid: 2,</span><br><span class="line">    type: 2,</span><br><span class="line">    nickname: 2,</span><br><span class="line">    msg: txt,</span><br><span class="line">    &#125;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <h2 id="运行服务端"><a href="#运行服务端" class="headerlink" title="运行服务端"></a>运行服务端</h2><p><code>node server.js</code></p>
 <p>此时，一个运行在chrome，一个运行在firefox，就已经能实现通信。</p>
+<hr>
 <h1 id="JavaScript编码规范"><a href="#JavaScript编码规范" class="headerlink" title="JavaScript编码规范"></a>JavaScript编码规范</h1><h2 id="不要在块内函数声明"><a href="#不要在块内函数声明" class="headerlink" title="不要在块内函数声明"></a>不要在块内函数声明</h2><p>不推荐：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (x) &#123;</span><br><span class="line">    function foo() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>推荐：</p>
@@ -704,8 +730,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/11/29/学车笔记/" rel="next" title="学车笔记">
-                <i class="fa fa-chevron-left"></i> 学车笔记
+              <a href="/2020/12/07/CSS之进阶总结/" rel="next" title="CSS之进阶总结">
+                <i class="fa fa-chevron-left"></i> CSS之进阶总结
               </a>
             
           </div>
@@ -714,8 +740,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/12/07/CSS之进阶总结/" rel="prev" title="CSS之进阶总结">
-                CSS之进阶总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/12/07/CSS之常用方法总结/" rel="prev" title="CSS之常用方法总结">
+                CSS之常用方法总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

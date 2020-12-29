@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="length长度 &amp;#39;wejfoiwe&amp;#39;.length // 8 charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#39;[59] // undefined charCodeAt()返回u">
+<meta name="description" content="查询过滤 charAt charCodeAt fromCharCode indexOf lastIndexOf includes search  【1】charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之String对象">
 <meta property="og:url" content="http://yoursite.com/2020/06/05/JavaScript之String对象/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="length长度 &amp;#39;wejfoiwe&amp;#39;.length // 8 charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#39;[59] // undefined charCodeAt()返回u">
+<meta property="og:description" content="查询过滤 charAt charCodeAt fromCharCode indexOf lastIndexOf includes search  【1】charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-24T11:21:04.682Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之String对象">
-<meta name="twitter:description" content="length长度 &amp;#39;wejfoiwe&amp;#39;.length // 8 charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#39;[59] // undefined charCodeAt()返回u">
+<meta name="twitter:description" content="查询过滤 charAt charCodeAt fromCharCode indexOf lastIndexOf includes search  【1】charAt()返回指定位置的字符 &amp;#39;ewfwef&amp;#39;.charAt(5) // f&amp;#39;ewfwef&amp;#39;[5] // f 区别： &amp;#39;ewfwef&amp;#39;.charAt(53) // “”&amp;#39;ewfwef&amp;#">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  423
+                  464
                 </span>
               
 
@@ -396,49 +396,70 @@
       
 
       
-        <h1 id="length"><a href="#length" class="headerlink" title="length"></a>length</h1><p>长度</p>
-<p><code>&#39;wejfoiwe&#39;.length</code> // 8</p>
-<h1 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h1><p>返回指定位置的字符</p>
+        <h1 id="查询过滤"><a href="#查询过滤" class="headerlink" title="查询过滤"></a>查询过滤</h1><ol>
+<li><code>charAt</code></li>
+<li><code>charCodeAt</code></li>
+<li><code>fromCharCode</code></li>
+<li><code>indexOf</code></li>
+<li><code>lastIndexOf</code></li>
+<li><code>includes</code></li>
+<li><code>search</code></li>
+</ol>
+<h2 id="【1】charAt"><a href="#【1】charAt" class="headerlink" title="【1】charAt()"></a>【1】charAt()</h2><p>返回指定位置的字符</p>
 <p><code>&#39;ewfwef&#39;.charAt(5)</code> // f<br><code>&#39;ewfwef&#39;[5]</code> // f</p>
 <p>区别：</p>
 <p><code>&#39;ewfwef&#39;.charAt(53)</code> // “”<br><code>&#39;ewfwef&#39;[59]</code> // undefined</p>
-<h1 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt()"></a>charCodeAt()</h1><p>返回uniccode/accsic编码</p>
+<h2 id="【2】charCodeAt"><a href="#【2】charCodeAt" class="headerlink" title="【2】charCodeAt()"></a>【2】charCodeAt()</h2><p>返回uniccode/accsic编码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;a&apos;.charCodeAt(0); // 97</span><br></pre></td></tr></table></figure>
-<h1 id="fromCharCode"><a href="#fromCharCode" class="headerlink" title="fromCharCode()"></a>fromCharCode()</h1><p>将 Unicode 编码转为一个字符:</p>
+<h2 id="【3】fromCharCode"><a href="#【3】fromCharCode" class="headerlink" title="【3】fromCharCode()"></a>【3】fromCharCode()</h2><p>将 Unicode 编码转为一个字符:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String.fromCharCode(65); // A</span><br></pre></td></tr></table></figure>
+<h2 id="【4】indexOf"><a href="#【4】indexOf" class="headerlink" title="【4】indexOf()"></a>【4】indexOf()</h2><p>返回字符首次出现的位置</p>
+<p><code>&#39;abcc&#39;.indexOf(&#39;c&#39;)</code> // 2</p>
+<h2 id="【5】lastIndexOf"><a href="#【5】lastIndexOf" class="headerlink" title="【5】lastIndexOf()"></a>【5】lastIndexOf()</h2><p>上同，倒数。</p>
+<h2 id="【6】includes"><a href="#【6】includes" class="headerlink" title="【6】includes()"></a>【6】includes()</h2><p>判断字符串中是否包含某字符串</p>
+<p><code>&#39;abcc&#39;.includes(&#39;c&#39;)</code> // true</p>
+<h2 id="【7】search"><a href="#【7】search" class="headerlink" title="【7】search()"></a>【7】search()</h2><p>返回下标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;hello world&apos;.search(&apos;wor&apos;); // 6</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="截取和分割"><a href="#截取和分割" class="headerlink" title="截取和分割"></a>截取和分割</h1><ol>
+<li><code>split</code></li>
+<li><code>substr</code></li>
+<li><code>substring</code></li>
+<li><code>slice</code></li>
+</ol>
+<h2 id="【1】split"><a href="#【1】split" class="headerlink" title="【1】split()"></a>【1】split()</h2><p>分割为数组</p>
+<p><code>&#39;abcd&#39;.split(&#39;&#39;)</code> // [“a”, “b”, “c”, “d”]</p>
+<p><strong>tips：把字符串变为数组最快的方法</strong></p>
+<p><code>&#39;abc&#39;.split(&#39; &#39;)</code> // [‘abc’]</p>
+<h2 id="【2】substr"><a href="#【2】substr" class="headerlink" title="【2】substr()"></a>【2】substr()</h2><p>截取（位置，个数）</p>
+<p><code>&#39;abcdefg&#39;.substr(2,3)</code> // “cde”</p>
+<h2 id="【3】substring"><a href="#【3】substring" class="headerlink" title="【3】substring()"></a>【3】substring()</h2><p>截取（开始位置，结束位置）</p>
+<p><code>&#39;abcdefg&#39;.substring(2,3)</code> // “c”<br><code>&#39;abcdefg&#39;.substring(2)</code> // “cdefg”<br><code>&#39;abcdefg&#39;.substring(2,-9)</code> // “ab” <strong>与slice的区别</strong></p>
+<h2 id="【4】slice"><a href="#【4】slice" class="headerlink" title="【4】slice()"></a>【4】slice()</h2><p>截取（开始位置，结束位置）</p>
+<p><code>&#39;abcdefg&#39;.slice(2,3)</code> // “c”<br><code>&#39;abcdefg&#39;.slice(2)</code> // “cdefg”<br><code>&#39;abcdefg&#39;.slice(2,-9)</code> // “” <strong>与substring的区别</strong></p>
+<hr>
 <h1 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h1><p>合并两个字符串</p>
 <p><code>&#39;w&#39;.concat(&#39;e&#39;)</code> // ‘we’</p>
-<h1 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h1><p>返回字符首次出现的位置</p>
-<p><code>&#39;abcc&#39;.indexOf(&#39;c&#39;)</code> // 2</p>
-<h1 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h1><p>上次，倒数。</p>
+<hr>
 <h1 id="match"><a href="#match" class="headerlink" title="match"></a>match</h1><h2 id="检索字符串"><a href="#检索字符串" class="headerlink" title="检索字符串"></a>检索字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;hello world&apos;.match(&apos;world&apos;); // [&quot;world&quot;, index: 6, input: &quot;hello world&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
 <h2 id="匹配正则"><a href="#匹配正则" class="headerlink" title="匹配正则"></a>匹配正则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;1 plus 2 equal 3&quot;.match(/\d/g); // [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="raw：模板字符串"><a href="#raw：模板字符串" class="headerlink" title="raw：模板字符串"></a>raw：模板字符串</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String.raw`$&#123;2+3&#125;`; // 5</span><br><span class="line"></span><br><span class="line">var s = String.raw`hello\n`;</span><br><span class="line">s === &quot;hello\\n&quot;; // true</span><br></pre></td></tr></table></figure>
-<h1 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h1><p>判断字符串中是否包含某字符串</p>
-<p><code>&#39;abcc&#39;.includes(&#39;c&#39;)</code> // true</p>
+<hr>
 <h1 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h1><p>重复并返回</p>
 <p><code>&#39;e&#39;.repeat(30)</code> // “eeeeeeeeeeeeeeeeeeeeeeeeeeeeee”</p>
 <h2 id="replace和replaceAll：替换"><a href="#replace和replaceAll：替换" class="headerlink" title="replace和replaceAll：替换"></a>replace和replaceAll：替换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;12333345&apos;.replace(&apos;3&apos;,&apos;0&apos;); // &quot;12033345&quot;</span><br><span class="line">&apos;12333345&apos;.replaceAll(&apos;3&apos;,&apos;0&apos;); // &quot;12000045&quot;</span><br></pre></td></tr></table></figure>
 <p>正则</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, [1,2], [1,2,3]];</span><br><span class="line">JSON.stringify(arr).replace(/(\[|\])/g,&apos;&apos;); // &quot;1,1,2,1,2,3&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h1><p>返回下标</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;hello world&apos;.search(&apos;wor&apos;); // 6</span><br></pre></td></tr></table></figure>
-<h1 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h1><p>分割为数组</p>
-<p><code>&#39;abcd&#39;.split(&#39;&#39;)</code> // [“a”, “b”, “c”, “d”]</p>
-<p><strong>tips：把字符串变为数组最快的方法</strong></p>
-<p><code>&#39;abc&#39;.split(&#39; &#39;)</code> // [‘abc’]</p>
-<h1 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h1><p>截取（位置，个数）</p>
-<p><code>&#39;abcdefg&#39;.substr(2,3)</code> // “cde”</p>
-<h1 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h1><p>截取（开始位置，结束位置）</p>
-<p><code>&#39;abcdefg&#39;.substring(2,3)</code> // “c”<br><code>&#39;abcdefg&#39;.substring(2)</code> // “cdefg”<br><code>&#39;abcdefg&#39;.substring(2,-9)</code> // “ab” <strong>与slice的区别</strong></p>
-<h1 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h1><p>截取（开始位置，结束位置）</p>
-<p><code>&#39;abcdefg&#39;.slice(2,3)</code> // “c”<br><code>&#39;abcdefg&#39;.slice(2)</code> // “cdefg”<br><code>&#39;abcdefg&#39;.slice(2,-9)</code> // “” <strong>与substring的区别</strong></p>
-<h1 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h1><p>把字符串变为小写</p>
+<hr>
+<h1 id="大小写更换"><a href="#大小写更换" class="headerlink" title="大小写更换"></a>大小写更换</h1><h2 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h2><p>把字符串变为小写</p>
 <p><code>&#39;B&#39;.toLowerCase()</code> // “b”</p>
-<h1 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h1><p>把字符串变为大写</p>
+<h2 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h2><p>把字符串变为大写</p>
 <p><code>&#39;a&#39;.toUpperCase()</code> // “A”</p>
+<hr>
 <h1 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h1><p>去掉两边的空字符串</p>
 <p><code>&#39; we &#39;.trim()</code> // “we”</p>
+<hr>
 <h1 id="其它技巧"><a href="#其它技巧" class="headerlink" title="其它技巧"></a>其它技巧</h1><h2 id="金钱格式化toLocalString"><a href="#金钱格式化toLocalString" class="headerlink" title="金钱格式化toLocalString"></a>金钱格式化toLocalString</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num = 1234567890;</span><br><span class="line">num.toLocalString();    //&apos;1,234,567,890&apos;</span><br><span class="line">num.toLocaleString(&apos;en-US&apos;); // 效果相同</span><br></pre></td></tr></table></figure>
 <h2 id="单行写一个评级组件"><a href="#单行写一个评级组件" class="headerlink" title="单行写一个评级组件"></a>单行写一个评级组件</h2><p><code>&quot;★★★★★☆☆☆☆☆&quot;.slice(5 - rate, 10 - rate)</code>;定义一个变量rate是1到5的值</p>
 
@@ -607,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#length"><span class="nav-number">1.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#charAt"><span class="nav-number">2.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#charCodeAt"><span class="nav-number">3.</span> <span class="nav-text">charCodeAt()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fromCharCode"><span class="nav-number">4.</span> <span class="nav-text">fromCharCode()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#concat"><span class="nav-number">5.</span> <span class="nav-text">concat()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#indexOf"><span class="nav-number">6.</span> <span class="nav-text">indexOf()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">7.</span> <span class="nav-text">lastIndexOf()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#match"><span class="nav-number">8.</span> <span class="nav-text">match</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检索字符串"><span class="nav-number">8.1.</span> <span class="nav-text">检索字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匹配正则"><span class="nav-number">8.2.</span> <span class="nav-text">匹配正则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#raw：模板字符串"><span class="nav-number">9.</span> <span class="nav-text">raw：模板字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#includes"><span class="nav-number">10.</span> <span class="nav-text">includes()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#repeat"><span class="nav-number">11.</span> <span class="nav-text">repeat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#replace和replaceAll：替换"><span class="nav-number">11.1.</span> <span class="nav-text">replace和replaceAll：替换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#search"><span class="nav-number">12.</span> <span class="nav-text">search()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#split"><span class="nav-number">13.</span> <span class="nav-text">split()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#substr"><span class="nav-number">14.</span> <span class="nav-text">substr()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#substring"><span class="nav-number">15.</span> <span class="nav-text">substring()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#slice"><span class="nav-number">16.</span> <span class="nav-text">slice()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#toLowerCase"><span class="nav-number">17.</span> <span class="nav-text">toLowerCase()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#toUpperCase"><span class="nav-number">18.</span> <span class="nav-text">toUpperCase()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trim"><span class="nav-number">19.</span> <span class="nav-text">trim()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其它技巧"><span class="nav-number">20.</span> <span class="nav-text">其它技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#金钱格式化toLocalString"><span class="nav-number">20.1.</span> <span class="nav-text">金钱格式化toLocalString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行写一个评级组件"><span class="nav-number">20.2.</span> <span class="nav-text">单行写一个评级组件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查询过滤"><span class="nav-number">1.</span> <span class="nav-text">查询过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】charAt"><span class="nav-number">1.1.</span> <span class="nav-text">【1】charAt()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】charCodeAt"><span class="nav-number">1.2.</span> <span class="nav-text">【2】charCodeAt()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】fromCharCode"><span class="nav-number">1.3.</span> <span class="nav-text">【3】fromCharCode()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】indexOf"><span class="nav-number">1.4.</span> <span class="nav-text">【4】indexOf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【5】lastIndexOf"><span class="nav-number">1.5.</span> <span class="nav-text">【5】lastIndexOf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【6】includes"><span class="nav-number">1.6.</span> <span class="nav-text">【6】includes()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【7】search"><span class="nav-number">1.7.</span> <span class="nav-text">【7】search()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#截取和分割"><span class="nav-number">2.</span> <span class="nav-text">截取和分割</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】split"><span class="nav-number">2.1.</span> <span class="nav-text">【1】split()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】substr"><span class="nav-number">2.2.</span> <span class="nav-text">【2】substr()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】substring"><span class="nav-number">2.3.</span> <span class="nav-text">【3】substring()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】slice"><span class="nav-number">2.4.</span> <span class="nav-text">【4】slice()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#concat"><span class="nav-number">3.</span> <span class="nav-text">concat()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#match"><span class="nav-number">4.</span> <span class="nav-text">match</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检索字符串"><span class="nav-number">4.1.</span> <span class="nav-text">检索字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匹配正则"><span class="nav-number">4.2.</span> <span class="nav-text">匹配正则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#raw：模板字符串"><span class="nav-number">5.</span> <span class="nav-text">raw：模板字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#repeat"><span class="nav-number">6.</span> <span class="nav-text">repeat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#replace和replaceAll：替换"><span class="nav-number">6.1.</span> <span class="nav-text">replace和replaceAll：替换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大小写更换"><span class="nav-number">7.</span> <span class="nav-text">大小写更换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#toLowerCase"><span class="nav-number">7.1.</span> <span class="nav-text">toLowerCase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toUpperCase"><span class="nav-number">7.2.</span> <span class="nav-text">toUpperCase()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trim"><span class="nav-number">8.</span> <span class="nav-text">trim()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其它技巧"><span class="nav-number">9.</span> <span class="nav-text">其它技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#金钱格式化toLocalString"><span class="nav-number">9.1.</span> <span class="nav-text">金钱格式化toLocalString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行写一个评级组件"><span class="nav-number">9.2.</span> <span class="nav-text">单行写一个评级组件</span></a></li></ol></li></ol></div>
             
 
           </div>

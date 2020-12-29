@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
+<meta name="description" content="学习链接-廖雪峰 学习链接-菜鸟教程  新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g  使用test/\d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之RegExp正则表达式">
 <meta property="og:url" content="http://yoursite.com/2020/12/23/JavaScript之RegExp正则表达式/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
+<meta property="og:description" content="学习链接-廖雪峰 学习链接-菜鸟教程  新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g  使用test/\d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-28T14:11:53.840Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之RegExp正则表达式">
-<meta name="twitter:description" content="学习链接-廖雪峰 学习链接-菜鸟教程 新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g 使用test/\d/.">
+<meta name="twitter:description" content="学习链接-廖雪峰 学习链接-菜鸟教程  新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2转义，2个\\会变成1个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g  使用test/\d">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  491
+                  672
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -398,9 +398,11 @@
       
         <p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023021582119488" target="_blank" rel="noopener">学习链接-廖雪峰</a></p>
 <p><a href="https://www.runoob.com/regexp/regexp-syntax.html" target="_blank" rel="noopener">学习链接-菜鸟教程</a></p>
+<hr>
 <h1 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var re1 = /ABC\-001/;</span><br><span class="line">var re2 = new RegExp(&apos;ABC\\-001&apos;);</span><br><span class="line"></span><br><span class="line">re1; // /ABC\-001/</span><br><span class="line">re2; // /ABC\-001/</span><br></pre></td></tr></table></figure>
 <p>re2转义，2个<code>\\</code>会变成1个<code>\</code>。</p>
 <p><code>new RegExp(&#39;a&#39;,&#39;g&#39;)</code>等同于<code>/a/g</code></p>
+<hr>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p><code>/\d/.test(3)</code>; // true</p>
 <h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p><strong>使用</strong></p>
 <p><code>/\d/.exec(&#39;3e&#39;)</code>; // [“3”, index: 0, input: “3e”, groups: undefined]</p>
@@ -416,9 +418,7 @@
 <p><strong>全局模式</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1a1b1c&apos;.match(/1./g); // [&quot;1a&quot;, &quot;1b&quot;, &quot;1c&quot;]</span><br></pre></td></tr></table></figure>
 <p>一次返回所有符合条件的值。</p>
-<h1 id="更多用法"><a href="#更多用法" class="headerlink" title="更多用法"></a>更多用法</h1><h2 id="切分字符串"><a href="#切分字符串" class="headerlink" title="切分字符串"></a>切分字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不用时：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(&apos; &apos;); // [&quot;a&quot;, &quot;b&quot;, &quot;&quot;, &quot;c&quot;]</span><br><span class="line"></span><br><span class="line">用正则：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(/\s+/); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</span><br><span class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</span><br><span class="line">re.exec(&apos;010 12345&apos;); // null</span><br></pre></td></tr></table></figure>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;8&apos;.replace(/\d/, &apos;*&apos;)</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h2><table>
 <thead>
 <tr>
@@ -431,11 +431,7 @@
 <tr>
 <td style="text-align:center"><code>[ABC]</code>中括号</td>
 <td style="text-align:center">匹配<code>[...]</code>中的所有字符</td>
-<td style="text-align:center"><code>&#39;google&#39;.match(/[aeiou]/g); // [&quot;o&quot;, &quot;o&quot;, &quot;e&quot;]</code><br>相当于：`’google’.match(/a</td>
-<td>e</td>
-<td>i</td>
-<td>o</td>
-<td>u/g)`</td>
+<td style="text-align:center"><code>&#39;google&#39;.match(/[o]/g); // [&quot;o&quot;, &quot;o&quot;]</code></td>
 </tr>
 <tr>
 <td style="text-align:center"><code>[^ABC]</code></td>
@@ -511,10 +507,75 @@
 <tr>
 <td style="text-align:center"><code>\v</code></td>
 <td style="text-align:center">匹配垂直制表符</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">&nbsp;</td>
 </tr>
 </tbody>
 </table>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$</code></td>
+<td style="text-align:center">行的结束<br><code>\d$</code>表示必须以数字结束</td>
+<td style="text-align:center"><code>/c$/g.test(&#39;abc&#39;); // true（是否以c结束）</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:center">行的开头<br><code>\d$</code>表示必须以数字开头</td>
+<td style="text-align:center"><code>/a$/g.test(&#39;abc&#39;); // true（是否以a开头）</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>()</code></td>
+<td style="text-align:center">分组</td>
+<td style="text-align:center"><code>/^(\d{3})-(\d{3,8})$/.exec(&#39;010-12345&#39;); // [&#39;010-12345&#39;, &#39;010&#39;, &#39;12345&#39;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[]</code></td>
+<td style="text-align:center">范围</td>
+<td style="text-align:center"><code>[0-9]</code>代表范围是数字</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{}</code></td>
+<td style="text-align:center">匹配长度</td>
+<td style="text-align:center"><code>{0,9}</code>代表长度0-9个</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">匹配出现0次或N次</td>
+<td style="text-align:center"><code>/a0*/g.test(&#39;a9&#39;); // true(a开头，0出现了0次)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">匹配出现1次或N次</td>
+<td style="text-align:center"><code>/a0*/g.test(&#39;a9&#39;); // false(a开头，0出现了0次)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:center">匹配出现0次或1次</td>
+<td style="text-align:center"><code>/a0?/g.test(&#39;a2&#39;); // true(a开头，0出现了0次)</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\</code></td>
+<td style="text-align:center">特殊字符</td>
+<td style="text-align:center">匹配如<code>$</code>之类的字符<br><code>/\$/g.test(&#39;$&#39;); // true</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&#124;</td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">匹配A或B<br><code>&#39;abc&#39;.match(/a竖线b/g); // [&quot;a&quot;, &quot;b&quot;]</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="更多用法"><a href="#更多用法" class="headerlink" title="更多用法"></a>更多用法</h1><h2 id="切分字符串"><a href="#切分字符串" class="headerlink" title="切分字符串"></a>切分字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不用时：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(&apos; &apos;); // [&quot;a&quot;, &quot;b&quot;, &quot;&quot;, &quot;c&quot;]</span><br><span class="line"></span><br><span class="line">用正则：</span><br><span class="line"></span><br><span class="line">&apos;a b  c&apos;.split(/\s+/); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re = /^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$/;</span><br><span class="line">re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]</span><br><span class="line">re.exec(&apos;010 12345&apos;); // null</span><br></pre></td></tr></table></figure>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;8&apos;.replace(/\d/, &apos;*&apos;); // &apos;*&apos;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -677,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建"><span class="nav-number">1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">2.1.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec"><span class="nav-number">2.2.</span> <span class="nav-text">exec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.3.</span> <span class="nav-text">match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多用法"><span class="nav-number">3.</span> <span class="nav-text">更多用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切分字符串"><span class="nav-number">3.1.</span> <span class="nav-text">切分字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">3.2.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换"><span class="nav-number">3.3.</span> <span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">4.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通字符"><span class="nav-number">4.1.</span> <span class="nav-text">普通字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非打印字符"><span class="nav-number">4.2.</span> <span class="nav-text">非打印字符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建"><span class="nav-number">1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">2.1.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exec"><span class="nav-number">2.2.</span> <span class="nav-text">exec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.3.</span> <span class="nav-text">match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通字符"><span class="nav-number">3.1.</span> <span class="nav-text">普通字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非打印字符"><span class="nav-number">3.2.</span> <span class="nav-text">非打印字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符"><span class="nav-number">3.3.</span> <span class="nav-text">特殊字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多用法"><span class="nav-number">4.</span> <span class="nav-text">更多用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切分字符串"><span class="nav-number">4.1.</span> <span class="nav-text">切分字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">4.2.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换"><span class="nav-number">4.3.</span> <span class="nav-text">替换</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -81,14 +81,14 @@
 
 <meta name="description" content="知识点 ResizeObserver：resize监听 MutationObserver:监听DOM节点的变动 InterSectionObserver：异步视口观察 PerformanceObserver：监测性能 ReportingObserver：汇报  ResizeObserver：resize监听window.resize下监听某DOM的改变： 123456789&amp;lt;textarea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之观察者模式(Obverse)">
-<meta property="og:url" content="http://yoursite.com/2020/12/08/JavaScript之观察者模式(Obverse)/index.html">
+<meta property="og:title" content="JavaScript之观察者模式-Obverse">
+<meta property="og:url" content="http://yoursite.com/2020/12/08/JavaScript之观察者模式-Obverse/index.html">
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="知识点 ResizeObserver：resize监听 MutationObserver:监听DOM节点的变动 InterSectionObserver：异步视口观察 PerformanceObserver：监测性能 ReportingObserver：汇报  ResizeObserver：resize监听window.resize下监听某DOM的改变： 123456789&amp;lt;textarea">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-12T06:04:40.061Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之观察者模式(Obverse)">
+<meta name="twitter:title" content="JavaScript之观察者模式-Obverse">
 <meta name="twitter:description" content="知识点 ResizeObserver：resize监听 MutationObserver:监听DOM节点的变动 InterSectionObserver：异步视口观察 PerformanceObserver：监测性能 ReportingObserver：汇报  ResizeObserver：resize监听window.resize下监听某DOM的改变： 123456789&amp;lt;textarea">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/12/08/JavaScript之观察者模式(Obverse)/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/08/JavaScript之观察者模式-Obverse/">
 
 
 
 
 
-  <title>JavaScript之观察者模式(Obverse) | 春风自是人间客</title>
+  <title>JavaScript之观察者模式-Obverse | 春风自是人间客</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/08/JavaScript之观察者模式(Obverse)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/08/JavaScript之观察者模式-Obverse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="彭丹丹">
@@ -293,7 +293,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript之观察者模式(Obverse)</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript之观察者模式-Obverse</h2>
         
 
         <div class="post-meta">
@@ -397,16 +397,16 @@
 
       
         <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><ul>
-<li>ResizeObserver：resize监听</li>
-<li>MutationObserver:监听DOM节点的变动</li>
-<li>InterSectionObserver：异步视口观察</li>
-<li>PerformanceObserver：监测性能</li>
-<li>ReportingObserver：汇报</li>
+<li><code>ResizeObserver</code>：resize监听</li>
+<li><code>MutationObserver</code>:监听DOM节点的变动</li>
+<li><code>InterSectionObserver</code>：异步视口观察</li>
+<li><code>PerformanceObserver</code>：监测性能</li>
+<li><code>ReportingObserver</code>：汇报</li>
 </ul>
-<h1 id="ResizeObserver：resize监听"><a href="#ResizeObserver：resize监听" class="headerlink" title="ResizeObserver：resize监听"></a>ResizeObserver：resize监听</h1><p>window.resize下监听某DOM的改变：</p>
+<h1 id="ResizeObserver：resize监听"><a href="#ResizeObserver：resize监听" class="headerlink" title="ResizeObserver：resize监听"></a>ResizeObserver：resize监听</h1><p><code>window.resize</code>下监听某<code>DOM</code>的改变：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea style=&quot;width: 100%;&quot; id=&quot;main&quot;&gt;&lt;/textarea&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">let mainEl = document.querySelector(&apos;#main&apos;);</span><br><span class="line">var ro = new ResizeObserver( entries =&gt; &#123;</span><br><span class="line">  console.log(entries);</span><br><span class="line">&#125;)</span><br><span class="line">ro.observe(mainEl);</span><br></pre></td></tr></table></figure>
 <h1 id="MutationObserver-监听DOM节点的变动"><a href="#MutationObserver-监听DOM节点的变动" class="headerlink" title="MutationObserver:监听DOM节点的变动"></a>MutationObserver:监听DOM节点的变动</h1><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;content&quot;&gt;</span><br><span class="line">      hi</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      var callback = function(mutationList, observer) &#123;</span><br><span class="line">        for(var mutation of mutationList) &#123;</span><br><span class="line">          console.log(mutation)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      var observer = new MutationObserver(callback);</span><br><span class="line">      var targetNode = document.getElementById(&apos;content&apos;);</span><br><span class="line">      observer.observe(targetNode.firstChild,&#123;</span><br><span class="line">        characterData: true</span><br><span class="line">      &#125;)</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        targetNode.firstChild.data = &apos;hello&apos;</span><br><span class="line">      &#125;,3000)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p>3秒钟之后，id为content的DOM变成了’hello’，此时的MutationObserver就已经监听到了改变，可以进行下一步的操作。</p>
+<p>3秒钟之后，id为<code>content</code>的<code>DOM</code>变成了<code>&#39;hello&#39;</code>，此时的<code>MutationObserver</code>就已经监听到了改变，可以进行下一步的操作。</p>
 <h2 id="实现vue-nexttick"><a href="#实现vue-nexttick" class="headerlink" title="实现vue.$nexttick"></a>实现vue.$nexttick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;div v-if=&quot;isShow&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; ref=&quot;userName&quot; /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;showInput&quot;&gt;点击显示输入框&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            isShow: false</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            showInput()&#123;</span><br><span class="line">                this.isShow = true</span><br><span class="line">                this.mynextTick(()=&gt;&#123;</span><br><span class="line">                    this.$refs.userName.focus()</span><br><span class="line">                &#125;)</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            mynextTick(func)&#123;</span><br><span class="line">                var textNode = document.createTextNode(0)//新建文本节点</span><br><span class="line">                var that = this</span><br><span class="line">                var callback = function(mutationsList, observer) &#123;</span><br><span class="line">                    func.call(that);</span><br><span class="line">                    // 或</span><br><span class="line">                    // fanc();</span><br><span class="line">                &#125;</span><br><span class="line">                var observer = new MutationObserver(callback);</span><br><span class="line"></span><br><span class="line">                observer.observe(textNode,&#123;characterData:true &#125;)</span><br><span class="line">                textNode.data = 1//修改文本信息，触发dom更新</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="InterSectionObserver：异步视口观察"><a href="#InterSectionObserver：异步视口观察" class="headerlink" title="InterSectionObserver：异步视口观察"></a>InterSectionObserver：异步视口观察</h1><p>学习链接：</p>
 <p><a href="http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html" target="_blank" rel="noopener">链接1</a><br><a href="https://www.jianshu.com/p/84a86e41eb2b" target="_blank" rel="noopener">链接2</a></p>

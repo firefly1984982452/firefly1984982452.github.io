@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
+<meta name="description" content="计算页面加载完成所需要的总时间1performance.timing.loadEventEnd - performance.timing.navigationStart  小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px;  减少重绘和回流 回流改">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端优化方案">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/前端优化方案/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
+<meta property="og:description" content="计算页面加载完成所需要的总时间1performance.timing.loadEventEnd - performance.timing.navigationStart  小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px;  减少重绘和回流 回流改">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-24T11:21:04.687Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端优化方案">
-<meta name="twitter:description" content="计算页面加载完成所需要的总时间performance.timing.loadEventEnd - performance.timing.navigationStart 小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px; 减少重绘和回流 回流改变尺寸">
+<meta name="twitter:description" content="计算页面加载完成所需要的总时间1performance.timing.loadEventEnd - performance.timing.navigationStart  小图标使用sprite图1234background: url(xxx) no-repeat;width: 64px;height: 64px;background-position: 0 -64px;  减少重绘和回流 回流改">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  665
+                  666
                 </span>
               
 
@@ -396,8 +396,10 @@
       
 
       
-        <h1 id="计算页面加载完成所需要的总时间"><a href="#计算页面加载完成所需要的总时间" class="headerlink" title="计算页面加载完成所需要的总时间"></a>计算页面加载完成所需要的总时间</h1><p><code>performance.timing.loadEventEnd - performance.timing.navigationStart</code></p>
+        <h1 id="计算页面加载完成所需要的总时间"><a href="#计算页面加载完成所需要的总时间" class="headerlink" title="计算页面加载完成所需要的总时间"></a>计算页面加载完成所需要的总时间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">performance.timing.loadEventEnd - performance.timing.navigationStart</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="小图标使用sprite图"><a href="#小图标使用sprite图" class="headerlink" title="小图标使用sprite图"></a>小图标使用sprite图</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background: url(xxx) no-repeat;</span><br><span class="line">width: 64px;</span><br><span class="line">height: 64px;</span><br><span class="line">background-position: 0 -64px;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="减少重绘和回流"><a href="#减少重绘和回流" class="headerlink" title="减少重绘和回流"></a>减少重绘和回流</h1><ul>
 <li><p>回流<br>改变尺寸或布局，如<code>px</code>、<code>width</code>、<code>height</code>、<code>border</code>、<code>margin</code>、<code>padding</code>等</p>
 </li>
@@ -411,16 +413,21 @@
 <li>先将元素<code>display:none</code>,改完之后再<code>display:block</code>；</li>
 <li>使用<code>resize</code>和<code>scroll</code>时进行<code>防抖</code>和<code>节流</code>处理，这两者会直接导致<code>回流</code>；</li>
 </ul>
-<h1 id="异步网络请求"><a href="#异步网络请求" class="headerlink" title="异步网络请求"></a>异步网络请求</h1><p>Promise</p>
+<hr>
+<h1 id="异步网络请求"><a href="#异步网络请求" class="headerlink" title="异步网络请求"></a>异步网络请求</h1><p><code>Promise</code></p>
+<hr>
 <h1 id="减少HTTP请求"><a href="#减少HTTP请求" class="headerlink" title="减少HTTP请求"></a>减少HTTP请求</h1><p>请求之后也可以存储下来</p>
+<hr>
 <h1 id="使用公用方法"><a href="#使用公用方法" class="headerlink" title="使用公用方法"></a>使用公用方法</h1><p>比如有时间戳转时间的插件的话，写一个即可，不用每个页面都写</p>
+<hr>
 <h1 id="使用公用组件"><a href="#使用公用组件" class="headerlink" title="使用公用组件"></a>使用公用组件</h1><p>比如公用的头部尾部等组件</p>
+<hr>
 <h1 id="使用压缩JS和压缩CSS文件"><a href="#使用压缩JS和压缩CSS文件" class="headerlink" title="使用压缩JS和压缩CSS文件"></a>使用压缩JS和压缩CSS文件</h1><h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><ul>
-<li><p>vue中的mode使用<code>‘history’</code>时地址栏不会有<code>#</code>号，利于SEO，但需要后台配合一起设置，否则页面会空白（mode默认是<code>‘hash’</code>）。</p>
+<li><p>vue中的mode使用<code>‘history’</code>时地址栏不会有<code>#</code>号，利于SEO，但需要后台配合一起设置，否则页面会空白（<code>mode</code>默认是<code>‘hash’</code>）。</p>
 </li>
-<li><p>图片和文字添加alt属性。</p>
+<li><p>图片和文字添加<code>alt</code>属性。</p>
 </li>
-<li><p>body中代码语义化，比如说使用<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>、<code>&lt;nav&gt;</code>的标签来代替<code>&lt;div&gt;</code>。</p>
+<li><p><code>body</code>中代码语义化，比如说使用<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>、<code>&lt;nav&gt;</code>的标签来代替<code>&lt;div&gt;</code>。</p>
 </li>
 <li><p>少使用<code>iframe</code>。</p>
 </li>
@@ -429,14 +436,17 @@
 </ul>
 <h2 id="移动端优化"><a href="#移动端优化" class="headerlink" title="移动端优化"></a>移动端优化</h2><ul>
 <li>初次加载缓慢时用骨架屏</li>
-<li>尽量用v-show而不是v-if</li>
-<li>for循环里面加key值</li>
-<li>首页可考虑用ssr渲染</li>
+<li>尽量用<code>v-show</code>而不是<code>v-if</code></li>
+<li><code>for</code>循环里面加<code>key</code>值</li>
+<li>首页可考虑用<code>ssr</code>渲染</li>
 </ul>
-<h1 id="WebWorker"><a href="#WebWorker" class="headerlink" title="WebWorker"></a>WebWorker</h1><p>大量DOM操作时使用WebWorker</p>
+<hr>
+<h1 id="WebWorker"><a href="#WebWorker" class="headerlink" title="WebWorker"></a>WebWorker</h1><p>大量<code>DOM</code>操作时使用<code>WebWorker</code></p>
+<hr>
 <h1 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h1><p>染几万条数据并不卡住界面</p>
 <h2 id="普通用法"><a href="#普通用法" class="headerlink" title="普通用法"></a>普通用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      控件</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      console.time(&quot;createElement&quot;);</span><br><span class="line">      // 插入十万条数据</span><br><span class="line">      const total = 100000;</span><br><span class="line">      let ul = document.querySelector(&quot;ul&quot;);</span><br><span class="line">      const fragment = document.createDocumentFragment();</span><br><span class="line">      for (let i = 0; i &lt; total; i++) &#123;</span><br><span class="line">        const li = document.createElement(&quot;li&quot;);</span><br><span class="line">        li.innerText = Math.floor(Math.random()*total);</span><br><span class="line">        fragment.appendChild(li);</span><br><span class="line">      &#125;</span><br><span class="line">      ul.appendChild(fragment);</span><br><span class="line">      console.timeEnd(&quot;createElement&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="使用requestAnimationFrame"><a href="#使用requestAnimationFrame" class="headerlink" title="使用requestAnimationFrame"></a>使用requestAnimationFrame</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      控件</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">      // 插入十万条数据</span><br><span class="line">      const total = 100000;</span><br><span class="line">      const once = 20;</span><br><span class="line">      const loopCount = total / once;</span><br><span class="line">      let countOfRender = 0;</span><br><span class="line">      let ul = document.querySelector(&apos;ul&apos;);</span><br><span class="line">      function add () &#123;</span><br><span class="line">        const fragment = document.createDocumentFragment();</span><br><span class="line">        for (let i = 0; i &lt; once; i++) &#123;</span><br><span class="line">          const li = document.createElement(&quot;li&quot;);</span><br><span class="line">          li.innerText = Math.floor(Math.random()*total);</span><br><span class="line">          fragment.appendChild(li);</span><br><span class="line">        &#125;</span><br><span class="line">        ul.appendChild(fragment);</span><br><span class="line">        countOfRender += 1;</span><br><span class="line">        loop();</span><br><span class="line">      &#125;</span><br><span class="line">      function loop()&#123;</span><br><span class="line">        if(countOfRender &lt; loopCount) &#123;</span><br><span class="line">          requestAnimationFrame(add);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      loop();</span><br><span class="line">      &#125;, 0);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="Page-Visibility-API"><a href="#Page-Visibility-API" class="headerlink" title="Page Visibility API"></a>Page Visibility API</h1>
       
     </div>

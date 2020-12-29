@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125; 多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。  单">
+<meta name="description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125;  多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之运行机制">
 <meta property="og:url" content="http://yoursite.com/2020/12/08/JavaScript之运行机制/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125; 多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。  单">
+<meta property="og:description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125;  多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-08T13:25:25.756Z">
+<meta property="og:updated_time" content="2020-12-29T11:33:52.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之运行机制">
-<meta name="twitter:description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125; 多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。  单">
+<meta name="twitter:description" content="链接 异步：现在和将来的时间间隙并行：能够同时发生的事情 并行：比如进程与线程，独立运行并且能同时运行。 123456fun : function()&amp;#123;	func1();	func2();	http1();	http2();&amp;#125;  多进程每个tab标签页有一个独立的进程（有的可能会合并） 比如：  Browser进程：主进程； 第三方插件进程； GPU进程； 浏览器渲染进程。">
 
 
 
@@ -400,39 +400,44 @@
 <p><strong>异步</strong>：现在和将来的时间间隙<br><strong>并行</strong>：能够同时发生的事情</p>
 <p>并行：比如进程与线程，独立运行并且能同时运行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun : function()&#123;</span><br><span class="line">	func1();</span><br><span class="line">	func2();</span><br><span class="line">	http1();</span><br><span class="line">	http2();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h1><p>每个tab标签页有一个独立的进程（有的可能会合并）</p>
 <p>比如：</p>
 <ul>
-<li>Browser进程：主进程；</li>
+<li><code>Browser</code>进程：主进程；</li>
 <li>第三方插件进程；</li>
-<li>GPU进程；</li>
+<li><code>GPU</code>进程；</li>
 <li>浏览器渲染进程。</li>
 </ul>
+<hr>
 <h1 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h1><p>浏览器的渲染进程是<code>多个线程</code>的，是多个，这些线程还是一个一个执行完了才执行下一个，所以<code>JS引擎是单线程</code>的。</p>
 <p>比如：</p>
 <ul>
-<li>GUI渲染线程</li>
-<li>JS引擎线程</li>
+<li><code>GUI</code>渲染线程</li>
+<li><code>JS</code>引擎线程</li>
 <li>事件触发线程</li>
 <li>定时触发器线程</li>
 </ul>
+<hr>
 <h1 id="浏览器渲染流程"><a href="#浏览器渲染流程" class="headerlink" title="浏览器渲染流程"></a>浏览器渲染流程</h1><p><strong>沉浸树（render树）</strong>：</p>
 <ul>
-<li>1.处理HTML标签构建DOM树；</li>
-<li>2.处理CSS标签构建CSSOM树；</li>
-<li>3.DOM和CSSOM树被组合形成渲染树（render树）；</li>
-<li>4.布局render树，计算尺寸、位置；</li>
-<li>5.绘制render树，绘制页面像素信息；</li>
-<li>6.发给图形处理器（GPU），显示在屏幕上。</li>
+<li>1.处理<code>HTML</code>标签构建<code>DOM</code>树；</li>
+<li>2.处理<code>CSS</code>标签构建<code>CSSOM</code>树；</li>
+<li>3.<code>DOM</code>和<code>CSSOM</code>树被组合形成渲染树（<code>render</code>树）；</li>
+<li>4.布局<code>render</code>树，计算尺寸、位置；</li>
+<li>5.绘制<code>render</code>树，绘制页面像素信息；</li>
+<li>6.发给图形处理器（<code>GPU</code>），显示在屏幕上。</li>
 </ul>
 <p><strong>CSS是否会阻塞dom树渲染？</strong></p>
-<p>由上面的流程可知，不知阻塞DOM树，但会阻塞CSSOM树。</p>
-<h1 id="事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）"><a href="#事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）" class="headerlink" title="事件循环（Event Loop）、宏任务（macrotask）、微任务（microtask）"></a>事件循环（<code>Event Loop</code>）、宏任务（<code>macrotask</code>）、微任务（<code>microtask</code>）</h1><p>事件循环（<code>Event Loop</code>）：执行完宏任务后，将微任务排队添加任务，执行后再循环检查有没有宏任务……所以整个过程称为事件循环。<br>宏任务（<code>macrotask</code>）：主代码、setTimeout、setInterval、setImmediate(IE)、MessageChannel<br>微任务（<code>microtask</code>）：promise、process.nextTick、MutationObserver</p>
+<p>由上面的流程可知，不知阻塞<code>DOM</code>树，但会阻塞<code>CSSOM</code>树。</p>
+<hr>
+<h1 id="事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）"><a href="#事件循环（Event-Loop）、宏任务（macrotask）、微任务（microtask）" class="headerlink" title="事件循环（Event Loop）、宏任务（macrotask）、微任务（microtask）"></a>事件循环（<code>Event Loop</code>）、宏任务（<code>macrotask</code>）、微任务（<code>microtask</code>）</h1><p>事件循环（<code>Event Loop</code>）：执行完宏任务后，将微任务排队添加任务，执行后再循环检查有没有宏任务……所以整个过程称为事件循环。<br>宏任务（<code>macrotask</code>）：主代码、<code>setTimeout</code>、<code>setInterval</code>、<code>setImmediate(IE)</code>、<code>MessageChannel</code><br>微任务（<code>microtask</code>）：<code>promise</code>、<code>process.nextTick</code>、<code>MutationObserver</code></p>
 <p>执行顺序：先宏任务–》执行结束后–》再执行所有微任务–》渲染–》下一个宏任务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;start&apos;);</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(&apos;1&apos;);</span><br><span class="line">&#125;, 10);</span><br><span class="line"></span><br><span class="line">new Promise(resolve =&gt; &#123;</span><br><span class="line">    console.log(&apos;2&apos;);</span><br><span class="line">    resolve();</span><br><span class="line">    setTimeout(() =&gt; console.log(&apos;3&apos;), 10);</span><br><span class="line">&#125;).then(function() &#123;</span><br><span class="line">    console.log(&apos;4&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(&apos;end&apos;);</span><br></pre></td></tr></table></figure>
 <p>这里的执行顺序就是<code>start--&gt;2--&gt;end--&gt;4--&gt;1--&gt;3</code></p>
 <p><strong>注意</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">promise是立即执行的，创建的时候就会执行，不存在将promise推入微任务；</span><br><span class="line">resolve()是表示promise的状态为fullfilled，相当于只是定义了一个有状态的promise，并没有调用它；</span><br><span class="line">promise调用then的前提是promise的状态为fullfilled；</span><br><span class="line">只有promise调用then的时候，then里面的函数才会被推入微任务中。</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="WebWorker"><a href="#WebWorker" class="headerlink" title="WebWorker"></a>WebWorker</h1><p><strong>用法</strong></p>
 <h2 id="不使用时"><a href="#不使用时" class="headerlink" title="不使用时"></a>不使用时</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;/&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=GBK&quot; /&gt;</span><br><span class="line">    &lt;title&gt;计算&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;打印1-9999的数：</span><br><span class="line">      &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;&lt;/p&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        var n = 0;</span><br><span class="line">        while (n &lt; 9999) </span><br><span class="line">        &#123;</span><br><span class="line">            n += 1;</span><br><span class="line">            document.getElementById(&apos;result&apos;).innerHTML += (n + &quot;, &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="使用时"><a href="#使用时" class="headerlink" title="使用时"></a>使用时</h2><p>test.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html &gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;打印1-9999的数&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      打印1-9999的数：</span><br><span class="line">      &lt;div id=&quot;result&quot; style=&quot;width: 1500px; height:auto; border:1px solid red; word-wrap: break-word; &quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      var worker = new Worker(&quot;./woker.js&quot;);</span><br><span class="line">      worker.onmessage = function (event) &#123;</span><br><span class="line">        document.getElementById(&quot;result&quot;).innerHTML += event.data + &quot;,&quot;;</span><br><span class="line">      &#125;;</span><br><span class="line">      worker.postMessage(&apos;data&apos;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
@@ -446,8 +451,9 @@
 <p><code>Uncaught DOMException: Failed to construct &#39;Worker&#39;</code></p>
 <p>可以使用live-server搭建一个简单的本地服务器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`npm install live-server -g`</span><br><span class="line">`live-server`</span><br></pre></td></tr></table></figure>
-<h1 id="setTimeout相关"><a href="#setTimeout相关" class="headerlink" title="setTimeout相关"></a>setTimeout相关</h1><p>setTimeout并不是由JS引擎计数的，因为单线程会阻塞，会影响计数的准确，因此通过单独线程来计时并触发。<br>setTiemout最小为4，不满会加成4。</p>
-<p>setTimeout的时间假设设置为1000，不是说1秒后立马会执行，而是尽快执行，把任务添加到了队列中，如果排到它了，就立马执行。</p>
+<hr>
+<h1 id="setTimeout相关"><a href="#setTimeout相关" class="headerlink" title="setTimeout相关"></a>setTimeout相关</h1><p><code>setTimeout</code>并不是由<code>JS</code>引擎计数的，因为单线程会阻塞，会影响计数的准确，因此通过单独线程来计时并触发。<br><code>setTiemout</code>最小为4，不满会加成4。</p>
+<p><code>setTimeout</code>的时间假设设置为1000，不是说1秒后立马会执行，而是尽快执行，把任务添加到了队列中，如果排到它了，就立马执行。</p>
 
       
     </div>
@@ -482,8 +488,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/12/08/JavaScript之观察者模式(Obverse)/" rel="prev" title="JavaScript之观察者模式(Obverse)">
-                JavaScript之观察者模式(Obverse) <i class="fa fa-chevron-right"></i>
+              <a href="/2020/12/08/JavaScript之观察者模式-Obverse/" rel="prev" title="JavaScript之观察者模式-Obverse">
+                JavaScript之观察者模式-Obverse <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
