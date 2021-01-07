@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS3-边框 border-radius box-shadow border-image  【1】box-shadowbox-shadow: 50px 50px 0 20px #ffb; 图：  解析： 12345参数1：X轴，图中为30，因为50-20=30；参数2：Y轴，图中为30，因为50-20=30；参数3：模糊距离参数4：阴影大小，默认可省略不写时为0。参数4：颜色。 【2】borde">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS之CSS3样式">
+<meta property="og:url" content="http://yoursite.com/2021/01/07/CSS之CSS3样式/index.html">
+<meta property="og:site_name" content="春风自是人间客">
+<meta property="og:description" content="CSS3-边框 border-radius box-shadow border-image  【1】box-shadowbox-shadow: 50px 50px 0 20px #ffb; 图：  解析： 12345参数1：X轴，图中为30，因为50-20=30；参数2：Y轴，图中为30，因为50-20=30；参数3：模糊距离参数4：阴影大小，默认可省略不写时为0。参数4：颜色。 【2】borde">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/0069qZtTgy1gizk2ty7otj304304aa9x.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/0069qZtTgy1gizka5updnj3042044746.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/0069qZtTgy1gizkad0s9lj304k04aweg.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0f2emiabj308x05lq2r.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0m36t5cij306q068web.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gizlk17h0ej303b03i74d.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/0069qZtTgy1gmf5vn5ch4j307l07igln.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0mzj9rt8j307o041t8i.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0ob24z97j306y03qmwy.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0ob7xfq6j307d03sjr7.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gj0ojj9giyj305602i3yg.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gj0ol4gog9j305l03amx2.jpg">
+<meta property="og:updated_time" content="2021-01-07T13:52:29.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS之CSS3样式">
+<meta name="twitter:description" content="CSS3-边框 border-radius box-shadow border-image  【1】box-shadowbox-shadow: 50px 50px 0 20px #ffb; 图：  解析： 12345参数1：X轴，图中为30，因为50-20=30；参数2：Y轴，图中为30，因为50-20=30；参数3：模糊距离参数4：阴影大小，默认可省略不写时为0。参数4：颜色。 【2】borde">
+<meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/01/07/CSS之CSS3样式/">
+
+
+
+
+
+  <title>CSS之CSS3样式 | 春风自是人间客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春风自是人间客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">是非成败转头空，青山依旧在，几度夕阳红。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-program">
+          <a href="/categories/program" rel="section">
+            
+            程序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/idea" rel="section">
+            
+            想法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/07/CSS之CSS3样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="彭丹丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风自是人间客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS之CSS3样式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-07T14:19:32+08:00">
+                2021-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,405
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS3-边框"><a href="#CSS3-边框" class="headerlink" title="CSS3-边框"></a>CSS3-边框</h1><ul>
+<li><code>border-radius</code></li>
+<li><code>box-shadow</code></li>
+<li><code>border-image</code></li>
+</ul>
+<h2 id="【1】box-shadow"><a href="#【1】box-shadow" class="headerlink" title="【1】box-shadow"></a>【1】box-shadow</h2><p><code>box-shadow: 50px 50px 0 20px #ffb;</code></p>
+<p>图：</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0nvzcynqj308y069dfn.jpg" alt="image"></p>
+<p>解析：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">参数1：X轴，图中为30，因为50-20=30；</span><br><span class="line">参数2：Y轴，图中为30，因为50-20=30；</span><br><span class="line">参数3：模糊距离</span><br><span class="line">参数4：阴影大小，默认可省略不写时为0。</span><br><span class="line">参数4：颜色。</span><br></pre></td></tr></table></figure>
+<h2 id="【2】border-image"><a href="#【2】border-image" class="headerlink" title="【2】border-image"></a>【2】border-image</h2><p><code>border-image-repeat</code>: 重复（<code>repeat</code>）、拉伸（<code>stretch</code>）或铺满（<code>round</code>）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-image: url(border.png) 30 round;</span><br></pre></td></tr></table></figure>
+<h2 id="【3】半透明边框"><a href="#【3】半透明边框" class="headerlink" title="【3】半透明边框"></a>【3】半透明边框</h2><p><code>rgba</code>或<code>hsla</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">color: hsla(1,0%,100%,.2);</span><br><span class="line">border: solid 3px;</span><br><span class="line">border-color: rgba(255,255,0,.2);</span><br></pre></td></tr></table></figure>
+<h2 id="【4】多重边框"><a href="#【4】多重边框" class="headerlink" title="【4】多重边框"></a>【4】多重边框</h2><h3 id="【4-1】用-box-shadow"><a href="#【4-1】用-box-shadow" class="headerlink" title="【4.1】用 box-shadow"></a>【4.1】用 box-shadow</h3><p><img src="https://wx3.sinaimg.cn/large/0069qZtTgy1gizk2ty7otj304304aa9x.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: #fbfb;</span><br><span class="line">box-shadow: 0 0 0 5px #f00, 0 0 0 10px #ff0, 0 0 0 15px #00f;</span><br></pre></td></tr></table></figure>
+<h3 id="【4-2】用-outline"><a href="#【4-2】用-outline" class="headerlink" title="【4.2】用 outline"></a>【4.2】用 outline</h3><p><img src="https://wx4.sinaimg.cn/mw1024/0069qZtTgy1gizka5updnj3042044746.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background: #fbfb;</span><br><span class="line">outline: 5px solid #ff0;</span><br><span class="line">border: 5px solid #f00;</span><br></pre></td></tr></table></figure>
+<p><strong>outline 和 border 的区别</strong>：</p>
+<ul>
+<li><code>outline</code>不占空间，<code>border</code>占空间</li>
+<li>设置圆角（<code>border-radius</code>）之后，<code>border</code>边框会贴紧，<code>outline</code>不会</li>
+<li><code>outline-set</code>可以设置边距</li>
+</ul>
+<p><strong>区别的图片</strong><br><img src="https://wx1.sinaimg.cn/mw1024/0069qZtTgy1gizkad0s9lj304k04aweg.jpg" alt="image"></p>
+<p><strong>区别的代码</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">background: #fbfb;</span><br><span class="line">outline: 5px solid #ff0;</span><br><span class="line">border: 5px solid #f00;</span><br><span class="line">border-radius: 50%;</span><br><span class="line">outline-offset: 10px;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="CSS3-background"><a href="#CSS3-background" class="headerlink" title="CSS3-background"></a>CSS3-background</h1><h2 id="【1】background-origin"><a href="#【1】background-origin" class="headerlink" title="【1】background-origin"></a>【1】background-origin</h2><p>背景区域的位置，有如下属性：</p>
+<ul>
+<li><p><code>content-box</code>：<code>padding</code>值会起效，以<code>padding</code>开始的单位开始显示背景；</p>
+</li>
+<li><p><code>padding-box</code>：<code>padding</code>不会影响背影，直接从<code>border</code>里面开如显示背影；</p>
+</li>
+<li><p><code>border-box</code>：<code>border</code>不会影响背景，直接把<code>border</code>的内容也算在背影里面，背景会减去<code>border</code>的长度。</p>
+</li>
+</ul>
+<h2 id="【2】background-image"><a href="#【2】background-image" class="headerlink" title="【2】background-image"></a>【2】background-image</h2><p>背景图，有如下属性：</p>
+<ul>
+<li><p><code>url()</code>：图片地址</p>
+</li>
+<li><p><code>line-gradient</code>：创建线性渐变的图片</p>
+</li>
+<li><p><code>redial-gradient</code>：创建径向渐变的图片</p>
+</li>
+<li><p><code>repeating-line-gradient</code>：创建重复线性渐变的图片</p>
+</li>
+<li><p><code>repeating-redial-gradient</code>：创建重复径向渐变的图片</p>
+</li>
+</ul>
+<p>与<code>background-size</code>组合的话，可以生成条纹背景。</p>
+<h3 id="【2-1】linear-gradient"><a href="#【2-1】linear-gradient" class="headerlink" title="【2.1】linear-gradient"></a>【2.1】linear-gradient</h3><p>背景 2 色平铺</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(#ff0 50%, #f00 50%);</span><br><span class="line">background-size: 100% 50%;</span><br></pre></td></tr></table></figure>
+<h4 id="【2-1-1】linear-gradient：条纹背景"><a href="#【2-1-1】linear-gradient：条纹背景" class="headerlink" title="【2.1.1】linear-gradient：条纹背景"></a>【2.1.1】linear-gradient：条纹背景</h4><h5 id="背景为上下-2-色分割"><a href="#背景为上下-2-色分割" class="headerlink" title="背景为上下 2 色分割"></a>背景为上下 2 色分割</h5><p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0f2emiabj308x05lq2r.jpg" alt="image"></p>
+<p><code>backgorund-image: linear-gradient(#ff0 50%, #f00 50%)</code></p>
+<h5 id="背景-2-色平铺"><a href="#背景-2-色平铺" class="headerlink" title="背景 2 色平铺"></a>背景 2 色平铺</h5><p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0f2jukxkj308v05pt8r.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(#ff0 50%, #f00 50%);</span><br><span class="line">background-size: 100% 50%;</span><br></pre></td></tr></table></figure>
+<h5 id="背景-2-色任意角度平铺"><a href="#背景-2-色任意角度平铺" class="headerlink" title="背景 2 色任意角度平铺"></a>背景 2 色任意角度平铺</h5><p><img src="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: repeating-linear-gradient(60deg,yellow 0%,yellow 5%,green 0%,green 10%);</span><br></pre></td></tr></table></figure>
+<h4 id="【2-1-2】linear-gradient：切角效果"><a href="#【2-1-2】linear-gradient：切角效果" class="headerlink" title="【2.1.2】linear-gradient：切角效果"></a>【2.1.2】linear-gradient：切角效果</h4><p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0m36t5cij306q068web.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">background:#ffb;</span><br><span class="line">background: linear-gradient(135deg, transparent 15px,#fbb 0) top left,</span><br><span class="line">      linear-gradient(-135deg, transparent 15px,#fbb 0) top right,</span><br><span class="line">      linear-gradient(-45deg, transparent 15px, #fbb 0) bottom right,</span><br><span class="line">      linear-gradient(45deg, transparent 15px, #fbb 0) bottom left;</span><br><span class="line">background-size:50% 50%;</span><br><span class="line">background-repeat:no-repeat;</span><br></pre></td></tr></table></figure>
+<h3 id="【2-2】repeating-linear-gradient"><a href="#【2-2】repeating-linear-gradient" class="headerlink" title="【2.2】repeating-linear-gradient"></a>【2.2】repeating-linear-gradient</h3><p>背景 2 色任意角度平铺</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/0069qZtTgy1gj0f30zb6bj308t05nn04.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: repeating-linear-gradient(60deg,yellow 0%,yellow 5%,green 0%,green 10%);</span><br></pre></td></tr></table></figure>
+<h2 id="【3】background-position-位置"><a href="#【3】background-position-位置" class="headerlink" title="【3】background-position 位置"></a>【3】background-position 位置</h2><p>让背景图在距离右边和底部都是 20px，如图：</p>
+<p><img src="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gizlk17h0ej303b03i74d.jpg" alt="image"></p>
+<h3 id="【3-1】background-position"><a href="#【3-1】background-position" class="headerlink" title="【3.1】background-position"></a>【3.1】background-position</h3><p>方法一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(img_url) no-repeat;</span><br><span class="line">background-position: bottom 20px right 20px;</span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">padding: 20px;</span><br><span class="line">background: url(img_url) no-repeat;</span><br><span class="line">background-position: bottom right;</span><br><span class="line">background-origin: content-box;</span><br></pre></td></tr></table></figure>
+<p><code>background-origin:content-box;</code>和<code>padding:20px</code>结合起来的效果和方法一一样。</p>
+<h3 id="【3-2】calc"><a href="#【3-2】calc" class="headerlink" title="【3.2】calc"></a>【3.2】calc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(img_url) no-repeat;</span><br><span class="line">background-position: calc(100% - 20px, 100% - 20px);</span><br></pre></td></tr></table></figure>
+<h2 id="【4】background-attachment"><a href="#【4】background-attachment" class="headerlink" title="【4】background-attachment"></a>【4】background-attachment</h2><p>背景依附，默认为<code>scroll</code>，随背景滚动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment: fixed; // 背景不会随内容滚动</span><br></pre></td></tr></table></figure>
+<p>用<code>background-attachment</code>实现滚动提示</p>
+<p><img src="https://wx2.sinaimg.cn/large/0069qZtTgy1gmf5vn5ch4j307l07igln.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background-image: radial-gradient(at top, rgba(0,0,0,0.2), rgba(0,0,0,0));</span><br><span class="line">background-repeat: no-repeat;</span><br><span class="line">background-size: 100% 15px;</span><br><span class="line">background-attachment: local, scroll;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3-transform"></a>CSS3-transform</h1><p><a href="https://c.runoob.com/codedemo/3391" target="_blank" rel="noopener">所有旋转效果</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* 转换中心 */</span><br><span class="line">transform-origin: top;</span><br><span class="line">/* 旋转 */</span><br><span class="line">transform: rotate(45deg);</span><br><span class="line">/* 倾斜 */</span><br><span class="line">transform: skew(45deg);</span><br><span class="line">/* 梯形效果 */</span><br><span class="line">transform: perspective(45deg);</span><br><span class="line">/* 平移 */</span><br><span class="line">transform: translate(20px, 10px);</span><br><span class="line">/* 缩放 */</span><br><span class="line">transform: scale(.5);</span><br></pre></td></tr></table></figure>
+<p>也可以所有属性合并：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform: rotate(45deg) translate(20px, 10px) scale(.5) skew(45deg);</span><br></pre></td></tr></table></figure>
+<h2 id="【1】rotate：旋转"><a href="#【1】rotate：旋转" class="headerlink" title="【1】rotate：旋转"></a>【1】rotate：旋转</h2><h3 id="【1-1】正方形"><a href="#【1-1】正方形" class="headerlink" title="【1.1】正方形"></a>【1.1】正方形</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.lin&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  transform: rotate(45deg);</span><br><span class="line">&#125;</span><br><span class="line">.lin &gt; img&#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  transform: rotate(-45deg)scale(1.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果不用<code>scale(1.5)</code>的话就是八角形</strong>。</p>
+<h3 id="【1-2】长方形"><a href="#【1-2】长方形" class="headerlink" title="【1.2】长方形"></a>【1.2】长方形</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.lin-long &gt; img&#123;</span><br><span class="line">  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);</span><br><span class="line">  transition: ls clip-path;</span><br><span class="line">&#125;</span><br><span class="line">.lin-long &gt; img:hover&#123;</span><br><span class="line">  clip-path: polygon(0 0 , 100% 0, 100% 100%, 0 100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="【2】skewX：倾斜"><a href="#【2】skewX：倾斜" class="headerlink" title="【2】skewX：倾斜"></a>【2】skewX：倾斜</h2><p><code>transform: skewX(-45deg);</code></p>
+<p><strong>skewX 默认会把字体内容也旋转，解决方式是加伪元素</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  text-align: center;</span><br><span class="line">  line-height: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.box::before&#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  z-index: -1;</span><br><span class="line">  background-color: #ffb;</span><br><span class="line">  transform: skewX(-45deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="【3】perspective：梯形效果"><a href="#【3】perspective：梯形效果" class="headerlink" title="【3】perspective：梯形效果"></a>【3】perspective：梯形效果</h2><p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0mzj9rt8j307o041t8i.jpg" alt="image"></p>
+<p><code>transform: perspective(30px)rotateX(5deg);</code></p>
+<p>同样会导致内容变成梯形，所以用伪元素生成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.border&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.border::before&#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  z-index: -1;</span><br><span class="line">  background:#fbb;</span><br><span class="line">  transform: perspective(30px)rotateX(5deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="CSS3-各种阴影"><a href="#CSS3-各种阴影" class="headerlink" title="CSS3-各种阴影"></a>CSS3-各种阴影</h1><h2 id="【1】边框阴影：box-shadow"><a href="#【1】边框阴影：box-shadow" class="headerlink" title="【1】边框阴影：box-shadow"></a>【1】边框阴影：box-shadow</h2><h3 id="【1-1】单侧阴影"><a href="#【1-1】单侧阴影" class="headerlink" title="【1.1】单侧阴影"></a>【1.1】单侧阴影</h3><p><img src="https://wx3.sinaimg.cn/mw690/0069qZtTgy1gj0ob24z97j306y03qmwy.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: 15px 0 5px -10px #000;</span><br></pre></td></tr></table></figure>
+<h3 id="【1-2】多侧阴影"><a href="#【1-2】多侧阴影" class="headerlink" title="【1.2】多侧阴影"></a>【1.2】多侧阴影</h3><p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gj0ob7xfq6j307d03sjr7.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: 15px 0 5px -10px #000, -15px 0 5px -10px #000;</span><br></pre></td></tr></table></figure>
+<h2 id="【2】文字阴影：text-shadow"><a href="#【2】文字阴影：text-shadow" class="headerlink" title="【2】文字阴影：text-shadow"></a>【2】文字阴影：text-shadow</h2><p><img src="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gj0ojj9giyj305602i3yg.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: 5px 5px 5px #f00;</span><br></pre></td></tr></table></figure>
+<p>参数：x 轴、y 轴、阴影、颜色。</p>
+<h2 id="【3】多边形阴影：drop-shadow"><a href="#【3】多边形阴影：drop-shadow" class="headerlink" title="【3】多边形阴影：drop-shadow"></a>【3】多边形阴影：drop-shadow</h2><p><strong>文字也会有阴影</strong></p>
+<p><img src="https://wx4.sinaimg.cn/mw690/0069qZtTgy1gj0ol4gog9j305l03amx2.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">border: 100px solid ;</span><br><span class="line">border-color: transparent transparent red;</span><br><span class="line">filter: drop-shadow(5px 5px 5px #000);</span><br></pre></td></tr></table></figure>
+<p>参数：x 轴、y 轴、阴影、颜色。</p>
+<h2 id="【4】通过阴影弱化背景"><a href="#【4】通过阴影弱化背景" class="headerlink" title="【4】通过阴影弱化背景"></a>【4】通过阴影弱化背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);</span><br></pre></td></tr></table></figure>
+<p>重点：用伪元素设置 blur</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.cover&#123;</span><br><span class="line">  width: 600px;</span><br><span class="line">  height: 500px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.cover::before&#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 600px;</span><br><span class="line">  height: 500px;</span><br><span class="line">  filter: blur(5px);</span><br><span class="line">  background: url(&apos;./floor.jpeg&apos;) center center no-repeat;</span><br><span class="line">  z-index: -1;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 30%;</span><br><span class="line">  top: 50%;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  border: 1px solid #fbb;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;cover&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;content&quot;&gt;我是内容&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="用keyframes模拟打字动画"><a href="#用keyframes模拟打字动画" class="headerlink" title="用keyframes模拟打字动画"></a>用<code>keyframes</code>模拟打字动画</h1><p>用<code>width:0</code>到<code>width:100%</code>模拟出打字效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@keyframes typing &#123;</span><br><span class="line">  from &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">p&#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  animation: typing 18s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/07/CSS之高性能代码与优化/" rel="next" title="CSS之高性能代码与优化">
+                <i class="fa fa-chevron-left"></i> CSS之高性能代码与优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/07/JavaScript之HTTP对象/" rel="prev" title="JavaScript之HTTP对象">
+                JavaScript之HTTP对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODk2OC8xNTQ5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="彭丹丹">
+            
+              <p class="site-author-name" itemprop="name">彭丹丹</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">182</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3-边框"><span class="nav-number">1.</span> <span class="nav-text">CSS3-边框</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】box-shadow"><span class="nav-number">1.1.</span> <span class="nav-text">【1】box-shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】border-image"><span class="nav-number">1.2.</span> <span class="nav-text">【2】border-image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】半透明边框"><span class="nav-number">1.3.</span> <span class="nav-text">【3】半透明边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】多重边框"><span class="nav-number">1.4.</span> <span class="nav-text">【4】多重边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【4-1】用-box-shadow"><span class="nav-number">1.4.1.</span> <span class="nav-text">【4.1】用 box-shadow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【4-2】用-outline"><span class="nav-number">1.4.2.</span> <span class="nav-text">【4.2】用 outline</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3-background"><span class="nav-number">2.</span> <span class="nav-text">CSS3-background</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】background-origin"><span class="nav-number">2.1.</span> <span class="nav-text">【1】background-origin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】background-image"><span class="nav-number">2.2.</span> <span class="nav-text">【2】background-image</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【2-1】linear-gradient"><span class="nav-number">2.2.1.</span> <span class="nav-text">【2.1】linear-gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#【2-1-1】linear-gradient：条纹背景"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">【2.1.1】linear-gradient：条纹背景</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#背景为上下-2-色分割"><span class="nav-number">2.2.1.1.1.</span> <span class="nav-text">背景为上下 2 色分割</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#背景-2-色平铺"><span class="nav-number">2.2.1.1.2.</span> <span class="nav-text">背景 2 色平铺</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#背景-2-色任意角度平铺"><span class="nav-number">2.2.1.1.3.</span> <span class="nav-text">背景 2 色任意角度平铺</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【2-1-2】linear-gradient：切角效果"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">【2.1.2】linear-gradient：切角效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2-2】repeating-linear-gradient"><span class="nav-number">2.2.2.</span> <span class="nav-text">【2.2】repeating-linear-gradient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】background-position-位置"><span class="nav-number">2.3.</span> <span class="nav-text">【3】background-position 位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【3-1】background-position"><span class="nav-number">2.3.1.</span> <span class="nav-text">【3.1】background-position</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【3-2】calc"><span class="nav-number">2.3.2.</span> <span class="nav-text">【3.2】calc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】background-attachment"><span class="nav-number">2.4.</span> <span class="nav-text">【4】background-attachment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3-transform"><span class="nav-number">3.</span> <span class="nav-text">CSS3-transform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】rotate：旋转"><span class="nav-number">3.1.</span> <span class="nav-text">【1】rotate：旋转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-1】正方形"><span class="nav-number">3.1.1.</span> <span class="nav-text">【1.1】正方形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-2】长方形"><span class="nav-number">3.1.2.</span> <span class="nav-text">【1.2】长方形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】skewX：倾斜"><span class="nav-number">3.2.</span> <span class="nav-text">【2】skewX：倾斜</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】perspective：梯形效果"><span class="nav-number">3.3.</span> <span class="nav-text">【3】perspective：梯形效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3-各种阴影"><span class="nav-number">4.</span> <span class="nav-text">CSS3-各种阴影</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】边框阴影：box-shadow"><span class="nav-number">4.1.</span> <span class="nav-text">【1】边框阴影：box-shadow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-1】单侧阴影"><span class="nav-number">4.1.1.</span> <span class="nav-text">【1.1】单侧阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-2】多侧阴影"><span class="nav-number">4.1.2.</span> <span class="nav-text">【1.2】多侧阴影</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】文字阴影：text-shadow"><span class="nav-number">4.2.</span> <span class="nav-text">【2】文字阴影：text-shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】多边形阴影：drop-shadow"><span class="nav-number">4.3.</span> <span class="nav-text">【3】多边形阴影：drop-shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】通过阴影弱化背景"><span class="nav-number">4.4.</span> <span class="nav-text">【4】通过阴影弱化背景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用keyframes模拟打字动画"><span class="nav-number">5.</span> <span class="nav-text">用keyframes模拟打字动画</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭丹丹</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+	  本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+	</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  
+  <!-- 页面爆炸效果 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>

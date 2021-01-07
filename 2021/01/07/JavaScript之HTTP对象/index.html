@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="协议客户端和服务器之间传输数据的规范，全称是“超文本传输协议”。  协议请求GET、POST和OPTION  GET和POST的区别   区别 get post     传参 URL、cookie 请求体body   参数长度 不同浏览器不同限制（限制URL而非参数） 无限制   安全性 参数保留在浏览记录中  通过地址栏收藏  直接在地址栏显示主动缓存 -   TCP数据包 1个 2个   幂等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript之HTTP对象">
+<meta property="og:url" content="http://yoursite.com/2021/01/07/JavaScript之HTTP对象/index.html">
+<meta property="og:site_name" content="春风自是人间客">
+<meta property="og:description" content="协议客户端和服务器之间传输数据的规范，全称是“超文本传输协议”。  协议请求GET、POST和OPTION  GET和POST的区别   区别 get post     传参 URL、cookie 请求体body   参数长度 不同浏览器不同限制（限制URL而非参数） 无限制   安全性 参数保留在浏览记录中  通过地址栏收藏  直接在地址栏显示主动缓存 -   TCP数据包 1个 2个   幂等">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-07T13:52:29.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript之HTTP对象">
+<meta name="twitter:description" content="协议客户端和服务器之间传输数据的规范，全称是“超文本传输协议”。  协议请求GET、POST和OPTION  GET和POST的区别   区别 get post     传参 URL、cookie 请求体body   参数长度 不同浏览器不同限制（限制URL而非参数） 无限制   安全性 参数保留在浏览记录中  通过地址栏收藏  直接在地址栏显示主动缓存 -   TCP数据包 1个 2个   幂等">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/01/07/JavaScript之HTTP对象/">
+
+
+
+
+
+  <title>JavaScript之HTTP对象 | 春风自是人间客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春风自是人间客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">是非成败转头空，青山依旧在，几度夕阳红。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-program">
+          <a href="/categories/program" rel="section">
+            
+            程序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/idea" rel="section">
+            
+            想法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/07/JavaScript之HTTP对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="彭丹丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风自是人间客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript之HTTP对象</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-07T15:44:34+08:00">
+                2021-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  919
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><p>客户端和服务器之间传输数据的规范，全称是“超文本传输协议”。</p>
+<hr>
+<h1 id="协议请求"><a href="#协议请求" class="headerlink" title="协议请求"></a>协议请求</h1><p><code>GET</code>、<code>POST</code>和<code>OPTION</code></p>
+<hr>
+<h1 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">区别</th>
+<th style="text-align:center">get</th>
+<th style="text-align:center">post</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">传参</td>
+<td style="text-align:center"><code>URL</code>、<code>cookie</code></td>
+<td style="text-align:center">请求体<code>body</code></td>
+</tr>
+<tr>
+<td style="text-align:center">参数长度</td>
+<td style="text-align:center">不同浏览器不同限制（限制<code>URL</code>而非参数）</td>
+<td style="text-align:center">无限制</td>
+</tr>
+<tr>
+<td style="text-align:center">安全性</td>
+<td style="text-align:center">参数保留在浏览记录中 <br> 通过地址栏收藏 <br> 直接在地址栏显示<br>主动缓存</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">TCP数据包</td>
+<td style="text-align:center">1个</td>
+<td style="text-align:center">2个</td>
+</tr>
+<tr>
+<td style="text-align:center">幂等性</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">用法</td>
+<td style="text-align:center">获取数据(<code>list</code>接口)</td>
+<td style="text-align:center">将数据发给服务器(<code>delete</code>接口)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>TCP数据包：</strong> <code>GET</code>请求会把<code>header</code>和<code>data</code>一并发出去，<code>POST</code>会先发<code>header</code>，服务器响应<code>100 continue</code>，浏览器再发送<code>data</code>，服务器响应<code>200 ok</code>。</li>
+<li><strong>幂等性：</strong> 指对某一资源进行一次或多次请求都具有相同的副作用。例如搜索接口都是幂相等的操作，而增、删、改都不是幂等操作。</li>
+</ul>
+<hr>
+<h1 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a><code>HTTP</code>和<code>HTTPS</code>的区别</h1><ul>
+<li><p><code>HTTPS</code> = <code>HTTP</code> + <code>SSL</code>证书</p>
+</li>
+<li><p><code>HTTP</code>是超文本传输协议，信息是明文传输；<code>HTTPS</code>则是具有安全性的<code>SSL</code>加密协议传输</p>
+</li>
+<li><p><code>HTTPS</code>比<code>HTTP</code>慢，因为<code>HTTPS</code>除了<code>TCP</code>握手的3个包，还要加上<code>SSL</code>握手的9个包。</p>
+</li>
+</ul>
+<hr>
+<h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="noopener">更全跨域方法链接</a></p>
+<ul>
+<li><code>jsonp</code>跨域</li>
+<li>跨域资源共享（<code>CORS</code>）</li>
+<li><code>nodejs</code>中间件代理跨域</li>
+<li><code>iframe</code></li>
+<li><code>document.domain</code></li>
+<li><code>postMessage</code></li>
+</ul>
+<h1 id="【1】jsonp"><a href="#【1】jsonp" class="headerlink" title="【1】jsonp"></a>【1】jsonp</h1><p>把JS、CSS、IMG等静态资源分离到独立域名的服务器上。<br><strong>缺点：只能实现GET请求</strong>。</p>
+<h2 id="【1-1】原生实现"><a href="#【1-1】原生实现" class="headerlink" title="【1.1】原生实现"></a>【1.1】原生实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var script = document.createElement(&apos;script&apos;);</span><br><span class="line">  script.type = &apos;text/javascript&apos;;</span><br><span class="line"></span><br><span class="line">  // 传参一个回调函数名给后端，方便后端返回时执行这个在前端定义的回调函数</span><br><span class="line">  script.src = &apos;http://www.domain2.com:8080/login?user=admin&amp;callback=handleCallback&apos;;</span><br><span class="line">  document.head.appendChild(script);</span><br><span class="line"></span><br><span class="line">  // 回调执行函数</span><br><span class="line">  function handleCallback(res) &#123;</span><br><span class="line">      alert(JSON.stringify(res));</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="【1-2】jquery-ajax"><a href="#【1-2】jquery-ajax" class="headerlink" title="【1.2】jquery ajax"></a>【1.2】jquery ajax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &apos;http://www.domain2.com:8080/login&apos;,</span><br><span class="line">    type: &apos;get&apos;,</span><br><span class="line">    dataType: &apos;jsonp&apos;,  // 请求方式为jsonp</span><br><span class="line">    jsonpCallback: &quot;handleCallback&quot;,    // 自定义回调函数名</span><br><span class="line">    data: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="【1-3】vue-js："><a href="#【1-3】vue-js：" class="headerlink" title="【1.3】vue.js："></a>【1.3】vue.js：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$http.jsonp(&apos;http://www.domain2.com:8080/login&apos;, &#123;</span><br><span class="line">    params: &#123;&#125;,</span><br><span class="line">    jsonp: &apos;handleCallback&apos;</span><br><span class="line">&#125;).then((res) =&gt; &#123;</span><br><span class="line">    console.log(res); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="【2】CORS"><a href="#【2】CORS" class="headerlink" title="【2】CORS"></a>【2】CORS</h1><p>普通跨域请求，只需要服务端设置<code>Access-Control-Allow-Origin</code>即可；若要携带<code>cookie</code>请求，前后端都要设置。</p>
+<h2 id="【2-1】原生ajax"><a href="#【2-1】原生ajax" class="headerlink" title="【2.1】原生ajax"></a>【2.1】原生ajax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 前端设置是否带cookie</span><br><span class="line">xhr.withCredentials = true;</span><br></pre></td></tr></table></figure>
+<h2 id="【2-2】jQuery-ajax"><a href="#【2-2】jQuery-ajax" class="headerlink" title="【2.2】jQuery ajax"></a>【2.2】jQuery ajax</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    ...</span><br><span class="line">   xhrFields: &#123;</span><br><span class="line">       withCredentials: true    // 前端设置是否带cookie</span><br><span class="line">   &#125;,</span><br><span class="line">   crossDomain: true,   // 会让请求头中包含跨域的额外信息，但不会含cookie</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="【2-3】vue框架-axios设置"><a href="#【2-3】vue框架-axios设置" class="headerlink" title="【2.3】vue框架 axios设置"></a>【2.3】vue框架 axios设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials = true</span><br></pre></td></tr></table></figure>
+<h1 id="【3】Nodejs中间件代理跨域"><a href="#【3】Nodejs中间件代理跨域" class="headerlink" title="【3】Nodejs中间件代理跨域"></a>【3】Nodejs中间件代理跨域</h1><p>如<code>proxy</code>中间件</p>
+<h1 id="【4】document-domain"><a href="#【4】document-domain" class="headerlink" title="【4】document.domain"></a>【4】document.domain</h1><p>该方式只能用于二级域名相同的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code> 适用于该方式。</p>
+<p>只需要给页面添加 <code>document.domain = &#39;test.com&#39;</code> 表示二级域名都相同就可以实现跨域</p>
+<h1 id="【5】postMessage"><a href="#【5】postMessage" class="headerlink" title="【5】postMessage"></a>【5】postMessage</h1><p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 发送消息端</span><br><span class="line">window.parent.postMessage(&apos;message&apos;, &apos;http://test.com&apos;)</span><br><span class="line">// 接收消息端</span><br><span class="line">var mc = new MessageChannel()</span><br><span class="line">mc.addEventListener(&apos;message&apos;, event =&gt; &#123;</span><br><span class="line">  var origin = event.origin || event.originalEvent.origin</span><br><span class="line">  if (origin === &apos;http://test.com&apos;) &#123;</span><br><span class="line">    console.log(&apos;验证通过&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><p>一般是在<code>html</code>中的<code>meta</code>标签上定义属性</p>
+<p>方法一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;expires&quot; content=&quot;mon, 18 apr 2016 14:30:00 GMT&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>请求–判断max-age是否过期（没过期就直接在缓存数据库中得到数据）–过期后判断属性是否字段一致，再使用缓存</p>
+<h2 id="。"><a href="#。" class="headerlink" title="。"></a>。</h2><h1 id="session和cookie"><a href="#session和cookie" class="headerlink" title="session和cookie"></a>session和cookie</h1><p>cookie是在客户端，session是在服务端。<br>一般如果想跳过cookie的限制，就用session。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/07/CSS之CSS3样式/" rel="next" title="CSS之CSS3样式">
+                <i class="fa fa-chevron-left"></i> CSS之CSS3样式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/07/CSS之实现各种功能/" rel="prev" title="CSS之实现各种功能">
+                CSS之实现各种功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODk2OC8xNTQ5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="彭丹丹">
+            
+              <p class="site-author-name" itemprop="name">彭丹丹</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">182</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#协议"><span class="nav-number">1.</span> <span class="nav-text">协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协议请求"><span class="nav-number">2.</span> <span class="nav-text">协议请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GET和POST的区别"><span class="nav-number">3.</span> <span class="nav-text">GET和POST的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP和HTTPS的区别"><span class="nav-number">4.</span> <span class="nav-text">HTTP和HTTPS的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域"><span class="nav-number">5.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【1】jsonp"><span class="nav-number">6.</span> <span class="nav-text">【1】jsonp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1-1】原生实现"><span class="nav-number">6.1.</span> <span class="nav-text">【1.1】原生实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【1-2】jquery-ajax"><span class="nav-number">6.2.</span> <span class="nav-text">【1.2】jquery ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【1-3】vue-js："><span class="nav-number">6.3.</span> <span class="nav-text">【1.3】vue.js：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【2】CORS"><span class="nav-number">7.</span> <span class="nav-text">【2】CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【2-1】原生ajax"><span class="nav-number">7.1.</span> <span class="nav-text">【2.1】原生ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2-2】jQuery-ajax"><span class="nav-number">7.2.</span> <span class="nav-text">【2.2】jQuery ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2-3】vue框架-axios设置"><span class="nav-number">7.3.</span> <span class="nav-text">【2.3】vue框架 axios设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【3】Nodejs中间件代理跨域"><span class="nav-number">8.</span> <span class="nav-text">【3】Nodejs中间件代理跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【4】document-domain"><span class="nav-number">9.</span> <span class="nav-text">【4】document.domain</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【5】postMessage"><span class="nav-number">10.</span> <span class="nav-text">【5】postMessage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓存"><span class="nav-number">11.</span> <span class="nav-text">缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#。"><span class="nav-number">11.1.</span> <span class="nav-text">。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session和cookie"><span class="nav-number">12.</span> <span class="nav-text">session和cookie</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭丹丹</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+	  本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+	</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  
+  <!-- 页面爆炸效果 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
