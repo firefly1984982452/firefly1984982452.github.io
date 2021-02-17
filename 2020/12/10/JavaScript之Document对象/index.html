@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Dcoument对象集合 all forms images links  域名、地址 domain documentURI baseURI URL  cookietitle：名称visibilityState：页面隐藏状态1234567891011document.addEventListener(&amp;apos;visibilitychange&amp;apos;, function () &amp;#123;">
+<meta name="description" content="Dcoument 对象集合 all forms images links   域名、地址 domain documentURI baseURI URL   cookie title：名称 visibilityState 和 hidden：页面隐藏状态123456789101112document.addEventListener(&amp;apos;visibilitychange&amp;apos;, func">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之Document对象">
 <meta property="og:url" content="http://yoursite.com/2020/12/10/JavaScript之Document对象/index.html">
 <meta property="og:site_name" content="春风自是人间客">
-<meta property="og:description" content="Dcoument对象集合 all forms images links  域名、地址 domain documentURI baseURI URL  cookietitle：名称visibilityState：页面隐藏状态1234567891011document.addEventListener(&amp;apos;visibilitychange&amp;apos;, function () &amp;#123;">
+<meta property="og:description" content="Dcoument 对象集合 all forms images links   域名、地址 domain documentURI baseURI URL   cookie title：名称 visibilityState 和 hidden：页面隐藏状态123456789101112document.addEventListener(&amp;apos;visibilitychange&amp;apos;, func">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-24T11:21:04.679Z">
+<meta property="og:updated_time" content="2021-02-17T11:27:53.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之Document对象">
-<meta name="twitter:description" content="Dcoument对象集合 all forms images links  域名、地址 domain documentURI baseURI URL  cookietitle：名称visibilityState：页面隐藏状态1234567891011document.addEventListener(&amp;apos;visibilitychange&amp;apos;, function () &amp;#123;">
+<meta name="twitter:description" content="Dcoument 对象集合 all forms images links   域名、地址 domain documentURI baseURI URL   cookie title：名称 visibilityState 和 hidden：页面隐藏状态123456789101112document.addEventListener(&amp;apos;visibilitychange&amp;apos;, func">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  191
+                  238
                 </span>
               
 
@@ -396,22 +396,33 @@
       
 
       
-        <h1 id="Dcoument对象集合"><a href="#Dcoument对象集合" class="headerlink" title="Dcoument对象集合"></a>Dcoument对象集合</h1><ul>
+        <h1 id="Dcoument-对象集合"><a href="#Dcoument-对象集合" class="headerlink" title="Dcoument 对象集合"></a>Dcoument 对象集合</h1><ul>
 <li>all</li>
 <li>forms</li>
 <li>images</li>
 <li>links</li>
 </ul>
+<hr>
 <h1 id="域名、地址"><a href="#域名、地址" class="headerlink" title="域名、地址"></a>域名、地址</h1><ul>
 <li>domain</li>
 <li>documentURI</li>
 <li>baseURI</li>
 <li>URL</li>
 </ul>
-<h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><h1 id="title：名称"><a href="#title：名称" class="headerlink" title="title：名称"></a>title：名称</h1><h1 id="visibilityState：页面隐藏状态"><a href="#visibilityState：页面隐藏状态" class="headerlink" title="visibilityState：页面隐藏状态"></a>visibilityState：页面隐藏状态</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&apos;visibilitychange&apos;, function () &#123;</span><br><span class="line">  // 用户离开了当前页面</span><br><span class="line">  if (document.visibilityState === &apos;hidden&apos;) &#123;</span><br><span class="line">    document.title = &apos;页面不可见&apos;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 用户打开或回到页面</span><br><span class="line">  if (document.visibilityState === &apos;visible&apos;) &#123;</span><br><span class="line">    document.title = &apos;页面可见&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><hr>
+<h1 id="title：名称"><a href="#title：名称" class="headerlink" title="title：名称"></a>title：名称</h1><hr>
+<h1 id="visibilityState-和-hidden：页面隐藏状态"><a href="#visibilityState-和-hidden：页面隐藏状态" class="headerlink" title="visibilityState 和 hidden：页面隐藏状态"></a>visibilityState 和 hidden：页面隐藏状态</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&apos;visibilitychange&apos;, function () &#123;</span><br><span class="line">  console.log(document.hidden,document.visibilityState)</span><br><span class="line">  // 用户离开了当前页面</span><br><span class="line">  if (document.visibilityState === &apos;hidden&apos; || document.hidden === true) &#123;</span><br><span class="line">    document.title = &apos;页面不可见&apos;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 用户打开或回到页面</span><br><span class="line">  if (document.visibilityState === &apos;visible&apos; || document.hidden === false) &#123;</span><br><span class="line">    document.title = &apos;页面可见&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>区别</p>
+<ul>
+<li><code>document.hidden</code>返回是否隐藏，只返回<code>true</code>和<code>false</code>；</li>
+<li><code>document.visibilityState</code>返回具体状态，有<code>hidden</code>、<code>visible</code>、<code>prerender</code>（正在渲染中）。</li>
+</ul>
+<hr>
 <h1 id="referrer：上一页地址"><a href="#referrer：上一页地址" class="headerlink" title="referrer：上一页地址"></a>referrer：上一页地址</h1><p>返回上一页的地址，可以处理如移动端直接进入到详情页时，用<code>history.go(-1)</code>和<code>history.back()</code>无效时可用<code>document.referrer</code>。</p>
 <p><a href="https://m.qidian.com/author/402631776" target="_blank" rel="noopener">直接进入此详情页时点返回会返回到首页</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(document.referrer === &apos;&apos;) &#123;</span><br><span class="line">  window.location.href = &apos;https://www.baidu.com/&apos;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  history.back();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h1 id="获取对象"><a href="#获取对象" class="headerlink" title="获取对象"></a>获取对象</h1><ul>
 <li>getElementById()</li>
 <li>getElementsByClassName()</li>
@@ -420,18 +431,22 @@
 <li>querySelector()</li>
 <li>querySelectorAll()</li>
 </ul>
+<hr>
 <h1 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h1><ul>
 <li>write()</li>
 <li>writeln()</li>
 </ul>
+<hr>
 <h1 id="状态监听"><a href="#状态监听" class="headerlink" title="状态监听"></a>状态监听</h1><ul>
 <li>addEventListener()</li>
 <li>removeEventListener()</li>
 </ul>
+<hr>
 <h1 id="创建元素、节点"><a href="#创建元素、节点" class="headerlink" title="创建元素、节点"></a>创建元素、节点</h1><ul>
 <li>createElement()</li>
 <li>createTextNode()</li>
 </ul>
+<hr>
 
       
     </div>
@@ -598,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dcoument对象集合"><span class="nav-number">1.</span> <span class="nav-text">Dcoument对象集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域名、地址"><span class="nav-number">2.</span> <span class="nav-text">域名、地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookie"><span class="nav-number">3.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#title：名称"><span class="nav-number">4.</span> <span class="nav-text">title：名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#visibilityState：页面隐藏状态"><span class="nav-number">5.</span> <span class="nav-text">visibilityState：页面隐藏状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#referrer：上一页地址"><span class="nav-number">6.</span> <span class="nav-text">referrer：上一页地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取对象"><span class="nav-number">7.</span> <span class="nav-text">获取对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入"><span class="nav-number">8.</span> <span class="nav-text">写入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态监听"><span class="nav-number">9.</span> <span class="nav-text">状态监听</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建元素、节点"><span class="nav-number">10.</span> <span class="nav-text">创建元素、节点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dcoument-对象集合"><span class="nav-number">1.</span> <span class="nav-text">Dcoument 对象集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域名、地址"><span class="nav-number">2.</span> <span class="nav-text">域名、地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookie"><span class="nav-number">3.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#title：名称"><span class="nav-number">4.</span> <span class="nav-text">title：名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#visibilityState-和-hidden：页面隐藏状态"><span class="nav-number">5.</span> <span class="nav-text">visibilityState 和 hidden：页面隐藏状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#referrer：上一页地址"><span class="nav-number">6.</span> <span class="nav-text">referrer：上一页地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取对象"><span class="nav-number">7.</span> <span class="nav-text">获取对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入"><span class="nav-number">8.</span> <span class="nav-text">写入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态监听"><span class="nav-number">9.</span> <span class="nav-text">状态监听</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建元素、节点"><span class="nav-number">10.</span> <span class="nav-text">创建元素、节点</span></a></li></ol></div>
             
 
           </div>

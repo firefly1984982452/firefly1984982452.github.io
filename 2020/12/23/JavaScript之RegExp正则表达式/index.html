@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="学习链接-廖雪峰 学习链接-菜鸟教程  新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2 转义，2 个\\会变成 1 个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g  使用【1】">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-22T12:42:28.393Z">
+<meta property="og:updated_time" content="2021-02-17T11:27:53.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之RegExp正则表达式">
 <meta name="twitter:description" content="学习链接-廖雪峰 学习链接-菜鸟教程  新建12345var re1 = /ABC\-001/;var re2 = new RegExp(&amp;apos;ABC\\-001&amp;apos;);re1; // /ABC\-001/re2; // /ABC\-001/ re2 转义，2 个\\会变成 1 个\。 new RegExp(&amp;#39;a&amp;#39;,&amp;#39;g&amp;#39;)等同于/a/g  使用【1】">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,247
+                  1,269
                 </span>
               
 
@@ -507,6 +507,21 @@
 <td style="text-align:center"><code>\w</code></td>
 <td style="text-align:center">匹配字母、数字、下划线，等价于<code>[a-zA-Z0-9_]</code></td>
 <td style="text-align:center"><code>&#39;b_ 2&#39;.match(/\w/g); // [&quot;b&quot;, &quot;_&quot;, &quot;2&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\W</code></td>
+<td style="text-align:center">除了上面</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\d</code></td>
+<td style="text-align:center">所有数字</td>
+<td style="text-align:center"><code>&#39;010-12345&#39;.match(/\d+/g); // [&quot;010&quot;, &quot;12345&quot;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\D</code></td>
+<td style="text-align:center">除了数字</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\f</code></td>
