@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="春风自是人间客">
 <meta property="og:description" content="CSS 编码技巧【1】尽量减少代码重复 line-height写倍数 font-size写百分比  当某些值相互依赖时，应该把它们的相互关系用代码表达出来。 比如line-height写倍数、font-size写百分比更利于维护。 123font-size:20px;height:20px;line-heigth:20px; 换成 123font-size: 150%;height:20px;li">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-07T13:52:29.989Z">
+<meta property="og:updated_time" content="2021-03-19T09:49:42.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS之高性能代码与优化">
 <meta name="twitter:description" content="CSS 编码技巧【1】尽量减少代码重复 line-height写倍数 font-size写百分比  当某些值相互依赖时，应该把它们的相互关系用代码表达出来。 比如line-height写倍数、font-size写百分比更利于维护。 123font-size:20px;height:20px;line-heigth:20px; 换成 123font-size: 150%;height:20px;li">
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  586
+                  616
                 </span>
               
 
@@ -416,7 +416,7 @@
 <hr>
 <h1 id="文档分析注释"><a href="#文档分析注释" class="headerlink" title="文档分析注释"></a>文档分析注释</h1><h2 id="目录注释"><a href="#目录注释" class="headerlink" title="目录注释"></a>目录注释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*--*\</span><br><span class="line">引入的CSS目录</span><br><span class="line">\*--*/</span><br><span class="line">/**</span><br><span class="line"> * css/base.css--------------引入cssReset</span><br><span class="line"> * font-family-config.css----引入配置字体的css</span><br><span class="line"> * public.css----------------引入全局公用的css</span><br><span class="line"> */</span><br><span class="line">import &apos;./assets/css/base.css&apos;;</span><br><span class="line">import &apos;./config/font-family-config.css&apos;;</span><br><span class="line">import &apos;./assets/css/public.css&apos;;</span><br></pre></td></tr></table></figure>
 <h2 id="具体-CSS-文件的注释"><a href="#具体-CSS-文件的注释" class="headerlink" title="具体 CSS 文件的注释"></a>具体 CSS 文件的注释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*-------*\</span><br><span class="line">  $主框架</span><br><span class="line">\*-------*/</span><br><span class="line">.page&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*-------*\</span><br><span class="line"> $标题菜单</span><br><span class="line">\*-------*/</span><br><span class="line">.title&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*------------*\</span><br><span class="line"> $滚动栏样式重置</span><br><span class="line">\*------------*/</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>中间最后留 5 行以后，好在全览时看起来像个段落。</p>
+<p>中间最好留 5 行以上，好在全览时看起来像个段落。</p>
 <hr>
 <h1 id="CSS-编写顺序"><a href="#CSS-编写顺序" class="headerlink" title="CSS 编写顺序"></a>CSS 编写顺序</h1><ol>
 <li>Reset；</li>
@@ -439,6 +439,11 @@
 <li>表格相关：<code>border-spacing</code>。</li>
 </ul>
 <p><strong>比如<code>border</code>不能继承是因为不通用，有的得加上，有的加上得删掉。</strong></p>
+<hr>
+<h1 id="SEO-优化和增加可读性"><a href="#SEO-优化和增加可读性" class="headerlink" title="SEO 优化和增加可读性"></a>SEO 优化和增加可读性</h1><ul>
+<li>鼠标样式随功能变化；</li>
+</ul>
+<p>如不可点击时可改为<code>cursor: not-allowed;</code></p>
 
       
     </div>
@@ -559,7 +564,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">166</span>
+                  <span class="site-state-item-count">171</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -605,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-编码技巧"><span class="nav-number">1.</span> <span class="nav-text">CSS 编码技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】尽量减少代码重复"><span class="nav-number">1.1.</span> <span class="nav-text">【1】尽量减少代码重复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】代码易维护-vs．代码量少"><span class="nav-number">1.2.</span> <span class="nav-text">【2】代码易维护 vs．代码量少</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】currentColor"><span class="nav-number">1.3.</span> <span class="nav-text">【3】currentColor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】合理使用简写"><span class="nav-number">1.4.</span> <span class="nav-text">【4】合理使用简写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档分析注释"><span class="nav-number">2.</span> <span class="nav-text">文档分析注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录注释"><span class="nav-number">2.1.</span> <span class="nav-text">目录注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体-CSS-文件的注释"><span class="nav-number">2.2.</span> <span class="nav-text">具体 CSS 文件的注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-编写顺序"><span class="nav-number">3.</span> <span class="nav-text">CSS 编写顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-命名"><span class="nav-number">4.</span> <span class="nav-text">CSS 命名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范"><span class="nav-number">4.1.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BEM-命名法"><span class="nav-number">4.2.</span> <span class="nav-text">BEM 命名法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优先级及优化"><span class="nav-number">5.</span> <span class="nav-text">优先级及优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-number">5.1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">5.2.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-样式继承"><span class="nav-number">6.</span> <span class="nav-text">CSS 样式继承</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-编码技巧"><span class="nav-number">1.</span> <span class="nav-text">CSS 编码技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】尽量减少代码重复"><span class="nav-number">1.1.</span> <span class="nav-text">【1】尽量减少代码重复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】代码易维护-vs．代码量少"><span class="nav-number">1.2.</span> <span class="nav-text">【2】代码易维护 vs．代码量少</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】currentColor"><span class="nav-number">1.3.</span> <span class="nav-text">【3】currentColor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】合理使用简写"><span class="nav-number">1.4.</span> <span class="nav-text">【4】合理使用简写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档分析注释"><span class="nav-number">2.</span> <span class="nav-text">文档分析注释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录注释"><span class="nav-number">2.1.</span> <span class="nav-text">目录注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体-CSS-文件的注释"><span class="nav-number">2.2.</span> <span class="nav-text">具体 CSS 文件的注释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-编写顺序"><span class="nav-number">3.</span> <span class="nav-text">CSS 编写顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-命名"><span class="nav-number">4.</span> <span class="nav-text">CSS 命名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范"><span class="nav-number">4.1.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BEM-命名法"><span class="nav-number">4.2.</span> <span class="nav-text">BEM 命名法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优先级及优化"><span class="nav-number">5.</span> <span class="nav-text">优先级及优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-number">5.1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化"><span class="nav-number">5.2.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-样式继承"><span class="nav-number">6.</span> <span class="nav-text">CSS 样式继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SEO-优化和增加可读性"><span class="nav-number">7.</span> <span class="nav-text">SEO 优化和增加可读性</span></a></li></ol></div>
             
 
           </div>

@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg">
-<meta property="og:updated_time" content="2021-03-01T09:27:31.374Z">
+<meta property="og:updated_time" content="2021-03-30T11:43:10.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之Array数组">
 <meta name="twitter:description" content="扩展运算符（...）用法：将数组变为参数序列 1console.log(...[1,2,3]); // 1,2,3 代替 apply12345678// ES5 的写法Math.max.apply(null, [14, 3, 77])// ES6 的写法Math.max(...[14, 3, 77])// 等同于Math.max(14, 3, 77); 替换 push123456789// ES5">
@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,515
+                  2,514
                 </span>
               
 
@@ -462,9 +462,19 @@
 <li><code>join</code></li>
 <li><code>copyWithin</code></li>
 </ol>
-<h2 id="【1】push-和-pop"><a href="#【1】push-和-pop" class="headerlink" title="【1】push 和 pop"></a>【1】push 和 pop</h2><p><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉.</p>
+<h2 id="【1】push-和-pop"><a href="#【1】push-和-pop" class="headerlink" title="【1】push 和 pop"></a>【1】push 和 pop</h2><ul>
+<li><p><code>push()</code>向<code>Array</code>的末尾添加若干元素;</p>
+</li>
+<li><p><code>pop()</code>则把<code>Array</code>的最后一个元素删除掉.</p>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;];</span><br><span class="line">arr.push(&apos;h&apos;);       //[&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;,&apos;h&apos;];</span><br><span class="line">arr.pop();           //[&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;]</span><br></pre></td></tr></table></figure>
-<h2 id="【2】shift-和-unshift"><a href="#【2】shift-和-unshift" class="headerlink" title="【2】shift 和 unshift"></a>【2】shift 和 unshift</h2><p><code>shift()</code>删除数组第一个数据；<br><code>unshift()</code>删除数姐最后一个数据。</p>
+<h2 id="【2】shift-和-unshift"><a href="#【2】shift-和-unshift" class="headerlink" title="【2】shift 和 unshift"></a>【2】shift 和 unshift</h2><ul>
+<li><p><code>shift()</code>删除数组第一个数据；</p>
+</li>
+<li><p><code>unshift()</code>添加数姐第一个数据。</p>
+</li>
+</ul>
 <h2 id="【3】concat"><a href="#【3】concat" class="headerlink" title="【3】concat"></a>【3】concat</h2><p>合并两个数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&apos;a&apos;,&apos;b&apos;];</span><br><span class="line">var b = [&apos;c&apos;,&apos;d&apos;]</span><br><span class="line">var c = a.concat(b);</span><br><span class="line">c //(4) [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br></pre></td></tr></table></figure>
 <h2 id="【4】join"><a href="#【4】join" class="headerlink" title="【4】join"></a>【4】join</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.join(&apos;,&apos;);       //&quot;a,b,c,d&quot;</span><br></pre></td></tr></table></figure>
@@ -484,7 +494,7 @@
 </ul>
 <p><a href="https://blog.csdn.net/coder_chenz/article/details/77156047" target="_blank" rel="noopener">Array.sort 原理</a></p>
 <p>v8 引擎的 sort 函数给出的排序方式：</p>
-<p>Chrome 浏览器（<code>Webkit</code>）：<code>插入排序</code>和<code>快速排序</code>（如果数组长度小于 10 就用<code>插入排序</code>，大于 10 就用<code>快速排序</code>）。<br>火狐浏览器（<code>Mozilla/Firefox</code>）：<code>归并排序</code>。</p>
+<p>Chrome 浏览器（<code>Webkit</code>）：<code>插入排序</code>和<code>快速排序</code>（如果数组长度小于 10 就用<code>插入排序</code>，大于 10 就用<code>快速排序</code>）。火狐浏览器（<code>Mozilla/Firefox</code>）：<code>归并排序</code>。</p>
 <ul>
 <li><ol>
 <li>返回值</li>
@@ -535,7 +545,7 @@
 <p><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].entries().next().value</code></p>
 <h2 id="【2】fromEntries"><a href="#【2】fromEntries" class="headerlink" title="【2】fromEntries"></a>【2】fromEntries</h2><p>将键值对数组转为对象</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const map = new Map().set(&apos;foo&apos;, true).set(&apos;bar&apos;, false);</span><br><span class="line">Object.fromEntries(map)</span><br></pre></td></tr></table></figure>
-<h2 id="【3】values"><a href="#【3】values" class="headerlink" title="【3】values"></a>【3】values</h2><p>和 entries 异曲同工<br>返回迭代器，一般和<code>next</code>一起使用</p>
+<h2 id="【3】values"><a href="#【3】values" class="headerlink" title="【3】values"></a>【3】values</h2><p>和 entries 异曲同工返回迭代器，一般和<code>next</code>一起使用</p>
 <p><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].values().next().value</code></p>
 <h2 id="【4】keys"><a href="#【4】keys" class="headerlink" title="【4】keys"></a>【4】keys</h2><p>数组里的下标</p>
 <p><code>[...[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].keys()]</code></p>
@@ -597,7 +607,7 @@
 <hr>
 <h1 id="取出数组中最大的数值"><a href="#取出数组中最大的数值" class="headerlink" title="取出数组中最大的数值"></a>取出数组中最大的数值</h1><p><code>Math.max(...[14, 3, 77])</code></p>
 <hr>
-<h1 id="arguments参数的-3-种转数组方法"><a href="#arguments参数的-3-种转数组方法" class="headerlink" title="arguments参数的 3 种转数组方法"></a><code>arguments</code>参数的 3 种转数组方法</h1><p><strong>方法 1：Array.prototype.slice.apply</strong><br><strong>方法 2：Array.from</strong><br><strong>方法 3：[…arguments]</strong></p>
+<h1 id="arguments参数的-3-种转数组方法"><a href="#arguments参数的-3-种转数组方法" class="headerlink" title="arguments参数的 3 种转数组方法"></a><code>arguments</code>参数的 3 种转数组方法</h1><p><strong>方法 1：Array.prototype.slice.apply</strong> <strong>方法 2：Array.from</strong> <strong>方法 3：[…arguments]</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var test3 = function()&#123;</span><br><span class="line">    console.log(arguments);</span><br><span class="line">    var list1 = Array.prototype.slice.apply(arguments);</span><br><span class="line">    console.log(list1);</span><br><span class="line">    var list2 = Array.from(arguments);</span><br><span class="line">    console.log(list2);</span><br><span class="line">    var list3 = [...arguments];</span><br><span class="line">    console.log(list3);</span><br><span class="line">&#125;</span><br><span class="line">test3(1,2,3,4);</span><br></pre></td></tr></table></figure>
 <p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg" alt="image"></p>
 <p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1ghdl1udru0j309o068dfy.jpg"></p>
@@ -722,7 +732,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">166</span>
+                  <span class="site-state-item-count">171</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

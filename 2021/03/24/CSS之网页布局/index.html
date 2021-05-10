@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="正常布局流 弹性盒子：flex规范123&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 示例12345678910111213141516171819202122.box&amp;#123;  width: 400px;  height: 400px;  border">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS之网页布局">
+<meta property="og:url" content="http://yoursite.com/2021/03/24/CSS之网页布局/index.html">
+<meta property="og:site_name" content="春风自是人间客">
+<meta property="og:description" content="正常布局流 弹性盒子：flex规范123&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 示例12345678910111213141516171819202122.box&amp;#123;  width: 400px;  height: 400px;  border">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gidesq1po8j30970c4mxc.jpg">
+<meta property="og:updated_time" content="2021-03-29T09:48:07.734Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS之网页布局">
+<meta name="twitter:description" content="正常布局流 弹性盒子：flex规范123&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 示例12345678910111213141516171819202122.box&amp;#123;  width: 400px;  height: 400px;  border">
+<meta name="twitter:image" content="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gidesq1po8j30970c4mxc.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/03/24/CSS之网页布局/">
+
+
+
+
+
+  <title>CSS之网页布局 | 春风自是人间客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">春风自是人间客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">是非成败转头空，青山依旧在，几度夕阳红。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-program">
+          <a href="/categories/program" rel="section">
+            
+            程序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-idea">
+          <a href="/categories/idea" rel="section">
+            
+            想法
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/24/CSS之网页布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="彭丹丹">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风自是人间客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS之网页布局</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-24T14:19:32+08:00">
+                2021-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  928
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="正常布局流"><a href="#正常布局流" class="headerlink" title="正常布局流"></a>正常布局流</h1><hr>
+<h1 id="弹性盒子：flex"><a href="#弹性盒子：flex" class="headerlink" title="弹性盒子：flex"></a>弹性盒子：flex</h1><h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  width: 400px;</span><br><span class="line">  height: 400px;</span><br><span class="line">  border: 1px solid #f7b2bb;</span><br><span class="line">  display: flex;</span><br><span class="line">  /*flex-direction: row;//方向</span><br><span class="line">  flex-wrap: wrap; //换行 */</span><br><span class="line">  flex-flow: row wrap;</span><br><span class="line">  justify-content: space-between;//内容</span><br><span class="line">  align-content: space-between;//</span><br><span class="line">&#125;</span><br><span class="line">.item&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: #f7b2bb;</span><br><span class="line">  color: #fff;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">  align-items: center;</span><br><span class="line">  /*flex-grow: 3;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="flex-居中最简单的一种方式"><a href="#flex-居中最简单的一种方式" class="headerlink" title="flex 居中最简单的一种方式"></a>flex 居中最简单的一种方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.father &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">  margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="flex-中的-justify-content-space-evenly"><a href="#flex-中的-justify-content-space-evenly" class="headerlink" title="flex 中的 justify-content: space-evenly"></a>flex 中的 <code>justify-content: space-evenly</code></h2><p>◆ <strong>均匀分布</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">justify-content: space-between; // 两端</span><br><span class="line">justify-content: space-around; // 两端间隙相等，项目中间的间隙比较大</span><br><span class="line">justify-content: space-evenly; // 两端与项目中间的间隙一样大</span><br></pre></td></tr></table></figure>
+<p>◆ 区别：</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/0069qZtTgy1gidesq1po8j30970c4mxc.jpg" alt="image"></p>
+<p>◆ <strong>IOS 之类的兼容性用 before 和 after</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">container&#123;</span><br><span class="line">      display: flex;</span><br><span class="line">      flex-flow: row nowrap;</span><br><span class="line">      align-items: center;</span><br><span class="line">      justify-content: space-between;</span><br><span class="line">       //justify-content: space-evenly;</span><br><span class="line">      &amp;:before,</span><br><span class="line">      &amp;:after &#123;</span><br><span class="line">          content: &apos;&apos;;</span><br><span class="line">          display: block;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="网格布局：grid"><a href="#网格布局：grid" class="headerlink" title="网格布局：grid"></a>网格布局：grid</h1><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">display: grid;</span><br><span class="line">&lt;!-- 列的排列 --&gt;</span><br><span class="line">grid-template-columns: 1fr 1fr 1fr 1fr;</span><br><span class="line">&lt;!-- 列间距 --&gt;</span><br><span class="line">grid-column-gap: 0.4rem;</span><br><span class="line">&lt;!-- 行的排列 --&gt;</span><br><span class="line">grid-template-rows: 1fr 1fr 1fr;</span><br><span class="line">&lt;!-- 行间距 --&gt;</span><br><span class="line">grid-row-gap: 0.3rem;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">阮一峰的学习链接-grid</a></li>
+<li><a href="https://juejin.cn/post/6854573220306255880#heading-22" target="_blank" rel="noopener">其它-grid</a></li>
+</ul>
+<hr>
+<h1 id="浮动布局：float"><a href="#浮动布局：float" class="headerlink" title="浮动布局：float"></a>浮动布局：float</h1><hr>
+<h1 id="定位：position"><a href="#定位：position" class="headerlink" title="定位：position"></a>定位：position</h1><ul>
+<li><code>relative</code>：略</li>
+<li><code>absolute</code>：略</li>
+<li><code>fixed</code>：略</li>
+<li><code>sticky</code></li>
+</ul>
+<h2 id="abosolute"><a href="#abosolute" class="headerlink" title="abosolute"></a>abosolute</h2><p>如果同时设置 left 和 right，相当于隐式的给了宽度。top 和 bottom 同理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">left: 30px;</span><br><span class="line">right: 30px;</span><br></pre></td></tr></table></figure>
+<h2 id="sticky：粘性布局"><a href="#sticky：粘性布局" class="headerlink" title="sticky：粘性布局"></a>sticky：粘性布局</h2><p>重点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position: sticky;</span><br><span class="line">top: 0;</span><br></pre></td></tr></table></figure>
+<p><code>sticky</code>必须指定 <code>top</code>, <code>right</code>, <code>bottom</code> 或 <code>left</code> 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。</p>
+<hr>
+<h1 id="多列布局：column"><a href="#多列布局：column" class="headerlink" title="多列布局：column"></a>多列布局：column</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Multiple-column_Layout" target="_blank" rel="noopener">MDN-学习链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.main &#123;</span><br><span class="line">  color: #f00;</span><br><span class="line">  /* 设置列数 */</span><br><span class="line">  column-count: 2;</span><br><span class="line">  /* 设置每列宽度 */</span><br><span class="line">  column-width: 200px;</span><br><span class="line">  /* 间隙大小 */</span><br><span class="line">  column-gap: 20px;</span><br><span class="line">  /* 间隙样式 */</span><br><span class="line">  column-rule: 1px dotted #000;</span><br><span class="line">&#125;</span><br><span class="line">h1&#123;</span><br><span class="line">  /* 跨越所有的列【一般用于标题】 */</span><br><span class="line">  column-span: all;</span><br><span class="line">&#125;</span><br><span class="line">section&#123;</span><br><span class="line">  /* 一整段内容不换页 */</span><br><span class="line">  break-inside: avoid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="BFC、IFC、GFC、FFC"><a href="#BFC、IFC、GFC、FFC" class="headerlink" title="BFC、IFC、GFC、FFC"></a>BFC、IFC、GFC、FFC</h1><ul>
+<li>BFC: 块级格式化上下文(block)</li>
+<li>IFC: 内联格式化上下文(inline)</li>
+<li>GFC: 网格布局格式化上下文(grid)</li>
+<li>FFC: 自适应格式化上下文(flex)</li>
+</ul>
+<h2 id="【1】BFC"><a href="#【1】BFC" class="headerlink" title="【1】BFC"></a>【1】BFC</h2><ul>
+<li><a href="https://blog.csdn.net/weixin_41819731/article/details/88594489" target="_blank" rel="noopener">CSDN 学习链接</a></li>
+<li><a href="https://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/" target="_blank" rel="noopener">张鑫旭学习链接</a>)</li>
+</ul>
+<h3 id="【1-1】原则"><a href="#【1-1】原则" class="headerlink" title="【1.1】原则"></a>【1.1】原则</h3><p><code>BFC</code>是特性（功能），不是定义。</p>
+<p>◆ 表现原则：内部再怎样变化不会影响外部元素。</p>
+<p>◆ BFC 要做的是：在内部元素样式变化之后，用代码将它变统一</p>
+<p>◆ BFC 要实现的 2 个功能：</p>
+<ul>
+<li>父元素包裹住子元素</li>
+<li>兄弟元素之间划清界限</li>
+</ul>
+<h3 id="【1-2】怎样触发"><a href="#【1-2】怎样触发" class="headerlink" title="【1.2】怎样触发"></a>【1.2】怎样触发</h3><ul>
+<li>根元素或其它包含它的元素</li>
+<li>浮动元素 (元素的 float 不是 none)</li>
+<li>绝对定位元素 (元素具有 position 为 absolute 或 fixed)</li>
+<li>内联块 (元素具有 display: inline-block)</li>
+<li>表格单元格 (元素具有 display: table-cell，HTML 表格单元格默认属性)</li>
+<li>表格标题 (元素具有 display: table-caption, HTML 表格标题默认属性)</li>
+<li>具有 overflow 且值不是 visible 的块元素，</li>
+<li>display: flow-root</li>
+<li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</li>
+</ul>
+<h3 id="1-3-怎样清除浮动"><a href="#1-3-怎样清除浮动" class="headerlink" title="[1.3]怎样清除浮动"></a>[1.3]怎样清除浮动</h3><p>◆ 清除浮动方法</p>
+<ul>
+<li>1、使用空元素<code>clear:both</code></li>
+<li>2、父元素<code>overflow:hidden</code></li>
+<li>3、使用邻近元素<code>clear:both</code></li>
+<li>4、使用伪类<code>:before</code>元素<code>clear:both</code></li>
+<li>5、父元素<code>display: flow-root</code></li>
+</ul>
+<p>父元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.content-box::after&#123;</span><br><span class="line">  clear: both;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>邻近元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.left&#123;</span><br><span class="line">  float: left;</span><br><span class="line">&#125;</span><br><span class="line">.right&#123;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="【2】IFC"><a href="#【2】IFC" class="headerlink" title="【2】IFC"></a>【2】IFC</h2><p>不能有块级元素</p>
+<h2 id="【3】GFC"><a href="#【3】GFC" class="headerlink" title="【3】GFC"></a>【3】GFC</h2><p>GridLayout 会有更加丰富的属性来控制行列</p>
+<h2 id="【4】FFC"><a href="#【4】FFC" class="headerlink" title="【4】FFC"></a>【4】FFC</h2><p>Flexbox 定义了伸缩容器内伸缩项目该如何布局</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/03/24/前端之模块功能实现/" rel="next" title="前端之模块功能实现">
+                <i class="fa fa-chevron-left"></i> 前端之模块功能实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODk2OC8xNTQ5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://upload.jianshu.io/users/upload_avatars/830956/debe5156eed7?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="彭丹丹">
+            
+              <p class="site-author-name" itemprop="name">彭丹丹</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">171</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正常布局流"><span class="nav-number">1.</span> <span class="nav-text">正常布局流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子：flex"><span class="nav-number">2.</span> <span class="nav-text">弹性盒子：flex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#规范"><span class="nav-number">2.1.</span> <span class="nav-text">规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">2.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-居中最简单的一种方式"><span class="nav-number">2.3.</span> <span class="nav-text">flex 居中最简单的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-中的-justify-content-space-evenly"><span class="nav-number">2.4.</span> <span class="nav-text">flex 中的 justify-content: space-evenly</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网格布局：grid"><span class="nav-number">3.</span> <span class="nav-text">网格布局：grid</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">3.1.</span> <span class="nav-text">基本使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动布局：float"><span class="nav-number">4.</span> <span class="nav-text">浮动布局：float</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定位：position"><span class="nav-number">5.</span> <span class="nav-text">定位：position</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#abosolute"><span class="nav-number">5.1.</span> <span class="nav-text">abosolute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sticky：粘性布局"><span class="nav-number">5.2.</span> <span class="nav-text">sticky：粘性布局</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多列布局：column"><span class="nav-number">6.</span> <span class="nav-text">多列布局：column</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC、IFC、GFC、FFC"><span class="nav-number">7.</span> <span class="nav-text">BFC、IFC、GFC、FFC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【1】BFC"><span class="nav-number">7.1.</span> <span class="nav-text">【1】BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-1】原则"><span class="nav-number">7.1.1.</span> <span class="nav-text">【1.1】原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【1-2】怎样触发"><span class="nav-number">7.1.2.</span> <span class="nav-text">【1.2】怎样触发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-怎样清除浮动"><span class="nav-number">7.1.3.</span> <span class="nav-text">[1.3]怎样清除浮动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【2】IFC"><span class="nav-number">7.2.</span> <span class="nav-text">【2】IFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【3】GFC"><span class="nav-number">7.3.</span> <span class="nav-text">【3】GFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【4】FFC"><span class="nav-number">7.4.</span> <span class="nav-text">【4】FFC</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭丹丹</span>
+
+  
+</div>
+
+
+	<div class="powered-by">
+	<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+	  本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+	</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  
+  <!-- 页面爆炸效果 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
